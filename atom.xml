@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Pandy的博客</title>
+  
+  <subtitle>滴答的小站</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
+  <updated>2022-12-29T06:51:45.755Z</updated>
+  <id>https://github.com/PandyYang/pandyyang.github.io/</id>
+  
+  <author>
+    <name>Pandy</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CGO的指针传递</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/</id>
+    <published>2022-12-29T06:25:39.000Z</published>
+    <updated>2022-12-29T06:51:45.755Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;CGO指针的概念&quot;&gt;&lt;a href=&quot;#CGO指针的概念&quot; class=&quot;headerlink&quot; title=&quot;CGO指针的概念&quot;&gt;&lt;/a&gt;CGO指针的概念&lt;/h2&gt;&lt;p&gt;Go 是一种垃圾收集语言，垃圾收集器需要知道每个指向 Go
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
