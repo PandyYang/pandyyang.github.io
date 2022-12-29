@@ -355,11 +355,43 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/" title="环境问题: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="环境问题" style="background-color: #F9EBEA;">环境问题
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
 </div>
 
+    
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"环境问题","weight":1,"link":"/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/"}], {
+        autoResize: true
+    });
+</script>
     
 
 </main>
@@ -371,7 +403,7 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <!--            -->
 <!--            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;-->
-<!--            <span class="white-color">1.3k</span>-->
+<!--            <span class="white-color">1.5k</span>-->
 <!--            -->
 
 <!--            <br>-->
@@ -379,21 +411,8 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
 <!--            -->
 <!--            -->
-<!--            <br>-->
-<!--            -->
-<!--&lt;!&ndash;            <span id="busuanzi_container_site_pv" style='display:none'>&ndash;&gt;-->
-<!--&lt;!&ndash;                <i class="fa fa-heart-o"></i>&ndash;&gt;-->
-<!--&lt;!&ndash;                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>&ndash;&gt;-->
-<!--&lt;!&ndash;            </span>&ndash;&gt;-->
-<!--            -->
-<!--            -->
-<!--            <span id="busuanzi_container_site_uv" style='display:none'>-->
-<!--                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.-->
-<!--            </span>-->
-<!--            -->
-<!--            -->
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -535,8 +554,6 @@ $(function () {
 
     
 
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     <!-- 雪花特效 -->

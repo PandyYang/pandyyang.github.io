@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2022-12-29T06:51:45.755Z</updated>
+  <updated>2022-12-29T09:32:06.493Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>使用CGO生成动态链接库</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</id>
+    <published>2022-12-29T09:02:56.000Z</published>
+    <updated>2022-12-29T09:32:06.493Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;导出c静态库&quot;&gt;&lt;a href=&quot;#导出c静态库&quot; class=&quot;headerlink&quot; title=&quot;导出c静态库&quot;&gt;&lt;/a&gt;导出c静态库&lt;/h2&gt;&lt;h3 id=&quot;arm系统在导出前要进行操作&quot;&gt;&lt;a href=&quot;#arm系统在导出前要进行操作&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CGO" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/CGO/"/>
+    
+    
+    <category term="环境问题" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CGO的指针传递</title>
     <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/</id>
     <published>2022-12-29T06:25:39.000Z</published>
-    <updated>2022-12-29T06:51:45.755Z</updated>
+    <updated>2022-12-29T09:35:40.964Z</updated>
     
     
       
@@ -33,6 +58,8 @@
       
     
     
+    
+    <category term="CGO" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/CGO/"/>
     
     
   </entry>
