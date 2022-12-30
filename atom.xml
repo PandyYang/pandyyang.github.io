@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Pandy的博客</title>
+  <title>滴答的博客</title>
   
-  <subtitle>滴答的小站</subtitle>
+  <subtitle>保护地球</subtitle>
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
@@ -46,7 +46,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/</id>
     <published>2022-12-29T06:25:39.000Z</published>
-    <updated>2022-12-29T09:35:40.964Z</updated>
+    <updated>2022-12-30T01:22:05.971Z</updated>
     
     
       
