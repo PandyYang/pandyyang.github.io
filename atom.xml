@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>滴答的博客</title>
+  <title>Pandy</title>
   
-  <subtitle>保护地球</subtitle>
+  <subtitle>滴答的小站</subtitle>
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2022-12-29T09:32:06.493Z</updated>
+  <updated>2023-01-03T03:33:21.587Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -17,24 +17,25 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>使用CGO生成动态链接库</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</id>
-    <published>2022-12-29T09:02:56.000Z</published>
-    <updated>2022-12-29T09:32:06.493Z</updated>
+    <title>进入Docker容器显示：vim: command not found</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/</id>
+    <published>2023-01-03T03:30:57.000Z</published>
+    <updated>2023-01-03T03:33:21.587Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;导出c静态库&quot;&gt;&lt;a href=&quot;#导出c静态库&quot; class=&quot;headerlink&quot; title=&quot;导出c静态库&quot;&gt;&lt;/a&gt;导出c静态库&lt;/h2&gt;&lt;h3 id=&quot;arm系统在导出前要进行操作&quot;&gt;&lt;a href=&quot;#arm系统在导出前要进行操作&quot;</summary>
+    <summary type="html">&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h2&gt;&lt;p&gt;环境中没有vim，需要进行安装。&lt;/p&gt;
+&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="CGO" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/CGO/"/>
+    <category term="Docker" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/"/>
     
     
     <category term="环境问题" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/"/>
@@ -42,24 +43,541 @@
   </entry>
   
   <entry>
-    <title>CGO的指针传递</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/cgo-de-zhi-zhen-chuan-di/</id>
-    <published>2022-12-29T06:25:39.000Z</published>
-    <updated>2022-12-30T01:22:05.971Z</updated>
+    <title>Docker安装Mysql5.5</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/</id>
+    <published>2023-01-03T03:22:56.000Z</published>
+    <updated>2023-01-03T03:29:59.691Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h2 id=&quot;CGO指针的概念&quot;&gt;&lt;a href=&quot;#CGO指针的概念&quot; class=&quot;headerlink&quot; title=&quot;CGO指针的概念&quot;&gt;&lt;/a&gt;CGO指针的概念&lt;/h2&gt;&lt;p&gt;Go 是一种垃圾收集语言，垃圾收集器需要知道每个指向 Go</summary>
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;拉取MySQL镜像&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;docker pull mysql:5.5
+&lt;span</summary>
         
       
     
     
     
-    <category term="CGO" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/CGO/"/>
+    <category term="Docker" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/"/>
+    
+    <category term="Mysql" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/Mysql/"/>
+    
+    
+    <category term="软件安装" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哀酱</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/</id>
+    <published>2023-01-02T04:49:17.000Z</published>
+    <updated>2023-01-03T01:23:37.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;独立、智慧，处变不惊。她的善良从来都是沉默的，以至于使多数人难以察觉&lt;br&gt;灰原哀是我最向往的女性的模样。 </summary>
+        
+      
+    
+    
+    
+    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+    <category term="偶像" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%81%B6%E5%83%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>月亮是海的心</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yue-liang-shi-hai-de-xin/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yue-liang-shi-hai-de-xin/</id>
+    <published>2023-01-02T04:45:06.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;天空是海的倒影&lt;br&gt;月亮是海的心&lt;br&gt;而你 </summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>秋夜月凉星河</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/qiu-ye-yue-liang-xing-he/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/qiu-ye-yue-liang-xing-he/</id>
+    <published>2023-01-02T04:43:55.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨夜秋月凉星河&lt;br&gt;杏色凝露&lt;br&gt;霜叶纷飞  &lt;/p&gt;
+&lt;p&gt;孤影南雁&lt;br&gt;声渐掩余晖  &lt;/p&gt;
+&lt;p&gt;残阳垂落暮色归&lt;br&gt;寒宫月遥缀&lt;br&gt;未遇嫦娥媚  &lt;/p&gt;
+&lt;p&gt;金阁银阙&lt;br&gt;岳峙临渊巍巍 </summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>雨天</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yu-tian/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yu-tian/</id>
+    <published>2023-01-02T04:41:40.000Z</published>
+    <updated>2023-01-03T01:23:37.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;淅淅沥沥&lt;/p&gt;
+&lt;p&gt;你听&lt;/p&gt;
+&lt;p&gt;久违的雨在向天台发脾气&lt;/p&gt;
+&lt;p&gt;等了好久的氤氲&lt;/p&gt;
+&lt;p&gt;丝毫不考虑梧桐叶的心情&lt;/p&gt;
+&lt;p&gt;原来雨天 </summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>你是</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/ni-shi/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/ni-shi/</id>
+    <published>2023-01-02T04:40:49.000Z</published>
+    <updated>2023-01-03T01:23:37.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;你是浪漫主义的根源&lt;/p&gt;
+&lt;p&gt;你是贝多芬染血的旋律&lt;/p&gt;
+&lt;p&gt;你是与冷相对的夏季蝉鸣&lt;/p&gt;
+&lt;p&gt;你是墓碑前凋落的玫瑰&lt;/p&gt;
+&lt;p&gt;你是乌云是叹息是遍布山坡的风信子&lt;/p&gt;
+&lt;p&gt;你是天台月光是光明与意境都恰到好处的月下云端&lt;/p&gt;
+&lt;p&gt;你是倔强的坚守是认真是</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>喜欢你这件小事</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/xi-huan-ni-zhe-jian-xiao-shi/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/xi-huan-ni-zhe-jian-xiao-shi/</id>
+    <published>2023-01-02T04:39:50.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;天空中的阴云在集聚&lt;/p&gt;
+&lt;p&gt;措辞再含蓄&lt;/p&gt;
+&lt;p&gt;我喜欢你&lt;/p&gt;
+&lt;p&gt;这实在是&lt;/p&gt;
+&lt;p&gt;即使不张嘴&lt;/p&gt;
+&lt;p&gt;也能从眼睛中暴露无疑的事&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>赠李</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/zeng-li/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/zeng-li/</id>
+    <published>2023-01-02T04:39:02.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;季雨落庭花，清院听煮茶； </summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>春意</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/chun-yi/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/chun-yi/</id>
+    <published>2023-01-02T04:38:16.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;素蘤初放意决春&lt;/p&gt;
+&lt;p&gt;一池皱水默然织伫结&lt;/p&gt;
+&lt;p&gt;谁家红袖独倚门&lt;/p&gt;
+&lt;p&gt;四下凉筝起&lt;/p&gt;
+&lt;p&gt;谁空惊起月下满城寂寞&lt;/p&gt;
+&lt;p&gt;卿白衣一袭等霜解&lt;/p&gt;
+&lt;p&gt;胭脂淡薄随烛漂泊&lt;/p&gt;
+&lt;p&gt;月下绣花鞋脚步碎随皎洁&lt;/p&gt;
+&lt;p&gt;云中锦书轻托&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>意千般 付筝弦</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yi-qian-ban-fu-zheng-xian/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yi-qian-ban-fu-zheng-xian/</id>
+    <published>2023-01-02T04:37:17.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;折扇轻遮面墨书情话&lt;/p&gt;
+&lt;p&gt;晨雨湿梨花也输她&lt;/p&gt;
+&lt;p&gt;席地而坐品苦茶&lt;/p&gt;
+&lt;p&gt;眉间皱想怎一纸书你风华&lt;/p&gt;
+&lt;p&gt;金盏白玉&lt;/p&gt;
+&lt;p&gt;匀笔墨稠&lt;/p&gt;
+&lt;p&gt;泪点朱砂&lt;/p&gt;
+&lt;p&gt;知卿呢喃&lt;/p&gt;
+&lt;p&gt;许诺与你共等长安覆飞雪&lt;/p&gt;
+&lt;p&gt;不书离</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>雪</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/xue/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/xue/</id>
+    <published>2023-01-02T04:36:22.000Z</published>
+    <updated>2023-01-03T01:23:37.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;雪沁梅蕊三两粒，&lt;/p&gt;
+&lt;p&gt;心筝映白月隔云；&lt;/p&gt;
+&lt;p&gt;渊渟湛然临岳峙，&lt;/p&gt;
+&lt;p&gt;昏夜将故得我心。&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>破晓</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/po-xiao/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/po-xiao/</id>
+    <published>2023-01-02T04:35:46.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;星空在破晓时分迎来最后一次璀璨&lt;/p&gt;
+&lt;p&gt;轻轻的夜风吻着院落蔷薇也吻过你的发梢&lt;/p&gt;
+&lt;p&gt;月亮藏在乌云的后面&lt;/p&gt;
+&lt;p&gt;在它的心的位置&lt;/p&gt;
+&lt;p&gt;似乎将要有皎洁流泻&lt;/p&gt;
+&lt;p&gt;那里是我想好的写好的背好的&lt;/p&gt;
+&lt;p&gt;想要对你说的话&lt;/p&gt;
+&lt;p&gt;只可惜</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>愿你梦里</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yuan-ni-meng-li/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yuan-ni-meng-li/</id>
+    <published>2023-01-02T04:35:16.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;愿你梦里&lt;/p&gt;
+&lt;p&gt;是月光下的云海&lt;/p&gt;
+&lt;p&gt;是夕阳下的薄荷草地&lt;/p&gt;
+&lt;p&gt;躲在白铁皮信箱里爱你未干的墨迹&lt;/p&gt;
+&lt;p&gt;是淋湿了沙漠的迟来雨季&lt;/p&gt;
+&lt;p&gt;是夏天早晨纯洁晶莹的露滴&lt;/p&gt;
+&lt;p&gt;是风想从我嘴边偷听到的爱你的秘密&lt;/p&gt;
+&lt;p&gt;是窗台风铃声夹</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>问</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/wen/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/wen/</id>
+    <published>2023-01-02T04:33:47.000Z</published>
+    <updated>2023-01-03T01:23:37.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;想用湿漉漉的感觉&lt;/p&gt;
+&lt;p&gt;为你诉说一个故事&lt;/p&gt;
+&lt;p&gt;不知喜欢下雨的你&lt;/p&gt;
+&lt;p&gt;可愿细听？&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>赠君</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/zeng-jun/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/zeng-jun/</id>
+    <published>2023-01-02T04:33:13.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;吾余盛夏兮，将遗兮伊人。&lt;/p&gt;
+&lt;p&gt;欲止冬晨兮，新雪兮飘飘。&lt;/p&gt;
+&lt;p&gt;吾余暖阳兮，供伊兮所需。&lt;/p&gt;
+&lt;p&gt;远暗之隅兮，伊心兮润泽。&lt;/p&gt;
+&lt;p&gt;吾藏伊靥兮，芳龄兮十九。&lt;/p&gt;
+&lt;p&gt;花信方知兮，浅笑兮奥秘。&lt;/p&gt;
+&lt;p&gt;吾思未答兮，祝伊兮归程。&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>身影</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/shen-ying/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/shen-ying/</id>
+    <published>2023-01-02T04:32:03.000Z</published>
+    <updated>2023-01-03T01:23:37.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;终于躲在柜子里的夏季&lt;/p&gt;
+&lt;p&gt;答应了和秋日约定好的小雨&lt;/p&gt;
+&lt;p&gt;要一起在雾气氤氲的小镇淅沥&lt;/p&gt;
+&lt;p&gt;你那在我脑海里飘忽不定的身影&lt;/p&gt;
+&lt;p&gt;就像屋檐下的风铃&lt;/p&gt;
+&lt;p&gt;那样动听&lt;/p&gt;
+&lt;p&gt;动听动听&lt;/p&gt;
+&lt;p&gt;却不及&lt;/p&gt;
+&lt;p&gt;有你的梦&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>街心</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/jie-xin/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/jie-xin/</id>
+    <published>2023-01-02T04:29:55.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;本钟塔尖的晚风将乌云逼退&lt;/p&gt;
+&lt;p&gt;你瞧&lt;/p&gt;
+&lt;p&gt;街心琴调&lt;/p&gt;
+&lt;p&gt;宫崎骏的夏天&lt;/p&gt;
+&lt;p&gt;枫坠的瓦尔登湖&lt;/p&gt;
+&lt;p&gt;plato</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>午后</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/wu-hou/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/wu-hou/</id>
+    <published>2023-01-02T04:29:08.000Z</published>
+    <updated>2023-01-03T01:23:37.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;你说&lt;/p&gt;
+&lt;p&gt;想你了就写信&lt;/p&gt;
+&lt;p&gt;于是乎&lt;/p&gt;
+&lt;p&gt;在一个安静的晴天午后&lt;/p&gt;
+&lt;p&gt;我拿出纸和笔&lt;/p&gt;
+&lt;p&gt;不远处的竹篱笆上停留着灰蜻蜓&lt;/p&gt;
+&lt;p&gt;风告诉它&lt;/p&gt;
+&lt;p&gt;纸鹤的心中很适合飞行&lt;/p&gt;
+&lt;p&gt;然后&lt;/p&gt;
+&lt;p&gt;我翻过一页页情绪</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>就像</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/jiu-xiang/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/jiu-xiang/</id>
+    <published>2023-01-02T04:24:37.000Z</published>
+    <updated>2023-01-03T01:23:37.703Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;就像在雾气弥漫的林地穿行&lt;/p&gt;
+&lt;p&gt;就像抬头望着被黑暗吞没星星的夜空&lt;/p&gt;
+&lt;p&gt;就像露水透及伤骨的冰冷&lt;/p&gt;
+&lt;p&gt;就像风肆虐丝毫不懂心中的忧郁失望之情&lt;/p&gt;
+&lt;p&gt;就像天空的眼泪不懂&lt;/p&gt;
+&lt;p&gt;为何你&lt;/p&gt;
+&lt;p&gt;让我想了又想&lt;/p&gt;
+&lt;p&gt;眉皱不轻&lt;/</summary>
+        
+      
+    
+    
+    
+    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
     
     
   </entry>

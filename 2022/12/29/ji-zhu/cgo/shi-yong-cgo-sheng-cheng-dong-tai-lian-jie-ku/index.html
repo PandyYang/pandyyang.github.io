@@ -4,13 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="CGO的指针传递, 滴答的博客">
+    <meta name="keywords" content="使用CGO生成动态链接库, Pandy">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="CGO指针的概念Go 是一种垃圾收集语言，垃圾收集器需要知道每个指向 Go 内存的指针的位置。正因为如此，在 Go 和 C 之间传递指针是有限制的。
-指针是 Go 指针还是 C 指针是由内存分配方式决定的动态属性；它与指针的类型无关。
-请注">
+    <meta name="description" content="导出c静态库arm系统在导出前要进行操作export GOOS=&#34;linux&#34;
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  
+
+go build -buildmode=c-archive ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>CGO的指针传递 | 滴答的博客</title>
+    <title>使用CGO生成动态链接库 | Pandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -68,7 +69,7 @@
         })();
     </script>
 
-<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="滴答的博客" type="application/atom+xml">
+<meta name="generator" content="Hexo 6.0.0"><link rel="alternate" href="/atom.xml" title="Pandy" type="application/atom+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -82,7 +83,7 @@
                     
                     <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                     
-                    <span class="logo-span">滴答的博客</span>
+                    <span class="logo-span">Pandy</span>
                 </a>
             </div>
             
@@ -166,10 +167,10 @@
         
         <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
-        <div class="logo-name">滴答的博客</div>
+        <div class="logo-name">Pandy</div>
         <div class="logo-desc">
             
-            生活 | 想法 | 技术
+            诗 | 宇宙 | 死亡
             
         </div>
     </div>
@@ -319,7 +320,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -332,13 +333,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/7.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        CGO的指针传递
+                        使用CGO生成动态链接库
                     </div>
                 </div>
             </div>
@@ -448,7 +449,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/" target="_blank">
+                            <span class="chip bg-color">环境问题</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -483,14 +488,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.3k
+                    239
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    1 分
                 </div>
                 
                 
@@ -501,64 +506,36 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="CGO指针的概念"><a href="#CGO指针的概念" class="headerlink" title="CGO指针的概念"></a>CGO指针的概念</h2><p>Go 是一种垃圾收集语言，垃圾收集器需要知道每个指向 Go 内存的指针的位置。正因为如此，在 Go 和 C 之间传递指针是有限制的。</p>
-<p>指针是 Go 指针还是 C 指针是由内存分配方式决定的动态属性；它与指针的类型无关。</p>
-<p>请注意，某些 Go 类型的值（类型的零值除外）始终包含 Go 指针。这适用于字符串、切片、接口、通道、映射和函数类型。指针类型可以包含 Go 指针或 C 指针。数组和结构类型可能包含也可能不包含 Go 指针，具体取决于元素类型。下面所有关于 Go 指针的讨论不仅适用于指针类型，还适用于包含 Go 指针的其他类型。 </p>
-<p>Go 代码可以将 Go 指针传递给 C，前提是它指向的 Go 内存不包含任何 Go 指针。 C 代码必须保留此属性：它不能在 Go 内存中存储任何 Go 指针，即使是临时的。当传递一个指向结构体中字段的指针时，所讨论的 Go 内存是该字段占用的内存，而不是整个结构体。当传递指向数组或切片中元素的指针时，所讨论的 Go 内存是整个数组或切片的整个后备数组。</p>
-<p>调用返回后，C 代码可能不会保留 Go 指针的副本。这包括 <em>GoString</em> 类型，如上所述，它包含一个 Go 指针； <em>GoString</em> 值可能不会被 C 代码保留。</p>
-<p>C 代码调用的 Go 函数可能不会返回 Go 指针（这意味着它可能不会返回字符串、切片、通道等）。 C 代码调用的 Go 函数可能以 C 指针作为参数，它可能通过这些指针存储非指针或 C 指针数据，但它可能不会将 Go 指针存储在 C 指针指向的内存中。 C 代码调用的 Go 函数可以将 Go 指针作为参数，但它必须保留其指向的 Go 内存不包含任何 Go 指针的属性。</p>
-<p>Go 代码可能不会在 C 内存中存储 Go 指针。 C 代码可以在 C 内存中存储 Go 指针，但要遵守上述规则：当 C 函数返回时，它必须停止存储 Go 指针。</p>
-<p>这些规则在运行时动态检查。检查由 GODEBUG 环境变量的 cgocheck 设置控制。默认设置是 GODEBUG&#x3D;cgocheck&#x3D;1，它实现了相当便宜的动态检查。使用 GODEBUG&#x3D;cgocheck&#x3D;0 可以完全禁用这些检查。通过 GODEBUG&#x3D;cgocheck&#x3D;2 可以在运行时以一定的代价完成对指针处理的检查。</p>
-<p>可以通过使用 unsafe 包来打败这种强制执行，当然也没有什么可以阻止 C 代码做任何它喜欢做的事情。但是，违反这些规则的程序可能会以意想不到的方式失败。</p>
-<p>runtime&#x2F;cgo.Handle 类型可用于在 Go 和 C 之间安全地传递 Go 值。有关详细信息，请参阅 runtime&#x2F;cgo 包文档。</p>
-<p>注意：当前的实现有一个错误。虽然允许 Go 代码将 nil 或 C 指针（但不是 Go 指针）写入 C 内存，但如果 C 内存的内容看起来是 Go 指针，当前的实现有时可能会导致运行时错误。因此，如果 Go 代码要在其中存储指针值，请避免将未初始化的 C 内存传递给 Go 代码。在将 C 传递给 Go 之前将 C 中的内存清零。</p>
-<h2 id="如何使用指针传递上下文"><a href="#如何使用指针传递上下文" class="headerlink" title="如何使用指针传递上下文"></a>如何使用指针传递上下文</h2><p>传递CGo的指针需要使用类型：C.uintptr_t。尽管Go有自己的指针类型的实现，例如：unsafe.Pointer。但是注意，在调用过程中会出现安全性问题。</p>
-<p>假如目前我们有一个结构体，其中包含了当前环境，例如：</p>
-<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">type</span> InitHandler <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    configInstance <span class="token operator">*</span>viper<span class="token punctuation">.</span>Viper
-    redisPool      <span class="token operator">*</span>redis<span class="token punctuation">.</span>Pool
-    loggerInstance <span class="token operator">*</span>log<span class="token punctuation">.</span>Logger
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>使用指针传递时，可以这样做：</p>
-<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">return</span> C<span class="token punctuation">.</span><span class="token function">uintptr_t</span><span class="token punctuation">(</span>cgo<span class="token punctuation">.</span><span class="token function">NewHandle</span><span class="token punctuation">(</span>initHandler<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>根据指针解析出环境：</p>
-<pre class="line-numbers language-go"><code class="language-go">h <span class="token operator">:=</span> cgo<span class="token punctuation">.</span><span class="token function">Handle</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span>
-val <span class="token operator">:=</span> h<span class="token punctuation">.</span><span class="token function">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span>InitHandler<span class="token punctuation">)</span>
+                <h2 id="导出c静态库"><a href="#导出c静态库" class="headerlink" title="导出c静态库"></a>导出c静态库</h2><h3 id="arm系统在导出前要进行操作"><a href="#arm系统在导出前要进行操作" class="headerlink" title="arm系统在导出前要进行操作"></a>arm系统在导出前要进行操作</h3><pre class="line-numbers language-shell"><code class="language-shell">export GOOS="linux"
+CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  
+
+go build -buildmode=c-archive -o number.a
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="c调用"><a href="#c调用" class="headerlink" title="c调用"></a>c调用</h2><pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out _test_main.c number.a  
+./a.out
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<p>使用完毕后释放指针空间：</p>
-<pre><code>h := cgo.Handle(handle)
-h.Delete()
-</code></pre>
-<h2 id="C和CGO进行交互"><a href="#C和CGO进行交互" class="headerlink" title="C和CGO进行交互"></a>C和CGO进行交互</h2><p>在Go中，使用CGO的类型定义的指针，如何在C端进行接受，传值？要使用一个特定类型：uintptr_t。</p>
-<p>例如：</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"libxxx.h"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
-
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// gcc main.c -o main -L. -lxxx</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    uintptr_t s <span class="token operator">=</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">destroy</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="Python和CGO交互"><a href="#Python和CGO交互" class="headerlink" title="Python和CGO交互"></a>Python和CGO交互</h2><p>Python和CGO的交互要用到ctypes这个库，传递值时，注意类型必须提前指定，否则只会接收到一个地址值。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> ctypes
-so <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>CDLL<span class="token punctuation">(</span><span class="token string">'/xxx.so'</span><span class="token punctuation">)</span>
-
-ptr <span class="token operator">=</span> so<span class="token punctuation">.</span>init<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"configpath"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-so<span class="token punctuation">.</span>query<span class="token punctuation">.</span>restype <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_char_p
-res <span class="token operator">=</span> so<span class="token punctuation">.</span>getmethod<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">,</span> ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
-so<span class="token punctuation">.</span>destroy<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><strong>cgo doc</strong>: <a target="_blank" rel="noopener" href="https://pkg.go.dev/cmd/cgo">https://pkg.go.dev/cmd/cgo</a></p>
-<p><strong>go语言高级编程</strong>： <a target="_blank" rel="noopener" href="https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html">https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html</a></p>
-<p><strong>go doc</strong>：<a target="_blank" rel="noopener" href="https://go.dev/doc/">https://go.dev/doc/</a></p>
+<h2 id="在linux中操作"><a href="#在linux中操作" class="headerlink" title="在linux中操作"></a>在linux中操作</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>在linux中进行动态链接库文件生成，在main目录下执行</p>
+<pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=c-shared -o sdk.so  
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>注意go调用要生成plugin</p>
+<pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=plugin -o ntisdk-plugin.so main.go  
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>生成可执行文件</p>
+<pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out main.c sdk.a  
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>将.so .h文件拷贝至指定目录 在main.c中调用相关方法之后设置下查找动态库路径的环境变量<br>用于指定查找共享库（动态链接库）时除了默认路径（.&#x2F;lib和.&#x2F;usr&#x2F;lib）之外的其他路径。</p>
+<pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH="/root/goProject/src/SDK/c"  
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="指定"><a href="#指定" class="headerlink" title="指定"></a>指定</h3><p>.&#x2F;a.out</p>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>cmd临时指定so文件</p>
+<pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH=xxx
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>永久指定</p>
+<pre class="line-numbers language-shell"><code class="language-shell"># cat /etc/ld.so.conf
+include ld.so.conf.d/*.conf
+# echo "/usr/local/lib" >> /etc/ld.so.conf
+# ldconfig
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -593,9 +570,9 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《CGO的指针传递》
+                    《使用CGO生成动态链接库》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/2022/12/29/cgo-de-zhi-zhen-chuan-di/" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/" property="cc:attributionName"
                rel="cc:attributionURL">
                 Pandy
             </a> 采用
@@ -621,31 +598,34 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
     </div>
 
     
-    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
-<link rel="stylesheet" href="/css/my-gitalk.css">
 
-<div class="card gitalk-card" data-aos="fade-up">
-    <div id="gitalk-container" class="card-content"></div>
+    
+
+    
+    <div class="disqus-card card" data-aos="fade-up">
+    <div id="disqus_thread" class="card-content">
+        <noscript>Please enable JavaScript to view the
+            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+    </div>
 </div>
 
-<script src="/libs/gitalk/gitalk.min.js"></script>
-<script>
-    let gitalk = new Gitalk({
-        clientID: '16b675954dd6f67f1b28',
-        clientSecret: 'ee62ce9eb7425e1f9d1654c386680017432dd2b9',
-        repo: 'pandyyang.github.io',
-        owner: 'PandyYang',
-        admin: ['PandyYang'],
-        id: '2022/12/29/cgo-de-zhi-zhen-chuan-di/',
-        distractionFreeMode: false  // Facebook-like distraction free mode
-    });
+<script type="text/javascript">
+    disqus_config = function () {
+        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/';
+        this.page.identifier = '/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/';
+        this.page.title = '使用CGO生成动态链接库';
+    };
+    let disqus_shortname = 'didablog';
 
-    gitalk.render('gitalk-container');
+    (function () { // DON'T EDIT BELOW THIS LINE
+        let d = document, s = d.createElement('script');
+        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
+        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-    
-
-    
-
     
 
     
@@ -661,31 +641,31 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/">
+                <a href="/2022/12/31/sheng-huo/2022-zai-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="使用CGO生成动态链接库">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="2022再见">
                         
-                        <span class="card-title">使用CGO生成动态链接库</span>
+                        <span class="card-title">2022再见</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            动态链接库
+                            2022是特别的一年
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-12-29
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-12-31
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CGO/" class="post-category" target="_blank">
-                                    CGO
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category" target="_blank">
+                                    生活
                                 </a>
                             
                             
@@ -695,8 +675,8 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/" target="_blank">
-                        <span class="chip bg-color">环境问题</span>
+                    <a href="/tags/%E6%96%B0%E5%B9%B4/" target="_blank">
+                        <span class="chip bg-color">新年</span>
                     </a>
                     
                 </div>
@@ -707,14 +687,14 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/29/cgo-de-zhi-zhen-chuan-di/">
+                <a href="/2022/12/29/ji-zhu/cgo/cgo-de-zhi-zhen-chuan-di/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="CGO的指针传递">
+                        <img src="/medias/featureimages/28.jpg" class="responsive-img" alt="CGO的指针传递">
                         
                         <span class="card-title">CGO的指针传递</span>
                     </div>
@@ -741,7 +721,6 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -778,7 +757,7 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 滴答的博客<br />'
+            + '来源: Pandy<br />'
             + '作者: Pandy<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
@@ -912,7 +891,7 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
 
 <!--            -->
 <!--            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;-->
-<!--            <span class="white-color">1.5k</span>-->
+<!--            <span class="white-color">7.9k</span>-->
 <!--            -->
 
 <!--            <br>-->

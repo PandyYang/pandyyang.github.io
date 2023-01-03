@@ -4,9 +4,486 @@
   
     
     <entry>
+      <title>进入Docker容器显示：vim: command not found</title>
+      <link href="/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/"/>
+      <url>/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/</url>
+      
+        <content type="html"><![CDATA[<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>环境中没有vim，需要进行安装。</p><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul><li>在命令行中输入：</li></ul><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> update<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>更新完毕之后下载vim</li></ul><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">apt-get</span> <span class="token function">install</span> vim<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>安装成功后即可正常使用</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 环境问题 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Docker安装Mysql5.5</title>
+      <link href="/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/"/>
+      <url>/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/</url>
+      
+        <content type="html"><![CDATA[<ul><li>拉取MySQL镜像</li></ul><pre class="line-numbers language-bash"><code class="language-bash">docker pull mysql:5.5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>创建目录映射</li></ul><pre class="line-numbers language-bash"><code class="language-bash"><span class="token function">mkdir</span> -p /data/mysql-data<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><ul><li>创建容器</li></ul><pre class="line-numbers language-bash"><code class="language-bash">docker create --name mysql -v /data/mysql-data:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD<span class="token operator">=</span>123456 mysql:5.5<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p><strong>参数解释：</strong></p><ol><li><p>–name mysql 指定是容器的名称</p></li><li><p>-v &#x2F;data&#x2F;mysql-data:&#x2F;var&#x2F;lib&#x2F;mysql 将主机目录&#x2F;data&#x2F;mysql-data挂载到容器的&#x2F;var&#x2F;lib&#x2F;mysql上</p></li><li><p>-p 3306:3306 设置端口映射，主机端口是3306，容器内部端口3306</p></li><li><p>-e MYSQL_ROOT_PASSWORD&#x3D;123456 设置容器参数，设置root用户的密码为123456</p></li><li><p>mysql:5.5 镜像名:版本</p></li></ol><ul><li><p>启动容器</p><pre><code>docker start mysql</code></pre></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> Docker </category>
+          
+          <category> Mysql </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 软件安装 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>哀酱</title>
+      <link href="/2023/01/02/sui-sui-nian/ai-jiang/"/>
+      <url>/2023/01/02/sui-sui-nian/ai-jiang/</url>
+      
+        <content type="html"><![CDATA[<p>独立、智慧，处变不惊。她的善良从来都是沉默的，以至于使多数人难以察觉<br>灰原哀是我最向往的女性的模样。  </p><p>拥有自己的追求和目标，处世之道、人生哲学和特别于他人的人格魅力。<br>首先作为科学家，习惯于追求自然世界的逻辑与真理，这是造就她性格气质的源头。她同时<br>是一个逐渐走向阳光的年轻女孩，憧憬着未来的一片光明。  </p><p>我们的小哀，我们的宫野小姐，通常留给人们的，只是一个瘦弱又倔强的背影。<br>在你不知道的地方，她可是年纪轻轻就在实验室里领导重大项目，只有18岁的组织干部。她<br>可是无数次在枪口下存活，从烟囪逃生的高黛<br>丽娅•格雷，她的“坐骑”可是哈雷啊。  </p><p><strong>她是一个，永远不会被所谓青春、所谓容貌、所谓爱情束缚的女子。</strong></p><p>理智的在自己选择的道路上走下去，从不后悔、挺直腰杆、一丝不苟、雷厉风行。  </p><p>她是平成年代的艾琳艾德勒。拥有着帅呆了酷毙了的人生。  </p><p>这才是我少年时代的偶像，一个延伸到侦探漫画之外的开挂角色。  </p><p>志保（shiho）的罗马音倒过来就是 (hoshi） 星。  </p><p><em>如同夜空中的繁星一样幽静神秘又充满魅力，却不会因为遥远的距离而黯淡了光芒。</em></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 碎碎念 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 偶像 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>月亮是海的心</title>
+      <link href="/2023/01/02/shi/yue-liang-shi-hai-de-xin/"/>
+      <url>/2023/01/02/shi/yue-liang-shi-hai-de-xin/</url>
+      
+        <content type="html"><![CDATA[<p>天空是海的倒影<br>月亮是海的心<br>而你  </p><p>是我的心</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>秋夜月凉星河</title>
+      <link href="/2023/01/02/shi/qiu-ye-yue-liang-xing-he/"/>
+      <url>/2023/01/02/shi/qiu-ye-yue-liang-xing-he/</url>
+      
+        <content type="html"><![CDATA[<p>昨夜秋月凉星河<br>杏色凝露<br>霜叶纷飞  </p><p>孤影南雁<br>声渐掩余晖  </p><p>残阳垂落暮色归<br>寒宫月遥缀<br>未遇嫦娥媚  </p><p>金阁银阙<br>岳峙临渊巍巍  </p><p>轩窗棂下<br>皓齿铜镜<br>红妆旧柜<br>朱纸画眉<br>凝弓饮醉  </p><p>斑驳岁月催<br>庭外花折泪<br>竹影窗扉<br>卧听风雨<br>一一廊回  </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>雨天</title>
+      <link href="/2023/01/02/shi/yu-tian/"/>
+      <url>/2023/01/02/shi/yu-tian/</url>
+      
+        <content type="html"><![CDATA[<p>淅淅沥沥</p><p>你听</p><p>久违的雨在向天台发脾气</p><p>等了好久的氤氲</p><p>丝毫不考虑梧桐叶的心情</p><p>原来雨天  </p><p>适合抹平脸红的心事</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>你是</title>
+      <link href="/2023/01/02/shi/ni-shi/"/>
+      <url>/2023/01/02/shi/ni-shi/</url>
+      
+        <content type="html"><![CDATA[<p>你是浪漫主义的根源</p><p>你是贝多芬染血的旋律</p><p>你是与冷相对的夏季蝉鸣</p><p>你是墓碑前凋落的玫瑰</p><p>你是乌云是叹息是遍布山坡的风信子</p><p>你是天台月光是光明与意境都恰到好处的月下云端</p><p>你是倔强的坚守是认真是安静是晴天是唯一</p><p>你是雨天的一朵朵小伞</p><p>你是我心里永远不舍得融化掉的 SWISSTHINS瑞士莲</p><p>你是起雾的清晨是朦胧的玻璃窗是抽屉洁白的信纸是西湖边上的柳絮</p><p>你是奋不顾身是无解是温柔削铁</p><p>你是眼泪是孤独是把成长作为交换的唯一礼物</p><p>你是在十字路口必须搜寻的身影</p><p>你是圣诞节是怀念的曲调是红酒杯中的微醺</p><p>你是永远迷醉不愿意醒来的梦</p><p>你是不想忘记不能忘记没有办法忘记的人</p><p>你是谜语是雾是六月的睡莲</p><p>你是神父的低诉是圣洁的天使是祷告是哥特式教堂</p><p>你是神秘模糊是飞瀑是让人心悸的青花瓷上的勾勒</p><p>你也是灾难是毒药是毁灭</p><p>你是兰芝杜若你是我唯一想要的了解</p><p>你是烟花烂漫是兰佩生幽是雄州雾列是渊渟岳峙是东方渐白</p><p>你是四季是傻笑是记忆犹新的昨天</p><p>你是悲伤是心锁是被遗失的文明是叶芝诗中的干枯草莓叶子</p><p>你是上瘾是心碎是方文山的素颜韵脚诗</p><p>你是中世纪骑士你是遍布墙壁上的酒藤是清晨的阳光</p><p>你是热烈是冷漠是恐惧是渴望是严寒</p><p>你是 16个世纪之前英王室伟大起源</p><p>你是 plato之心是生死是神秘是哲学是幼稚可笑也是终极深奥</p><p>你是命运是唯一的活路</p><p>你是借口你是我脑海里的完全</p><p>你是海是神是夏</p><p>你是海螺的吹奏是海边的踏浪</p><p>你是原谅你是结局你是遗忘</p><p>你是一切一切我能够写进诗里的形容</p><p>你是废墟是月光是中魔的城堡是 love是奇迹是永远永远的遥不可及</p><p>你是爱与恨</p><p>你是解脱</p><p>是我情绪的起源</p><p>是梵高画布上的星空</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>喜欢你这件小事</title>
+      <link href="/2023/01/02/shi/xi-huan-ni-zhe-jian-xiao-shi/"/>
+      <url>/2023/01/02/shi/xi-huan-ni-zhe-jian-xiao-shi/</url>
+      
+        <content type="html"><![CDATA[<p>天空中的阴云在集聚</p><p>措辞再含蓄</p><p>我喜欢你</p><p>这实在是</p><p>即使不张嘴</p><p>也能从眼睛中暴露无疑的事</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>赠李</title>
+      <link href="/2023/01/02/shi/zeng-li/"/>
+      <url>/2023/01/02/shi/zeng-li/</url>
+      
+        <content type="html"><![CDATA[<p>季雨落庭花，清院听煮茶；  </p><p>远山浮云起，筝声到天涯。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>春意</title>
+      <link href="/2023/01/02/shi/chun-yi/"/>
+      <url>/2023/01/02/shi/chun-yi/</url>
+      
+        <content type="html"><![CDATA[<p>素蘤初放意决春</p><p>一池皱水默然织伫结</p><p>谁家红袖独倚门</p><p>四下凉筝起</p><p>谁空惊起月下满城寂寞</p><p>卿白衣一袭等霜解</p><p>胭脂淡薄随烛漂泊</p><p>月下绣花鞋脚步碎随皎洁</p><p>云中锦书轻托</p><p>临水绣花绣出泪你怨着谁</p><p>我烛下与爱恨交杯</p><p>宝剑终难抵锈绿</p><p>烟花也易冷</p><p>浮萍窃语随风趁夜</p><p>灯火阑珊处我只为你提笔</p><p>那年杏花刚沾雨</p><p>流莺随柳绕春几色</p><p>小雨淅沥心绪临窗理</p><p>你翩然裙裾</p><p>让感觉随枯叶入水情意煎成茶</p><p>小城古巷顿觉处处淡香不绝</p><p>好一个云烟遮三月天</p><p>化月与柳叶一弯</p><p>你眸里花落惹得多少筝弦断</p><p>风华付风沙</p><p>可否能鞠一把月</p><p>映你楚楚容颜</p><p>谁家小院春色引花蝶</p><p>梨花惹无邪</p><p>你诗我故夜</p><p>枯花几两袅袅迷离香</p><p>溶月般若沭沭解皆结</p><p>你是是非</p><p>是非浪千叠</p><p>我不想再写</p><p>最是情难写</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>意千般 付筝弦</title>
+      <link href="/2023/01/02/shi/yi-qian-ban-fu-zheng-xian/"/>
+      <url>/2023/01/02/shi/yi-qian-ban-fu-zheng-xian/</url>
+      
+        <content type="html"><![CDATA[<p>折扇轻遮面墨书情话</p><p>晨雨湿梨花也输她</p><p>席地而坐品苦茶</p><p>眉间皱想怎一纸书你风华</p><p>金盏白玉</p><p>匀笔墨稠</p><p>泪点朱砂</p><p>知卿呢喃</p><p>许诺与你共等长安覆飞雪</p><p>不书离别</p><p>轻墨言君子书香</p><p>白纸映淑女优雅</p><p>金钗解独上西楼愁</p><p>君宁弃天下</p><p>放你不下</p><p>功名且随它</p><p>身后金戈铁马遍地骨尸</p><p>你的泪不能流下</p><p>青丝任白留丹心碧</p><p>又是月下</p><p>听你拂筝</p><p>烟雨漫漫江南</p><p>谁又在谁的心中依西窗烛独拆愁</p><p>红豆有时</p><p>蒹葭不寂</p><p>我伏案梦里又与你相遇</p><p>青青子衿</p><p>莲裙从景</p><p>眷恋百年你的锦绣年华繁盛</p><p>卿之所及</p><p>我始终不及</p><p>琴弦断</p><p>焚香净</p><p>留孤独泛舟漫行</p><p>你为何不爱我</p><p>霜冷伤花</p><p>等夏等你长发</p><p>你望向哪</p><p>秋菊又瘦</p><p>海棠听雨滴答</p><p>暗香盈袖</p><p>你飘摇衣袂醉了满山红枫</p><p>兰芝杜若傍溪</p><p>月夜横笛</p><p>我心中的藤蔓为何就不能蔓延了你</p><p>你竹伞微倾</p><p>留下雨季迷离</p><p>绿蚁</p><p>荼蘼</p><p>水碧桃红</p><p>阡陌上花</p><p>初柳浅青</p><p>新燕又衔泥</p><p>新的一季我还爱呢</p><p>意千般</p><p>付筝弦</p><p>情至深</p><p>则无言</p><p>静默</p><p>静默在身旁观你泼茶</p><p>红尘万声</p><p>浮华繁盛</p><p>此刻</p><p>你将世间的风波都平定</p><p>我愿做笔下落花</p><p>守你白骨枯瘦</p><p>你看你</p><p>又笑了吧</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>雪</title>
+      <link href="/2023/01/02/shi/xue/"/>
+      <url>/2023/01/02/shi/xue/</url>
+      
+        <content type="html"><![CDATA[<p>雪沁梅蕊三两粒，</p><p>心筝映白月隔云；</p><p>渊渟湛然临岳峙，</p><p>昏夜将故得我心。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>破晓</title>
+      <link href="/2023/01/02/shi/po-xiao/"/>
+      <url>/2023/01/02/shi/po-xiao/</url>
+      
+        <content type="html"><![CDATA[<p>星空在破晓时分迎来最后一次璀璨</p><p>轻轻的夜风吻着院落蔷薇也吻过你的发梢</p><p>月亮藏在乌云的后面</p><p>在它的心的位置</p><p>似乎将要有皎洁流泻</p><p>那里是我想好的写好的背好的</p><p>想要对你说的话</p><p>只可惜</p><p>几欲挣扎</p><p>却日出临作罢</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>愿你梦里</title>
+      <link href="/2023/01/02/shi/yuan-ni-meng-li/"/>
+      <url>/2023/01/02/shi/yuan-ni-meng-li/</url>
+      
+        <content type="html"><![CDATA[<p>愿你梦里</p><p>是月光下的云海</p><p>是夕阳下的薄荷草地</p><p>躲在白铁皮信箱里爱你未干的墨迹</p><p>是淋湿了沙漠的迟来雨季</p><p>是夏天早晨纯洁晶莹的露滴</p><p>是风想从我嘴边偷听到的爱你的秘密</p><p>是窗台风铃声夹杂的淅淅沥沥</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>问</title>
+      <link href="/2023/01/02/shi/wen/"/>
+      <url>/2023/01/02/shi/wen/</url>
+      
+        <content type="html"><![CDATA[<p>想用湿漉漉的感觉</p><p>为你诉说一个故事</p><p>不知喜欢下雨的你</p><p>可愿细听？</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>赠君</title>
+      <link href="/2023/01/02/shi/zeng-jun/"/>
+      <url>/2023/01/02/shi/zeng-jun/</url>
+      
+        <content type="html"><![CDATA[<p>吾余盛夏兮，将遗兮伊人。</p><p>欲止冬晨兮，新雪兮飘飘。</p><p>吾余暖阳兮，供伊兮所需。</p><p>远暗之隅兮，伊心兮润泽。</p><p>吾藏伊靥兮，芳龄兮十九。</p><p>花信方知兮，浅笑兮奥秘。</p><p>吾思未答兮，祝伊兮归程。</p><p>其路隐匿兮，白昼兮近昏。</p><p>伊若需爱兮，尽吾兮所有。</p><p>与伊远行兮，寻觅兮伊求。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>身影</title>
+      <link href="/2023/01/02/shi/shen-ying/"/>
+      <url>/2023/01/02/shi/shen-ying/</url>
+      
+        <content type="html"><![CDATA[<p>终于躲在柜子里的夏季</p><p>答应了和秋日约定好的小雨</p><p>要一起在雾气氤氲的小镇淅沥</p><p>你那在我脑海里飘忽不定的身影</p><p>就像屋檐下的风铃</p><p>那样动听</p><p>动听动听</p><p>却不及</p><p>有你的梦</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>街心</title>
+      <link href="/2023/01/02/shi/jie-xin/"/>
+      <url>/2023/01/02/shi/jie-xin/</url>
+      
+        <content type="html"><![CDATA[<p>本钟塔尖的晚风将乌云逼退</p><p>你瞧</p><p>街心琴调</p><p>宫崎骏的夏天</p><p>枫坠的瓦尔登湖</p><p>plato 之心</p><p>记忆中窗边的纸鹤</p><p>蒙纱月</p><p>咖啡杯里的拉线</p><p>和</p><p>你的脸</p><p>都在此刻</p><p>晕出了感觉</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>午后</title>
+      <link href="/2023/01/02/shi/wu-hou/"/>
+      <url>/2023/01/02/shi/wu-hou/</url>
+      
+        <content type="html"><![CDATA[<p>你说</p><p>想你了就写信</p><p>于是乎</p><p>在一个安静的晴天午后</p><p>我拿出纸和笔</p><p>不远处的竹篱笆上停留着灰蜻蜓</p><p>风告诉它</p><p>纸鹤的心中很适合飞行</p><p>然后</p><p>我翻过一页页情绪</p><p>和院子里的蔷薇一起</p><p>闭着眼睛</p><p>在猫的胡须上</p><p>旅行</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>就像</title>
+      <link href="/2023/01/02/shi/jiu-xiang/"/>
+      <url>/2023/01/02/shi/jiu-xiang/</url>
+      
+        <content type="html"><![CDATA[<p>就像在雾气弥漫的林地穿行</p><p>就像抬头望着被黑暗吞没星星的夜空</p><p>就像露水透及伤骨的冰冷</p><p>就像风肆虐丝毫不懂心中的忧郁失望之情</p><p>就像天空的眼泪不懂</p><p>为何你</p><p>让我想了又想</p><p>眉皱不轻</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>post</title>
+      <link href="/2023/01/02/shi/ni/"/>
+      <url>/2023/01/02/shi/ni/</url>
+      
+        <content type="html"><![CDATA[<p>猫打翻公主的早茶</p><p>你的长发</p><p>想阻止我 偷看</p><p>风牵走王子的白马</p><p>你的裙摆</p><p>却说这是真爱</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 诗 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>世界的本质是什么？</title>
+      <link href="/2023/01/01/xiang-fa/shi-jie-de-ben-zhi-shi-shi-me/"/>
+      <url>/2023/01/01/xiang-fa/shi-jie-de-ben-zhi-shi-shi-me/</url>
+      
+        <content type="html"><![CDATA[<p>今天下午突然想到了一个问题，我们体会过后的所有的东西，每个人都在各自的一生中重复体验，那这样做的意义何在呢？应该以怎样的态度去面对这个世界？很显然，人与人之间的体验是割裂的，人和现实的表象之间也是存在着距离。</p><p>一个地方，对于去过的人来说便不再陌生。但是还未曾到达过的人，总是难免心怀着期待。如果以这个地方的角度来看，它已熟悉它所见到的种种，不会因为没有你的到访，而有所改变。那么到访的意义，很显然在自我的一方。自我的感知，是存在的全部。</p><p>芝兰生幽谷，不因无人而不芳。杜若盛开，乃至这些词被发明出现，其实我们和彼此都是毫无关联的。这个世界总是在同步发生着很多事情，大到整个宇宙，我们却只能看到眼前的东西，触动被脑海里的情景。人只是活在各自的认知里，我们所认为的世界，其实不是真实的，至少不是全面的。认知总有缺失，机会总不能被全然发现，很多事情背后有复杂的缘故，既然如此，要认清自我的缺陷，切记不可以太过于执着。</p><p>我们的思维看似是自我的本体，但是有个问题很奇怪，这也许就是上帝论的起源。我既然作为自我的全部，但是并没有对自我有足够的认知，体内的血液，脉络，纹理，都不是自我决定的，更不能被自我从内而外完全认识清除。我们其实是一个奇怪的盒子，只是恰恰借了一具尸体，我们的思维都是环境所造就的。我们觉得自己可以改变很多，但是遗憾的是命运早已暗自标好了价格。</p><p>我们畏惧疼痛，疼痛并非由自我的意志所引发，而是躯体自我的保护机制。疼痛了，才提醒自我注意保护。所以躯体和个人是分开的，基因控制着物质的根基，我们只是感知的表皮，顺应着逻辑做事情。</p><p>人是存在的表象。世界亦如此，因为你无论如何去理解，总是理解到了一角。你觉得自己可以身处认知之外的，实际上这句话也是认知以内的东西，这是一个悖论，即人无法被自我完全控制。事情总会失控，就像感情，这是无法改变的事情。</p><p>世界的本质也有一点，即完全的按部就班。地球存在引力，地心吸引着有质量的一切。花儿开了又谢，所有的植物都在做一件事，争夺阳光，生产种子，然后想办法扩展自己。一切的意义在何处呢？世界的本质即一种按部就班的冲动，就像动物会显示出本能。植物为什么那样做呢？百合飘散香气，百合并不知道。世界的本质即走向自我毁灭的终点。</p><p>我们所谓的舒适感是什么呢？人的本能里有几种需求。如果能一一满足，则个人会感觉很舒服。人的社会属性被承认，自我也会感觉到舒服。如果人在社会中生存，就要距离社会近，和世界的本质远了。医学没有发展以前，疾病会很容易致人死地。像是新冠病毒，它的好坏，世界并不知道。宇宙的起点本就没有一切，但是目前病毒好像有了思维一样，要置人于死地。病毒肯定是不存在思想，人却有思想，只是在人的思想里病毒有害。我们为什么害怕死，是因为冰冷寂寞吗，死后的世界并不能被感知，却能影响到社会属性中的别人，爱你的人会伤心，一个人的出现总是伴随着一些纽带的。世界的本质不在人的这一边，人却觉得自己是万物的主宰，上帝的赋权。</p><p>世界的本质即冲动。花儿开放，是因为温度给予的冲动，我们的存在甚至也是因为有人冲动，冲动即欲望。但是欲望好像不适合用于植物。冲动是谁给予的，宇宙这么空旷冰冷。我们如果好好想想这个问题，就会发现很多超出认知之外的东西。唯一能确定的是，要看清眼前的事情，比如找个好工作，或者结婚。慢慢察觉，活着是一件辛苦的事情，这也是活着的意义。生命是一个熵增的过程，到最后你会发现，死亡是一个凉爽的夜晚。我们无时无刻不在和熵增对抗。衰老、生气、病痛、死亡…</p><p>世界本质就像浪漫主义的根源，好像无法被简单概括，一句话就概括东西的是诗人，三两行引子，教人花半生去想象。我们所厌烦的，期待的，意义由自我产生，注重个人的体验，即存在的全部。这也是我喜欢文字的一个理由，活着的感觉，我思故我在。不想去体验一些事情，想把时间要么白白浪费，要么有价值的浪费。</p><p>世界的本质的本质是一粒沙，就是单纯的飘荡在宇宙中。我们站在陆地上，但是地球漂浮在银河系，所以我们也漂浮在银河系，银河系又是更大星系中的一粒沙。这里的意思就是微不足道，即虚无。所以人啊，活着要学会释怀，人虽处于实实在在的苦痛，但是也要认清规律。不要太过理想，也不要太过于浪漫。写几首诗，送给几个好朋友，相与枕藉乎舟中，不知东方之既白。</p><p>世界的本质看来局限于认知的局限，什么都是假的，有限的，混乱的，我们如果试图用物理学亦或形而上去解释，也发现无法解释清楚。什么都触不可及，除了眼前人。所以用心生活，用心去爱才是目前所能及的。我从二十多岁开始，就有想画画，做饭，写东西的想法，这看来似乎是一种无能的表现。但是不是这样的，这几样事情和宇宙旅行不冲突，我本身就处于时间中旅行。我只是想做温暖的人，温暖的事。</p><p> 世界的本质一篇文章无法探讨清楚，但是至少有了一点点感触。我希望自己在2023年，不要冷漠，不要无所谓，我昨天想起我以前实在是难以接近的人，我都无法和自己做朋友，为什么要这样呢？我其实也搞不懂，太自己为是，无知啊无知。世界的本质就是在你变成一个很好的人之后，看见它的样子吧。愿一切都安好。</p><p>元旦快乐，2023心想事成，健康喜乐。</p><p>2023年01月01日 18:33</p><p>Pandy</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 想法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 宇宙 </tag>
+            
+            <tag> 死亡 </tag>
+            
+            <tag> 生命 </tag>
+            
+            <tag> 哲学 </tag>
+            
+            <tag> 物理 </tag>
+            
+            <tag> 存在主义 </tag>
+            
+            <tag> 虚无主义 </tag>
+            
+            <tag> 爱 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>2022再见</title>
+      <link href="/2022/12/31/sheng-huo/2022-zai-jian/"/>
+      <url>/2022/12/31/sheng-huo/2022-zai-jian/</url>
+      
+        <content type="html"><![CDATA[<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="-1"><a href="#-1" class="headerlink" title=""></a></h2><p>今天是2022年12月31日，2022年的最后一天。</p><p>2022年的四季看着和以往没有什么两样，却轮到一群在城市里生活的人感受到压力的氛围了。疫情带来的种种不便，让人满是压抑。现在解开了，解开了好啊，<strong>任何不顺应时代的行为，都会被时代惩罚</strong>。中国的放开是处于一个很奇特节点的必然行为，因为几乎是一夜之间。昨儿个进园区大门，正准备扫码，大爷挥舞着双臂说，不扫码了，解开了。前天还手里拿着二维码，说是领导让继续扫码，今天的剧情就在<strong>以一种几乎不可逆的形式推进</strong>，一切都在变化着… </p><p><strong>只要环境在变化，人们就有一点点信心，对生活有所期待。</strong>比起遥遥望不到边际的封控，我想不出什么有趣的事情，唯一有趣的事，就是分析国际上的种种形式，因为国与国之间是会互相影响的，看不见今天的人，也同样看不到明天。毕竟时代的故事，在讲给所有人听。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101624013.png" alt="image-20221231101624013"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101930272.png" alt="image-20221231101930272"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101939786.png" alt="image-20221231101939786"></p><p>2022年，乌克兰人民相当长一段时间依旧在冰冷和黑暗中度过。21世纪少有的法西斯行径，就在和我们一同在同一时空中上演。只不过一种温柔，一种激烈。身体和思想，同样在被严重剥削。<em>乌克兰的最终胜利就是理想世界的一道光</em>。如果要让我做一个选择，我会不顾大局选择自由。尽管对比西北半球，一切安好。</p><p><img src="https://static01.nyt.com/images/2022/03/04/world/04russia-world-rules-01/merlin_202776828_ffa9b0b4-3285-4aaa-a4d1-d4114d0a8302-master1050.jpg" alt="乌克兰战争考验自由主义国际秩序- 纽约时报中文网"></p><p>2022年，第一次换工作。从2019年疫情未开始就在北京，一直漂泊到现在，3年的时间，对这个城市依旧没有太多好感，北京对于漂泊的人来说，更多的价值在于它的工作机会，以及相对完善的社会福利体系。除此以外，一切似乎都可以将就。地铁上、公交上、路上，从凌晨5点开始到24点，都是年轻人，似乎这个世界就是被年轻人所组成。北京容易给人一种错觉，万事欣欣向荣。地域的区别，带来的也是发展的不公。明明有很多年轻人，愿意卖力工作，愿意超过35岁奉献自己，却没有机会。社会的样子现在就变成了，有力无处使，规则的制定者永远也不愁饿肚子，一纸禁令就可以让无数人因为房贷车贷，睡不着觉。良将为明君死而有所值，每个时代都在努力追梦。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231102318789.png" alt="image-20221231102318789"></p><p>2022年，看完了几本书。印象最深的是谷崎润一郎的《细雪》以及紫式部的《源氏物语》，雪子就是昭和时期日本毁灭之美的缩影，很懂生活，而无所依，直至末尾，都看不到她的归宿，这是最让人想推测的地方，但是却根本无法推测，因为其特殊的身世，特殊的轨迹的缘故吧，但是无论如何，都希望雪子幸福。紫式部在长保三年至宽弘五年写出了世界上第一部长篇小说，这部书有时代意义，是值得一看的。源氏公子虽然滥情，但是从头至尾没有表现出残忍的一面，暂且不可推测紫式部是否不想让此书有太多复杂情节，但是看完不会让人有太多挑理之处。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103908389.png" alt="image-20221231103908389"></p><p>2022年，遇见了蓉城。五一去了这座城市，很快就爱上了它。凉爽而又湿润的气候，很受鼻子喜欢。让人奇怪的是，我原本以为北京商业里很有礼貌，服务态度好，蓉城竟然更好。更不提妹子个个好看，哈哈哈…</p><p> 成都有种不紧不慢的节奏，去玉林路吃饭的时候，不起眼的小馆里都满满是人。成都人似乎更懂生活。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231092726844.png" alt="image-20221231092726844"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231093237850.png" alt="image-20221231093237850"></p><p>夜晚的时候，总是要下点雨，乌云夹带凉风，飘在天边的时候，让人有点忘乎所以。天天晚上在夜市吃饭，也算了弥补了很长一段时间没有夜摊经历这件事。hhaaa</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231092930816.png" alt="image-20221231092930816"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231092616423.png" alt="image-20221231092616423"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101831807.png" alt="image-20221231101831807"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101855907.png" alt="image-20221231101855907"></p><p>2022年第一次换了工作。跳槽这件事，是很值得研究的事情。好像漂泊的一个好处就是，无所牵挂，随心所欲选择城市去择业，流浪。这倒是一个接近自我安慰的想法，不过也有点道理。虽然向稳是人的天性，但有时候也得当断则断，明天是期待的，明天会更好，因努力，果随缘。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231102740839.png"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231102826741.png" alt="image-20221231102826741"></p><p>2022年我感染了新型冠状肺炎。新冠的轻症在专家嘴里，好像是90%以上，但重症在个人的身上却是100%。我早已准备好接受这一切。只是遭遇了一周的折腾，外送一周的咳嗽，现在基本上没事了。实际上我的症状和朋友们比起来非常轻，（发热、头疼、呕吐、恶心、咳嗽、听力下降、嗓子疼、无力）可能是半个月前刚接种过疫苗的缘故。半个月前，我认识的所有人里，只有两个人还没有打疫苗，我劝了他们，也不知道有没有效果。半个月前我也已经暗示疫情解封，呼吁屯药。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103011787.png" alt="image-20221231103011787"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103024848.png" alt="image-20221231103024848"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103042193.png" alt="image-20221231103042193"></p><p>2022年我依旧在做该做的事，学习技能。万事的根源，相当大一部分来自于选择不对，努力不够。选择自己的热爱，并全身心投入，我想我知道自己要做什么。不过人都是顺应身份的，有时候接受也是一个答案。不过如果你的行为偏离了努力，很多事情立即能预见萎靡。人是社会动物，被规则把控，跳出这一切需要勇气，也要付出代价。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103317910.png" alt="image-20221231103317910"></p><p>2022年我打完了几部游戏，经典的《黑暗之魂》、《荒野大镖客》、《地铁》系列、《艾尔登法环》等等。也买了几部国产的差强人意的作品。游戏是我生活的一部分，甚至是我认识这个世界的另一个方式。我花了很多个周末，几乎五百个小时去玩，在世界一流的游戏里，感受到了很多快乐（斯德哥尔摩）。恐怖游戏更是买了很多，发誓下次一定玩。我希望中国未来也能有优秀作品出现。</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231104030426.png" alt="image-20221231104030426"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231103848475.png" alt="image-20221231103848475"></p><p>2022年，没能多陪陪父母。原谅我喜欢浪，又总让人担心。</p><p>2022年要走了，时针一旦划过的地方，不会再回来。我们以前希望世界更好，现在希望恢复原样，原来21世纪也是会倒退的，原来人类在自然面前，还是那样脆弱孤独。宇宙空旷而又寂冷，珍惜身边的人。</p><p>​ 2022年12月31日 10:17</p><p><img src="http://pic.didablog.com//blog/picture/image-20221231101814098.png" alt="image-20221231101814098"></p><p><img src="http://pic.didablog.com//blog/picture/image-20221231104243587.png" alt="image-20221231104243587"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生活 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 新年 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>使用CGO生成动态链接库</title>
-      <link href="/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/"/>
-      <url>/2022/12/29/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</url>
+      <link href="/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/"/>
+      <url>/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</url>
       
         <content type="html"><![CDATA[<h2 id="导出c静态库"><a href="#导出c静态库" class="headerlink" title="导出c静态库"></a>导出c静态库</h2><h3 id="arm系统在导出前要进行操作"><a href="#arm系统在导出前要进行操作" class="headerlink" title="arm系统在导出前要进行操作"></a>arm系统在导出前要进行操作</h3><pre class="line-numbers language-shell"><code class="language-shell">export GOOS="linux"CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  go build -buildmode=c-archive -o number.a<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre><h2 id="c调用"><a href="#c调用" class="headerlink" title="c调用"></a>c调用</h2><pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out _test_main.c number.a  ./a.out<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="在linux中操作"><a href="#在linux中操作" class="headerlink" title="在linux中操作"></a>在linux中操作</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>在linux中进行动态链接库文件生成，在main目录下执行</p><pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=c-shared -o sdk.so  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>注意go调用要生成plugin</p><pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=plugin -o ntisdk-plugin.so main.go  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>生成可执行文件</p><pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out main.c sdk.a  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>将.so .h文件拷贝至指定目录 在main.c中调用相关方法之后设置下查找动态库路径的环境变量<br>用于指定查找共享库（动态链接库）时除了默认路径（.&#x2F;lib和.&#x2F;usr&#x2F;lib）之外的其他路径。</p><pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH="/root/goProject/src/SDK/c"  <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="指定"><a href="#指定" class="headerlink" title="指定"></a>指定</h3><p>.&#x2F;a.out</p><h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>cmd临时指定so文件</p><pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH=xxx<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>永久指定</p><pre class="line-numbers language-shell"><code class="language-shell"># cat /etc/ld.so.confinclude ld.so.conf.d/*.conf# echo "/usr/local/lib" >> /etc/ld.so.conf# ldconfig<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
       
@@ -30,8 +507,8 @@
     
     <entry>
       <title>CGO的指针传递</title>
-      <link href="/2022/12/29/cgo-de-zhi-zhen-chuan-di/"/>
-      <url>/2022/12/29/cgo-de-zhi-zhen-chuan-di/</url>
+      <link href="/2022/12/29/ji-zhu/cgo/cgo-de-zhi-zhen-chuan-di/"/>
+      <url>/2022/12/29/ji-zhu/cgo/cgo-de-zhi-zhen-chuan-di/</url>
       
         <content type="html"><![CDATA[<h2 id="CGO指针的概念"><a href="#CGO指针的概念" class="headerlink" title="CGO指针的概念"></a>CGO指针的概念</h2><p>Go 是一种垃圾收集语言，垃圾收集器需要知道每个指向 Go 内存的指针的位置。正因为如此，在 Go 和 C 之间传递指针是有限制的。</p><p>指针是 Go 指针还是 C 指针是由内存分配方式决定的动态属性；它与指针的类型无关。</p><p>请注意，某些 Go 类型的值（类型的零值除外）始终包含 Go 指针。这适用于字符串、切片、接口、通道、映射和函数类型。指针类型可以包含 Go 指针或 C 指针。数组和结构类型可能包含也可能不包含 Go 指针，具体取决于元素类型。下面所有关于 Go 指针的讨论不仅适用于指针类型，还适用于包含 Go 指针的其他类型。 </p><p>Go 代码可以将 Go 指针传递给 C，前提是它指向的 Go 内存不包含任何 Go 指针。 C 代码必须保留此属性：它不能在 Go 内存中存储任何 Go 指针，即使是临时的。当传递一个指向结构体中字段的指针时，所讨论的 Go 内存是该字段占用的内存，而不是整个结构体。当传递指向数组或切片中元素的指针时，所讨论的 Go 内存是整个数组或切片的整个后备数组。</p><p>调用返回后，C 代码可能不会保留 Go 指针的副本。这包括 <em>GoString</em> 类型，如上所述，它包含一个 Go 指针； <em>GoString</em> 值可能不会被 C 代码保留。</p><p>C 代码调用的 Go 函数可能不会返回 Go 指针（这意味着它可能不会返回字符串、切片、通道等）。 C 代码调用的 Go 函数可能以 C 指针作为参数，它可能通过这些指针存储非指针或 C 指针数据，但它可能不会将 Go 指针存储在 C 指针指向的内存中。 C 代码调用的 Go 函数可以将 Go 指针作为参数，但它必须保留其指向的 Go 内存不包含任何 Go 指针的属性。</p><p>Go 代码可能不会在 C 内存中存储 Go 指针。 C 代码可以在 C 内存中存储 Go 指针，但要遵守上述规则：当 C 函数返回时，它必须停止存储 Go 指针。</p><p>这些规则在运行时动态检查。检查由 GODEBUG 环境变量的 cgocheck 设置控制。默认设置是 GODEBUG&#x3D;cgocheck&#x3D;1，它实现了相当便宜的动态检查。使用 GODEBUG&#x3D;cgocheck&#x3D;0 可以完全禁用这些检查。通过 GODEBUG&#x3D;cgocheck&#x3D;2 可以在运行时以一定的代价完成对指针处理的检查。</p><p>可以通过使用 unsafe 包来打败这种强制执行，当然也没有什么可以阻止 C 代码做任何它喜欢做的事情。但是，违反这些规则的程序可能会以意想不到的方式失败。</p><p>runtime&#x2F;cgo.Handle 类型可用于在 Go 和 C 之间安全地传递 Go 值。有关详细信息，请参阅 runtime&#x2F;cgo 包文档。</p><p>注意：当前的实现有一个错误。虽然允许 Go 代码将 nil 或 C 指针（但不是 Go 指针）写入 C 内存，但如果 C 内存的内容看起来是 Go 指针，当前的实现有时可能会导致运行时错误。因此，如果 Go 代码要在其中存储指针值，请避免将未初始化的 C 内存传递给 Go 代码。在将 C 传递给 Go 之前将 C 中的内存清零。</p><h2 id="如何使用指针传递上下文"><a href="#如何使用指针传递上下文" class="headerlink" title="如何使用指针传递上下文"></a>如何使用指针传递上下文</h2><p>传递CGo的指针需要使用类型：C.uintptr_t。尽管Go有自己的指针类型的实现，例如：unsafe.Pointer。但是注意，在调用过程中会出现安全性问题。</p><p>假如目前我们有一个结构体，其中包含了当前环境，例如：</p><pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">type</span> InitHandler <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>    configInstance <span class="token operator">*</span>viper<span class="token punctuation">.</span>Viper    redisPool      <span class="token operator">*</span>redis<span class="token punctuation">.</span>Pool    loggerInstance <span class="token operator">*</span>log<span class="token punctuation">.</span>Logger<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>使用指针传递时，可以这样做：</p><pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">return</span> C<span class="token punctuation">.</span><span class="token function">uintptr_t</span><span class="token punctuation">(</span>cgo<span class="token punctuation">.</span><span class="token function">NewHandle</span><span class="token punctuation">(</span>initHandler<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>根据指针解析出环境：</p><pre class="line-numbers language-go"><code class="language-go">h <span class="token operator">:=</span> cgo<span class="token punctuation">.</span><span class="token function">Handle</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span>val <span class="token operator">:=</span> h<span class="token punctuation">.</span><span class="token function">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span>InitHandler<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><p>使用完毕后释放指针空间：</p><pre><code>h := cgo.Handle(handle)h.Delete()</code></pre><h2 id="C和CGO进行交互"><a href="#C和CGO进行交互" class="headerlink" title="C和CGO进行交互"></a>C和CGO进行交互</h2><p>在Go中，使用CGO的类型定义的指针，如何在C端进行接受，传值？要使用一个特定类型：uintptr_t。</p><p>例如：</p><pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"libxxx.h"</span></span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">// gcc main.c -o main -L. -lxxx</span>    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    uintptr_t s <span class="token operator">=</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token function">destroy</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="Python和CGO交互"><a href="#Python和CGO交互" class="headerlink" title="Python和CGO交互"></a>Python和CGO交互</h2><p>Python和CGO的交互要用到ctypes这个库，传递值时，注意类型必须提前指定，否则只会接收到一个地址值。</p><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> ctypesso <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>CDLL<span class="token punctuation">(</span><span class="token string">'/xxx.so'</span><span class="token punctuation">)</span>ptr <span class="token operator">=</span> so<span class="token punctuation">.</span>init<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"configpath"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>so<span class="token punctuation">.</span>query<span class="token punctuation">.</span>restype <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_char_pres <span class="token operator">=</span> so<span class="token punctuation">.</span>getmethod<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">,</span> ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>so<span class="token punctuation">.</span>destroy<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><strong>cgo doc</strong>: <a href="https://pkg.go.dev/cmd/cgo">https://pkg.go.dev/cmd/cgo</a></p><p><strong>go语言高级编程</strong>： <a href="https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html">https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html</a></p><p><strong>go doc</strong>：<a href="https://go.dev/doc/">https://go.dev/doc/</a></p>]]></content>
       
