@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-09T03:41:00.462Z</updated>
+  <updated>2023-02-09T06:29:27.853Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>浅雪</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/shi/02/qian-xue/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/shi/02/qian-xue/</id>
+    <published>2023-02-09T06:19:17.000Z</published>
+    <updated>2023-02-09T06:29:27.853Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;故宫的雪啊&lt;br&gt;下了六百多年&lt;br&gt;我却只怀念&lt;br&gt;遇见风的那一天&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>知识大爆炸</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/xiang-fa/zhi-shi-da-bao-zha/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/xiang-fa/zhi-shi-da-bao-zha/</id>
+    <published>2023-02-09T05:19:41.000Z</published>
+    <updated>2023-02-09T06:29:27.856Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;已构思好，周末写。。&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
+    
+    
+    <category term="成长" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%88%90%E9%95%BF/"/>
+    
+    <category term="学习" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="方向" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%96%B9%E5%90%91/"/>
+    
+    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>ChatGPT-知己和对手</title>
@@ -311,8 +365,8 @@
   
   <entry>
     <title>家晨</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/jia-chen/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/jia-chen/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/01/jia-chen/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/01/jia-chen/</id>
     <published>2023-01-13T02:56:08.000Z</published>
     <updated>2023-01-13T02:57:05.201Z</updated>
     
@@ -521,54 +575,6 @@
     
     
     <category term="软件安装" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>哀酱</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/</id>
-    <published>2023-01-02T04:49:17.000Z</published>
-    <updated>2023-01-03T01:23:37.702Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;独立、智慧，处变不惊。她的善良从来都是沉默的，以至于使多数人难以察觉&lt;br&gt;灰原哀是我最向往的女性的模样。 </summary>
-        
-      
-    
-    
-    
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-    
-    <category term="偶像" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%81%B6%E5%83%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>月亮是海的心</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yue-liang-shi-hai-de-xin/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/yue-liang-shi-hai-de-xin/</id>
-    <published>2023-01-02T04:45:06.000Z</published>
-    <updated>2023-01-03T01:23:37.703Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;天空是海的倒影&lt;br&gt;月亮是海的心&lt;br&gt;而你 </summary>
-        
-      
-    
-    
-    
-    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
-    
     
   </entry>
   
