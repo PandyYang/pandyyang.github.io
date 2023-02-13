@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-09T06:29:27.853Z</updated>
+  <updated>2023-02-13T03:02:16.412Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -17,41 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>浅雪</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/shi/02/qian-xue/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/shi/02/qian-xue/</id>
-    <published>2023-02-09T06:19:17.000Z</published>
-    <updated>2023-02-09T06:29:27.853Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;故宫的雪啊&lt;br&gt;下了六百多年&lt;br&gt;我却只怀念&lt;br&gt;遇见风的那一天&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>知识大爆炸</title>
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/xiang-fa/zhi-shi-da-bao-zha/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/xiang-fa/zhi-shi-da-bao-zha/</id>
     <published>2023-02-09T05:19:41.000Z</published>
-    <updated>2023-02-09T06:29:27.856Z</updated>
+    <updated>2023-02-13T03:02:16.412Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;已构思好，周末写。。&lt;/p&gt;
-</summary>
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;前几天在一个学习群里突然看到老师分享的一本书，叫做《英语常用短语大全集》，想起了自己一直都希望学好英语，想到自己大学的时候，每天很早起床，和泽华去湖边背诵英语，虽然到现在都没过六级，但是这是一段很难忘的经历。生活中可能用心去学习，然后改变自己的资料随处可见</summary>
         
       
     
@@ -60,13 +38,13 @@
     <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
     
     
+    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
     <category term="成长" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%88%90%E9%95%BF/"/>
     
     <category term="学习" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="方向" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%96%B9%E5%90%91/"/>
-    
-    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%AE%A4%E7%9F%A5/"/>
     
   </entry>
   
@@ -151,7 +129,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/</id>
     <published>2023-01-29T09:39:12.000Z</published>
-    <updated>2023-01-29T14:24:55.180Z</updated>
+    <updated>2023-02-01T01:43:11.489Z</updated>
     
     
       
@@ -186,7 +164,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/fei-duo-pian/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/fei-duo-pian/</id>
     <published>2023-01-29T02:58:53.000Z</published>
-    <updated>2023-01-29T04:19:44.336Z</updated>
+    <updated>2023-02-01T01:43:11.489Z</updated>
     
     
       
@@ -217,7 +195,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/28/du-shu/jian-ai-2/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/28/du-shu/jian-ai-2/</id>
     <published>2023-01-28T03:01:36.000Z</published>
-    <updated>2023-01-29T04:19:44.377Z</updated>
+    <updated>2023-02-01T01:43:11.489Z</updated>
     
     
       
@@ -252,7 +230,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/27/du-shu/jian-ai-1/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/27/du-shu/jian-ai-1/</id>
     <published>2023-01-27T10:26:01.000Z</published>
-    <updated>2023-01-29T04:19:44.358Z</updated>
+    <updated>2023-02-01T01:43:11.489Z</updated>
     
     
       
@@ -287,7 +265,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/</id>
     <published>2023-01-27T02:32:23.000Z</published>
-    <updated>2023-01-27T03:06:03.789Z</updated>
+    <updated>2023-02-01T01:43:11.488Z</updated>
     
     
       
@@ -459,13 +437,13 @@
     <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
     
     
-    <category term="经历" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%BB%8F%E5%8E%86/"/>
-    
     <category term="成长" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%88%90%E9%95%BF/"/>
     
     <category term="学习" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="方向" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%96%B9%E5%90%91/"/>
+    
+    <category term="经历" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%BB%8F%E5%8E%86/"/>
     
     <category term="选择" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E9%80%89%E6%8B%A9/"/>
     
@@ -575,6 +553,31 @@
     
     
     <category term="软件安装" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>哀酱</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/</id>
+    <published>2023-01-02T04:49:17.000Z</published>
+    <updated>2023-01-03T01:23:37.702Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;独立、智慧，处变不惊。她的善良从来都是沉默的，以至于使多数人难以察觉&lt;br&gt;灰原哀是我最向往的女性的模样。 </summary>
+        
+      
+    
+    
+    
+    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+    
+    <category term="偶像" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%81%B6%E5%83%8F/"/>
     
   </entry>
   
