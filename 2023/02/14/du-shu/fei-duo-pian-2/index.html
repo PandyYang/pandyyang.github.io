@@ -318,7 +318,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '不会熄灭，不会被吹散。';
+        let pwd = 'The soul will not be extinguished, will not be blown away by the wind～';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('本文因包含机密信息，或涉及到个人隐私，继续访问需获得作者授权。')).toString(CryptoJS.enc.Hex)) {
                 alert('折返吧，少年～');
