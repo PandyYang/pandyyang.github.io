@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-13T03:02:16.412Z</updated>
+  <updated>2023-02-14T05:01:04.382Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>情报SDK使用手册</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/qing-bao-sdk-shi-yong-shou-ce/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/qing-bao-sdk-shi-yong-shou-ce/</id>
+    <published>2023-02-14T04:55:22.000Z</published>
+    <updated>2023-02-14T05:01:04.382Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;情报SDK使用手册&quot;&gt;&lt;a href=&quot;#情报SDK使用手册&quot; class=&quot;headerlink&quot; title=&quot;情报SDK使用手册&quot;&gt;&lt;/a&gt;情报SDK使用手册&lt;/h1&gt;&lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SDK" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/SDK/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>工作中的觉悟</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/</id>
+    <published>2023-02-13T03:51:26.000Z</published>
+    <updated>2023-02-13T03:51:26.552Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>知识大爆炸</title>
@@ -101,8 +139,8 @@
   
   <entry>
     <title>危机感</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/06/gong-zuo/wei-ji-gan/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/06/gong-zuo/wei-ji-gan/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/06/zhi-chang/wei-ji-gan/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/06/zhi-chang/wei-ji-gan/</id>
     <published>2023-02-06T01:41:39.000Z</published>
     <updated>2023-02-07T03:50:01.220Z</updated>
     
@@ -522,62 +560,6 @@
     
     
     <category term="环境问题" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Docker安装Mysql5.5</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/</id>
-    <published>2023-01-03T03:22:56.000Z</published>
-    <updated>2023-01-03T03:29:59.691Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;拉取MySQL镜像&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code class=&quot;language-bash&quot;&gt;docker pull mysql:5.5
-&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/"/>
-    
-    <category term="Mysql" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/Mysql/"/>
-    
-    
-    <category term="软件安装" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>哀酱</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/sui-sui-nian/ai-jiang/</id>
-    <published>2023-01-02T04:49:17.000Z</published>
-    <updated>2023-01-03T01:23:37.702Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;独立、智慧，处变不惊。她的善良从来都是沉默的，以至于使多数人难以察觉&lt;br&gt;灰原哀是我最向往的女性的模样。 </summary>
-        
-      
-    
-    
-    
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
-    
-    
-    <category term="偶像" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%81%B6%E5%83%8F/"/>
     
   </entry>
   
