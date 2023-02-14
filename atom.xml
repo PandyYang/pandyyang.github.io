@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-14T05:58:19.710Z</updated>
+  <updated>2023-02-14T09:08:15.533Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>斐多篇（2）</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/du-shu/fei-duo-pian-2/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/du-shu/fei-duo-pian-2/</id>
+    <published>2023-02-14T09:05:33.000Z</published>
+    <updated>2023-02-14T09:08:15.533Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;http://pic.didablog.com/blog/picture/202302141707913.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="读书" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
+    
+    
+    <category term="死亡" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%AD%BB%E4%BA%A1/"/>
+    
+    <category term="哲学" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%93%B2%E5%AD%A6/"/>
+    
+    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%AE%A4%E7%9F%A5/"/>
+    
+    <category term="灵魂" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%81%B5%E9%AD%82/"/>
+    
+  </entry>
   
   <entry>
     <title>情报SDK使用手册</title>
@@ -534,32 +565,6 @@
     
     
     <category term="教程" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%95%99%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>进入Docker容器显示：vim: command not found</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/wen-ti/jin-ru-docker-rong-qi-xian-shi-vim-command-not-found/</id>
-    <published>2023-01-03T03:30:57.000Z</published>
-    <updated>2023-01-03T03:33:21.587Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;原因&quot;&gt;&lt;a href=&quot;#原因&quot; class=&quot;headerlink&quot; title=&quot;原因&quot;&gt;&lt;/a&gt;原因&lt;/h2&gt;&lt;p&gt;环境中没有vim，需要进行安装。&lt;/p&gt;
-&lt;h2 id=&quot;步骤&quot;&gt;&lt;a href=&quot;#步骤&quot; class=&quot;headerlink&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/"/>
-    
-    
-    <category term="环境问题" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
