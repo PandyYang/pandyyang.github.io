@@ -319,10 +319,10 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '';
+        let pwd = 'c9882fbb62d17064e6b48a711190526e3043397bce8776dc3a1088a96b937a44';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('密码是啥来着？')).toString(CryptoJS.enc.Hex)) {
-                alert('不知道的话，请不要乱试...');
+            if (pwd !== CryptoJS.SHA256(prompt('本文因包含机密信息，或涉及到个人隐私，必须经过授权访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('折返吧，少年～。');
                 location.href = '/';
             }
         }
@@ -499,6 +499,11 @@
                 
                 
 
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
                 
             </div>
         </div>
@@ -1487,9 +1492,7 @@ sdk<span class="token punctuation">.</span>destroy<span class="token punctuation
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            情报SDK使用手册简介威胁情报SDK是一种软件开发工具包，用于为应用程序和系统提供实时威胁情报。
-该SDK通过与xx的情报数据接口集成，向开发人员提供威胁情报数据，以便用户可以在其应用程序中使用这些数据来保护其用户或设备。
-威胁情报SDK包
+                            使用情报SDK的必知必会。
                         
                     </div>
                     <div class="publish-info">
@@ -1729,8 +1732,21 @@ sdk<span class="token punctuation">.</span>destroy<span class="token punctuation
 
 <!--            -->
 <!--            -->
+<!--            <br>-->
+<!--            -->
+<!--&lt;!&ndash;            <span id="busuanzi_container_site_pv" style='display:none'>&ndash;&gt;-->
+<!--&lt;!&ndash;                <i class="fa fa-heart-o"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </span>&ndash;&gt;-->
+<!--            -->
+<!--            -->
+<!--            <span id="busuanzi_container_site_uv" style='display:none'>-->
+<!--                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.-->
+<!--            </span>-->
+<!--            -->
+<!--            -->
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1869,8 +1885,12 @@ $(function () {
     
 
     
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
     <!-- 雪花特效 -->
+    
+    <script type="text/javascript" src="/libs/others/snow.js"></script>
     
 
 </body>

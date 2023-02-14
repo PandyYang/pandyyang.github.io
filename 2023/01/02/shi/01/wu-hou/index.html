@@ -333,8 +333,8 @@
     (function() {
         let pwd = '';
         if (pwd && pwd.length > 0) {
-            if (pwd !== CryptoJS.SHA256(prompt('密码是啥来着？')).toString(CryptoJS.enc.Hex)) {
-                alert('不知道的话，请不要乱试...');
+            if (pwd !== CryptoJS.SHA256(prompt('本文因包含机密信息，或涉及到个人隐私，必须经过授权访问。')).toString(CryptoJS.enc.Hex)) {
+                alert('折返吧，少年～。');
                 location.href = '/';
             }
         }
@@ -507,6 +507,11 @@
                 
                 
 
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
                 
             </div>
         </div>
@@ -903,8 +908,21 @@ plato 之心
 
 <!--            -->
 <!--            -->
+<!--            <br>-->
+<!--            -->
+<!--&lt;!&ndash;            <span id="busuanzi_container_site_pv" style='display:none'>&ndash;&gt;-->
+<!--&lt;!&ndash;                <i class="fa fa-heart-o"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>&ndash;&gt;-->
+<!--&lt;!&ndash;            </span>&ndash;&gt;-->
+<!--            -->
+<!--            -->
+<!--            <span id="busuanzi_container_site_uv" style='display:none'>-->
+<!--                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.-->
+<!--            </span>-->
+<!--            -->
+<!--            -->
         </div>
-        <div class="col s12 m4 l4 social-link ">
+        <div class="col s12 m4 l4 social-link social-statis">
     <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fa fa-github"></i>
     </a>
@@ -1043,8 +1061,12 @@ $(function () {
     
 
     
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
 
     <!-- 雪花特效 -->
+    
+    <script type="text/javascript" src="/libs/others/snow.js"></script>
     
 
 </body>
