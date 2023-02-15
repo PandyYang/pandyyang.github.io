@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-15T01:33:19.511Z</updated>
+  <updated>2023-02-15T03:03:53.475Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,83 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用Python2.7进行日期的格式化</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/ji-zhu/python/shi-yong-python2-7-jin-xing-ri-qi-de-ge-shi-hua/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/ji-zhu/python/shi-yong-python2-7-jin-xing-ri-qi-de-ge-shi-hua/</id>
+    <published>2023-02-15T02:49:25.000Z</published>
+    <updated>2023-02-15T03:03:53.475Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨天需要将数据入库ES，本来之前是经过kafka，再经入库程序消费之后，处理入库。但是搭建的测试环境不好迁移入库程序，所以自己写了一个脚本进行处理。&lt;/p&gt;
+&lt;p&gt;最后发现es的索引日期类型为UTC的字符串格式，而原数据为int类型。所以需要有一个转换。t的类型为int类的</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux加载动态链接库</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/ji-zhu/linux/linux-jia-zai-dong-tai-lian-jie-ku/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/ji-zhu/linux/linux-jia-zai-dong-tai-lian-jie-ku/</id>
+    <published>2023-02-15T02:09:06.000Z</published>
+    <updated>2023-02-15T02:48:33.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;动态链接，就是把一些经常会共享的代码制作成DLL档，当可执行文件调用到DLL档内的函数时，操作系统才会把DLL档加载存储器内，DLL档本身的结构就是可执行档，当程序有需求时函数才进行链接。通过动态链接方式，存储器浪费的情形将可大幅降低。静态链接库则是直接链接到可执行文件。&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Linux" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>故乡</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/sheng-huo/gu-xiang/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/sheng-huo/gu-xiang/</id>
+    <published>2023-02-15T02:08:10.000Z</published>
+    <updated>2023-02-15T02:08:10.579Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>成都</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/lu-xing/cheng-du/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/lu-xing/cheng-du/</id>
+    <published>2023-02-15T02:07:57.000Z</published>
+    <updated>2023-02-15T02:07:57.183Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>斐多篇（2）</title>
@@ -49,8 +126,8 @@
   
   <entry>
     <title>情报SDK使用手册</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/qing-bao-sdk-shi-yong-shou-ce/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/qing-bao-sdk-shi-yong-shou-ce/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/vuln/qing-bao-sdk-shi-yong-shou-ce/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/ji-zhu/vuln/qing-bao-sdk-shi-yong-shou-ce/</id>
     <published>2023-02-14T04:55:22.000Z</published>
     <updated>2023-02-14T05:58:19.710Z</updated>
     
@@ -77,10 +154,12 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/</id>
     <published>2023-02-13T03:51:26.000Z</published>
-    <updated>2023-02-13T03:51:26.552Z</updated>
+    <updated>2023-02-15T02:03:57.607Z</updated>
     
     
     
+    
+    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
     
     
   </entry>
@@ -119,8 +198,8 @@
   
   <entry>
     <title>ChatGPT-知己和对手</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/ji-zhu/chatgpt-zhi-ji-he-dui-shou/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/ji-zhu/chatgpt-zhi-ji-he-dui-shou/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/09/ji-zhu/ren-gong-zhi-neng/chatgpt-zhi-ji-he-dui-shou/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/09/ji-zhu/ren-gong-zhi-neng/chatgpt-zhi-ji-he-dui-shou/</id>
     <published>2023-02-09T01:49:42.000Z</published>
     <updated>2023-02-09T03:41:00.462Z</updated>
     
@@ -173,7 +252,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/06/zhi-chang/wei-ji-gan/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/06/zhi-chang/wei-ji-gan/</id>
     <published>2023-02-06T01:41:39.000Z</published>
-    <updated>2023-02-07T03:50:01.220Z</updated>
+    <updated>2023-02-15T02:03:57.603Z</updated>
     
     
       
@@ -188,7 +267,7 @@
     
     
     
-    <category term="工作" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
+    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
     
     
   </entry>
@@ -456,115 +535,6 @@
     
     
     <category term="工作方式" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>末了</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/08/xiang-fa/mo-liao/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/08/xiang-fa/mo-liao/</id>
-    <published>2023-01-08T14:13:32.000Z</published>
-    <updated>2023-01-09T01:36:16.340Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;</summary>
-        
-      
-    
-    
-    
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>选择和努力</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/08/xiang-fa/xuan-ze-he-nu-li/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/08/xiang-fa/xuan-ze-he-nu-li/</id>
-    <published>2023-01-07T23:55:06.000Z</published>
-    <updated>2023-01-09T01:36:16.340Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;之前想写一篇文章，想取名《你为什么赚不到钱》，但是一想到自己也没怎么赚到钱，所以不敢写了。但是关于选择和努力的一些问题今天想探讨探讨。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;我从2019年末，就去北京实习了，中间因为经历了疫情，工作搁置了大半年。不过在这段时间</summary>
-        
-      
-    
-    
-    
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
-    
-    
-    <category term="成长" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%88%90%E9%95%BF/"/>
-    
-    <category term="学习" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="方向" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%96%B9%E5%90%91/"/>
-    
-    <category term="经历" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%BB%8F%E5%8E%86/"/>
-    
-    <category term="选择" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E9%80%89%E6%8B%A9/"/>
-    
-    <category term="情感" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%83%85%E6%84%9F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为何世界总是谎言？</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/07/ren-zhi/wei-he-shi-jie-zong-shi-huang-yan/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/07/ren-zhi/wei-he-shi-jie-zong-shi-huang-yan/</id>
-    <published>2023-01-07T02:12:27.000Z</published>
-    <updated>2023-01-09T01:36:16.340Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;​		为何来自官方的声音总是充斥着虚假，为什么教育总让人认知真善美、却无法区分这个世界的真实与虚伪。为什么需要愚民？为什么某墙头草报在不同时期竟能变表现出不同的反差？为什么人民给予的权利，全无法反过来为人民所利用？为何政策年年缩紧却却从不想着放松？为什么再努力，你也买不起房</summary>
-        
-      
-    
-    
-    
-    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AE%A4%E7%9F%A5/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Docker基础学习</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-ji-chu-xue-xi/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-ji-chu-xue-xi/</id>
-    <published>2023-01-03T03:39:23.000Z</published>
-    <updated>2023-01-09T01:36:16.340Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h2 id=&quot;基础命令&quot;&gt;&lt;a href=&quot;#基础命令&quot; class=&quot;headerlink&quot; title=&quot;基础命令&quot;&gt;&lt;/a&gt;基础命令&lt;/h2&gt;&lt;pre class=&quot;line-numbers language-bash&quot;&gt;&lt;code</summary>
-        
-      
-    
-    
-    
-    <category term="Docker" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/Docker/"/>
-    
-    
-    <category term="教程" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
