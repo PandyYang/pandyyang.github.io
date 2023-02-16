@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/2023/02/16/ji-zhu/python/python-shi-yong-gun-dong-cha-xun-huo-qu-es-quan-bu-shu-ju/</loc>
+    
+    <lastmod>2023-02-16</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/01/yue-liang-shi-hai-de-xin/</loc>
     
     <lastmod>2023-02-16</lastmod>
@@ -819,6 +828,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/tags/ElasticSearch/</loc>
+    <lastmod>2023-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
@@ -907,6 +923,13 @@
   
   <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/categories/%E6%97%85%E8%A1%8C/</loc>
+    <lastmod>2023-02-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/categories/Python/</loc>
     <lastmod>2023-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
