@@ -1,27 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>浅雪</title>
+  <title>月白</title>
   
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-16T06:29:46.816Z</updated>
+  <updated>2023-02-16T07:11:18.515Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
-    <name>Pandy</name>
+    <name>月白</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>如何写一篇标准的使用手册</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/16/zhi-chang/ru-he-xie-yi-pian-biao-zhun-de-shi-yong-shou-ce/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/16/zhi-chang/ru-he-xie-yi-pian-biao-zhun-de-shi-yong-shou-ce/</id>
+    <published>2023-02-16T06:57:02.000Z</published>
+    <updated>2023-02-16T07:11:18.515Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;如何写一篇标准的使用手册要根据具体的需求进行处理，处理需求的几个步骤得要学会。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;明确需求目的。&lt;/li&gt;
+&lt;li&gt;明确目标用户。&lt;/li&gt;
+&lt;li&gt;明确使用场景。&lt;/li&gt;
+&lt;li&gt;形成解决方案。&lt;/li&gt;
+&lt;li&gt;最小代价验证方案。&lt;/li&gt;
+&lt;</summary>
+        
+      
+    
+    
+    
+    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
+    
+    
+    <category term="技能" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%8A%80%E8%83%BD/"/>
+    
+    <category term="Word" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Word/"/>
+    
+    <category term="Office" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Office/"/>
+    
+  </entry>
+  
+  <entry>
     <title>人生不易</title>
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/16/sheng-huo/ren-sheng-bu-yi/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/16/sheng-huo/ren-sheng-bu-yi/</id>
     <published>2023-02-16T03:28:55.000Z</published>
-    <updated>2023-02-16T06:29:46.816Z</updated>
+    <updated>2023-02-16T07:12:22.768Z</updated>
     
     
       
@@ -97,7 +133,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/sheng-huo/gu-xiang/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/sheng-huo/gu-xiang/</id>
     <published>2023-02-15T02:08:10.000Z</published>
-    <updated>2023-02-15T02:08:10.579Z</updated>
+    <updated>2023-02-16T07:12:47.480Z</updated>
     
     
     
@@ -110,11 +146,19 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/15/lu-xing/cheng-du/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/15/lu-xing/cheng-du/</id>
     <published>2023-02-15T02:07:57.000Z</published>
-    <updated>2023-02-15T02:07:57.183Z</updated>
+    <updated>2023-02-16T07:14:37.070Z</updated>
     
     
     
     
+    <category term="旅行" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%97%85%E8%A1%8C/"/>
+    
+    
+    <category term="感悟" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%84%9F%E6%82%9F/"/>
+    
+    <category term="风景" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E9%A3%8E%E6%99%AF/"/>
+    
+    <category term="朋友" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%9C%8B%E5%8F%8B/"/>
     
   </entry>
   
@@ -302,7 +346,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/</id>
     <published>2023-01-29T09:39:12.000Z</published>
-    <updated>2023-02-01T01:43:11.489Z</updated>
+    <updated>2023-02-16T07:16:55.299Z</updated>
     
     
       
@@ -368,7 +412,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/28/du-shu/jian-ai-2/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/28/du-shu/jian-ai-2/</id>
     <published>2023-01-28T03:01:36.000Z</published>
-    <updated>2023-02-01T01:43:11.489Z</updated>
+    <updated>2023-02-16T07:16:41.538Z</updated>
     
     
       
@@ -403,7 +447,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/27/du-shu/jian-ai-1/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/27/du-shu/jian-ai-1/</id>
     <published>2023-01-27T10:26:01.000Z</published>
-    <updated>2023-02-01T01:43:11.489Z</updated>
+    <updated>2023-02-16T07:16:20.584Z</updated>
     
     
       
@@ -438,7 +482,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/</id>
     <published>2023-01-27T02:32:23.000Z</published>
-    <updated>2023-02-01T01:43:11.488Z</updated>
+    <updated>2023-02-16T07:15:38.229Z</updated>
     
     
       
@@ -463,7 +507,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/22/sheng-huo/chun-jie/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/22/sheng-huo/chun-jie/</id>
     <published>2023-01-22T01:29:25.000Z</published>
-    <updated>2023-01-23T03:40:29.671Z</updated>
+    <updated>2023-02-16T07:13:06.831Z</updated>
     
     
       
@@ -493,7 +537,7 @@
     <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/17/xiang-fa/qian-xue/"/>
     <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/17/xiang-fa/qian-xue/</id>
     <published>2023-01-17T02:25:15.000Z</published>
-    <updated>2023-01-17T03:06:21.454Z</updated>
+    <updated>2023-02-16T07:18:33.856Z</updated>
     
     
       
@@ -511,28 +555,6 @@
     
     
     <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>家晨</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/01/jia-chen/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/13/shi/01/jia-chen/</id>
-    <published>2023-01-13T02:56:08.000Z</published>
-    <updated>2023-01-13T02:57:05.201Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;竹青密园庭，院满雀起声。&lt;br&gt;晨光熹微布，最是故乡情。&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
     
   </entry>
   
