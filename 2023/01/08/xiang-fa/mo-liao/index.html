@@ -187,7 +187,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'a224120316e7a0e0c994e5e9f32d023b14f79c6814d51d64d70f9b5b16eb538f';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('非公开文章，访问受限。')).toString(CryptoJS.enc.Hex)) {
                 alert('访问被拒绝，返回首页。');
