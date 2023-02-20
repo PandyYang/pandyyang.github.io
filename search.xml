@@ -4,6 +4,58 @@
   
     
     <entry>
+      <title>MySQL的IF查询</title>
+      <link href="/2023/02/20/ji-zhu/sql/mysql-de-if-cha-xun/"/>
+      <url>/2023/02/20/ji-zhu/sql/mysql-de-if-cha-xun/</url>
+      
+        <content type="html"><![CDATA[<p>IF函数通过判断条件返回特定值。</p><p>基本语法为：</p><pre class="line-numbers language-mysql"><code class="language-mysql">IF(expr,result_true,result_false)<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>简单示例：</p><pre class="line-numbers language-mysql"><code class="language-mysql">SELECT name,IF(sex=1,'男','女')sex FROM students;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>复杂逻辑：</p><p>假如现在要判断漏洞的评分情况，目前nvd官网的评分有两种v2或者v3。而漏洞的等级是按照评分来计算的，例如</p><table><thead><tr><th>评分</th><th>等级</th><th>表达</th></tr></thead><tbody><tr><td>(0, 3]</td><td>低</td><td>LOW</td></tr><tr><td>(3, 7]</td><td>中</td><td>MODERATE</td></tr><tr><td>(7,∞）</td><td>高</td><td>HIGH</td></tr></tbody></table><p>现在给你某CVE的v2，v3字段，求最终的漏洞等级的表达。</p><p>v2和v3都可能为0，有v3以v3为准，否则以v2为准，都为0则为0。</p><p>这其实是一个IF嵌套。很轻易就能想到方案。</p><pre class="line-numbers language-mysql"><code class="language-mysql">SELECTIF    (        cvss_v3 > 0,    IF        (            cvss_v3 - 7 >= 0,            "HIGH",        IF        ( cvss_v3 - 3 <= 0, "LOW", "MODERATE" )),    IF        (            score - 7 >= 0,            "HIGH",        IF        ( score - 3 <= 0, "LOW", "MODERATE" ))) AS vvv FROM    leak_nvd_v1 WHERE    cve_id = "CVE-2022-26928"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>MySQL递归查询</title>
+      <link href="/2023/02/20/ji-zhu/sql/mysql-di-gui-cha-xun/"/>
+      <url>/2023/02/20/ji-zhu/sql/mysql-di-gui-cha-xun/</url>
+      
+        <content type="html"><![CDATA[<p>MySQL递归查询适用于存在父子级关系的查询操作，一般复杂的关系组织，建议在表设计时进行解耦，将复杂的关系存储于第三张表中，之后在Service层进行处理。</p><p>MySQL的递归查询之前最多是用存储过程进行处理，但是存储过程编写复杂，而且比较重，虽然性能可以但是效果差强人意。MySQL从8开始，支持在sql层面进行递归查询。</p><pre class="line-numbers language-mysql"><code class="language-mysql">-- mysql递归查询SELECT    id FROM    (    SELECT        t1.*,        IF-- 查询是否是上下级 逻辑为：判断当前不变变化的节点，在不在不断合并的节点中        ( FIND_IN_SET( t1.parent_id, @parent_ids ) > 0, @parent_ids := CONCAT( @parent_ids, ',', id ), '0' ) AS ischild     FROM        ( SELECT * FROM sys_department ) t1,-- department        ( SELECT @parent_ids := '1' ) t2 -- 变量初始化            ) t3 WHERE    t3.ischild != '0' UNION-- 自身SELECT    id FROM    sys_department WHERE    id = 1<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>建表和初始化数据的语句：</p><pre class="line-numbers language-mysql"><code class="language-mysql">/* Navicat Premium Data Transfer Source Server         : cloudwise Source Server Type    : MySQL Source Server Version : 1010100 Source Host           : 10.2.3.201:18103 Source Schema         : gtcas Target Server Type    : MySQL Target Server Version : 1010100 File Encoding         : 65001 Date: 10/02/2023 23:08:11*/SET NAMES utf8mb4;SET FOREIGN_KEY_CHECKS = 0;-- ------------------------------ Table structure for sys_department-- ----------------------------DROP TABLE IF EXISTS `sys_department`;CREATE TABLE `sys_department`  (  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '部门ID',  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '部门名称',  `parent_id` bigint UNSIGNED NULL DEFAULT NULL COMMENT '上级部门ID',  `level` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '层级',  `status` tinyint(1) NOT NULL COMMENT '状态 1启用，2停用',  `create_user_id` bigint NOT NULL,  `create_time` datetime NOT NULL,  `modify_user_id` bigint NOT NULL,  `modify_time` datetime NOT NULL,  PRIMARY KEY (`id`) USING BTREE,  INDEX `parent_id_index`(`parent_id`) USING BTREE,  INDEX `status_index`(`status`) USING BTREE) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;-- ------------------------------ Records of sys_department-- ----------------------------INSERT INTO `sys_department` VALUES (1, '总部门', 0, '0', 1, 1, '2023-02-10 17:39:32', 1, '2023-02-10 17:39:37');INSERT INTO `sys_department` VALUES (2, '研发部', 1, '1', 1, 1, '2023-02-10 17:40:10', 1, '2023-02-10 17:40:06');INSERT INTO `sys_department` VALUES (3, '人事部', 1, '1', 1, 1, '0000-00-00 00:00:00', 1, '0000-00-00 00:00:00');INSERT INTO `sys_department` VALUES (4, '人事1组', 3, '2', 1, 1, '0000-00-00 00:00:00', 1, '0000-00-00 00:00:00');-- ------------------------------ Table structure for sys_department_user-- ----------------------------DROP TABLE IF EXISTS `sys_department_user`;CREATE TABLE `sys_department_user`  (  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',  `department_id` bigint NOT NULL COMMENT '部门ID',  `user_id` bigint NOT NULL COMMENT '用户ID',  PRIMARY KEY (`id`) USING BTREE,  INDEX `user_id_index`(`user_id`) USING BTREE,  INDEX `department_id_index`(`department_id`) USING BTREE) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;-- ------------------------------ Records of sys_department_user-- ----------------------------INSERT INTO `sys_department_user` VALUES (1, 2, 1);INSERT INTO `sys_department_user` VALUES (2, 3, 2);INSERT INTO `sys_department_user` VALUES (3, 3, 3);INSERT INTO `sys_department_user` VALUES (4, 4, 4);-- ------------------------------ Table structure for sys_user-- ----------------------------DROP TABLE IF EXISTS `sys_user`;CREATE TABLE `sys_user`  (  `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID',  `user_id` bigint UNSIGNED NOT NULL COMMENT '用户ID',  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '用户名',  `sex` char(2) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT '男',  `status` tinyint(1) NOT NULL COMMENT '状态 1启用，2停用',  `create_user_id` bigint UNSIGNED NOT NULL,  `create_time` datetime NOT NULL,  `modify_user_id` bigint UNSIGNED NOT NULL,  `modify_time` datetime NOT NULL,  PRIMARY KEY (`id`) USING BTREE,  INDEX `user_id_index`(`user_id`) USING BTREE) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;-- ------------------------------ Records of sys_user-- ----------------------------INSERT INTO `sys_user` VALUES (1, 1, 'test1', '男', 1, 1, '2023-02-10 17:35:05', 1, '2023-02-10 17:35:13');INSERT INTO `sys_user` VALUES (2, 2, 'test2', '男', 1, 1, '2023-02-10 17:35:41', 1, '2023-02-10 17:35:45');INSERT INTO `sys_user` VALUES (3, 3, 'test3', '女', 1, 1, '2023-02-10 17:36:12', 1, '2023-02-10 17:36:15');INSERT INTO `sys_user` VALUES (4, 4, 'test4', '男', 1, 1, '2023-02-10 17:37:04', 1, '2023-02-10 17:37:06');SET FOREIGN_KEY_CHECKS = 1;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SQL </tag>
+            
+            <tag> 面试 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python2使用滚动查询获取ES7的全部数据</title>
       <link href="/2023/02/16/ji-zhu/python/python-shi-yong-gun-dong-cha-xun-huo-qu-es-quan-bu-shu-ju/"/>
       <url>/2023/02/16/ji-zhu/python/python-shi-yong-gun-dong-cha-xun-huo-qu-es-quan-bu-shu-ju/</url>

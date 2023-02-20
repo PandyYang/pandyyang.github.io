@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-17T01:35:09.440Z</updated>
+  <updated>2023-02-20T02:19:44.033Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL的IF查询</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/20/ji-zhu/sql/mysql-de-if-cha-xun/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/20/ji-zhu/sql/mysql-de-if-cha-xun/</id>
+    <published>2023-02-20T02:11:20.000Z</published>
+    <updated>2023-02-20T02:19:44.033Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;IF函数通过判断条件返回特定值。&lt;/p&gt;
+&lt;p&gt;基本语法为：&lt;/p&gt;
+&lt;pre class=&quot;line-numbers language-mysql&quot;&gt;&lt;code</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SQL" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/SQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL递归查询</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/20/ji-zhu/sql/mysql-di-gui-cha-xun/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/20/ji-zhu/sql/mysql-di-gui-cha-xun/</id>
+    <published>2023-02-20T02:02:53.000Z</published>
+    <updated>2023-02-20T02:11:00.639Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;MySQL递归查询适用于存在父子级关系的查询操作，一般复杂的关系组织，建议在表设计时进行解耦，将复杂的关系存储于第三张表中，之后在Service层进行处理。&lt;/p&gt;
+&lt;p&gt;MySQL的递归查询之前最多是用存储过程进行处理，但是存储过程编写复杂，而且比较重，虽然性能可以但是效</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="SQL" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/SQL/"/>
+    
+    <category term="面试" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Python2使用滚动查询获取ES7的全部数据</title>
@@ -494,61 +549,6 @@
     <category term="写实" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%86%99%E5%AE%9E/"/>
     
     <category term="自传" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%87%AA%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>未来可期</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/27/sheng-huo/wei-lai-ke-qi/</id>
-    <published>2023-01-27T02:32:23.000Z</published>
-    <updated>2023-02-17T01:32:27.646Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;今天是大年初五，此刻的我正在返京的路上。&lt;/p&gt;
-&lt;p&gt;昨天四人帮里的我们几个去大队买了点吃的，还专门买了点炮和烟花准备放一放。路上的时候月亮弯弯的，此月曾经照古人，却在很久以后，不会照到我哈哈，神经质的感觉。&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>春节</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/22/sheng-huo/chun-jie/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/22/sheng-huo/chun-jie/</id>
-    <published>2023-01-22T01:29:25.000Z</published>
-    <updated>2023-02-17T01:32:27.653Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;今天是2023年1月22日，农历大年初一。&lt;/p&gt;
-&lt;p&gt;从昨天晚上开始，爆竹声声不断，烟花绽放的一刻，感慨岁月原来可以是曾经的热闹与温馨的。&lt;/p&gt;
-&lt;p&gt;沉寂了太久的夜空，也许在此刻，也不会觉得冷寂和孤独了吧。&lt;/p&gt;
-&lt;p&gt;每次回忆过去，不一定非要是伤感的曲调。我们总</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-    <category term="新年" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%96%B0%E5%B9%B4/"/>
-    
-    <category term="春节" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%98%A5%E8%8A%82/"/>
     
   </entry>
   
