@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>月白</title>
+  <title>Pandy</title>
   
-  
+  <subtitle>热烈祝贺港娃考研上岸</subtitle>
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
@@ -10,7 +10,7 @@
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
-    <name>月白</name>
+    <name>Pandy</name>
     
   </author>
   
