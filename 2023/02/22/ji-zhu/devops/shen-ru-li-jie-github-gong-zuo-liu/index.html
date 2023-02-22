@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="深入理解Github工作流, Pandy">
+    <meta name="baidu-site-verification" content="fmlEuI34ir" />
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
+    <meta name="description" content="关于工作流工作流是将运行一个或多个作业的可配置自动化过程。工作流由签入到存储库的 YAML 文件定义，并在存储库中的事件触发时运行，也可以手动触发或按定义的计划触发。
+工作流在存储库的目录中定义，一个存储库可以有多个工作流，每个工作流可以执">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>深入理解Github工作流 | Pandy</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce84511d3df71640a9378a69f6293044";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pandy" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Pandy</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Pandy</div>
+        <div class="logo-desc">
+            
+            广阔天地 大有作为
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('非公开文章，访问受限。')).toString(CryptoJS.enc.Hex)) {
+                alert('访问被拒绝，返回首页。');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/27.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        深入理解Github工作流
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-02-22
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Pandy
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.6k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="关于工作流"><a href="#关于工作流" class="headerlink" title="关于工作流"></a>关于工作流</h1><p>工作流是将运行一个或多个作业的可配置自动化过程。工作流由签入到存储库的 YAML 文件定义，并在存储库中的事件触发时运行，也可以手动触发或按定义的计划触发。</p>
+<p>工作流在存储库的目录中定义，一个存储库可以有多个工作流，每个工作流可以执行一组不同的任务。例如，您可以有一个工作流来构建和测试拉取请求，另一个工作流在每次创建发布时部署应用程序，还有另一个工作流在每次有人打开新问题时添加标签。<code>.github/workflows</code></p>
+<h2 id="工作流的基础知识"><a href="#工作流的基础知识" class="headerlink" title="工作流的基础知识"></a>工作流的基础知识</h2><p>工作流必须包含以下基本组件：</p>
+<ol>
+<li>将触发工作流的一个或多个<em>事件</em>。</li>
+<li>一个或多个作业，每个<em>作业</em>将在运行器计算机上执行并<em>运行</em>一系列一个或多个<em>步骤</em>。</li>
+<li>每个步骤都可以运行您定义的脚本或运行操作，这是一个可重用的扩展，可以简化您的工作流。</li>
+</ol>
+<p><img src="https://docs.github.com/assets/cb-25535/images/help/images/overview-actions-simple.png" alt="工作流概述"></p>
+<h2 id="触发工作流"><a href="#触发工作流" class="headerlink" title="触发工作流"></a>触发工作流</h2><p>工作流触发器是导致工作流运行的事件。这些事件可以是：</p>
+<ul>
+<li>工作流存储库中发生的事件</li>
+<li>在 GitHub 外部发生的事件，并在 GitHub 上触发事件<code>repository_dispatch</code></li>
+<li>预定时间</li>
+<li>手动</li>
+</ul>
+<p>例如，您可以将工作流配置为在推送到存储库的默认分支、创建发布或打开问题时运行。</p>
+<h2 id="创建工作流"><a href="#创建工作流" class="headerlink" title="创建工作流"></a>创建工作流</h2><p>有关工作流的语法，请在目录跳转至对应章节。</p>
+<p>GitHub 操作使用 YAML 语法来定义工作流。每个工作流都作为单独的 YAML 文件存储在代码存储库中名为 的目录中。<code>.github/workflows</code></p>
+<p>您可以在存储库中创建一个示例工作流，该工作流在推送代码时自动触发一系列命令。在此工作流中，GitHub Actions 签出推送的代码，安装 bats 测试框架，并运行基本命令来输出 <a target="_blank" rel="noopener" href="https://www.npmjs.com/package/bats">bats</a> 版本：。<code>bats -v</code></p>
+<ol>
+<li>在存储库中，创建用于存储工作流文件的目录。<code>.github/workflows/</code></li>
+<li>在目录中，创建一个名为的新文件并添加以下代码。<code>.github/workflows/``learn-github-actions.yml</code></li>
+</ol>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">name</span><span class="token punctuation">:</span> learn<span class="token punctuation">-</span>github<span class="token punctuation">-</span>actions
+<span class="token key atrule">run-name</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; github.actor &amp;#125;&amp;#125; is learning GitHub Actions</span>
+<span class="token key atrule">on</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>push<span class="token punctuation">]</span>
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">check-bats-version</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v3
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v3
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> <span class="token string">'14'</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> npm install <span class="token punctuation">-</span>g bats
+      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> bats <span class="token punctuation">-</span>v
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="3">
+<li>提交代码并推送至Github存储库。</li>
+</ol>
+<p><img src="http://pic.didablog.com/blog/picture/202302221117652.png" alt="image-20230222111711570"></p>
+<h2 id="了解工作流文件"><a href="#了解工作流文件" class="headerlink" title="了解工作流文件"></a>了解工作流文件</h2><table>
+<thead>
+<tr>
+<th>语句</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name: learn-github-actions</td>
+<td><em>可选</em> - 工作流的名称，因为它将显示在 GitHub 存储库的“操作”选项卡中。</td>
+</tr>
+<tr>
+<td>run-name: $ is learning GitHub Actions</td>
+<td><em>可选</em> - 从工作流生成的工作流运行的名称，将显示在存储库“操作”选项卡上的工作流运行列表中。此示例使用带有上下文的表达式来显示触发工作流运行的参与者的用户名。</td>
+</tr>
+<tr>
+<td>on: [push]</td>
+<td>指定此工作流的触发器。此示例使用该事件，因此每次有人将更改推送到存储库或合并拉取请求时，都会触发工作流运行。</td>
+</tr>
+<tr>
+<td>jobs:</td>
+<td>将工作流中运行的所有作业组合在一起。<code>learn-github-actions</code></td>
+</tr>
+<tr>
+<td>check-bats-version:</td>
+<td>定义名为 的作业。子键将定义作业的属性。<code>check-bats-version</code></td>
+</tr>
+<tr>
+<td>runs-on: ubuntu-latest</td>
+<td>将作业配置为在最新版本的 Ubuntu Linux 运行器上运行。这意味着作业将在 GitHub 托管的新虚拟机上执行。</td>
+</tr>
+<tr>
+<td>steps:</td>
+<td>将作业中运行的所有步骤组合在一起。此部分下嵌套的每个项都是单独的操作或 shell 脚本。<code>check-bats-version</code></td>
+</tr>
+<tr>
+<td>- uses: actions&#x2F;checkout@v3</td>
+<td>关键字指定此步骤将运行操作。这是一个将存储库签出到运行器上的操作，允许您针对代码运行脚本或其他操作（例如构建和测试工具）。每当工作流针对存储库的代码运行时，都应使用签出操作。<code>uses``v3``actions/checkout</code></td>
+</tr>
+<tr>
+<td>- uses: actions&#x2F;setup-node@v3       with:         node-version: ‘14’</td>
+<td>此步骤使用操作来安装指定版本的 Node.js（此示例使用 v14）。这会将 和 命令都放在 .<code>actions/setup-node@v3``node``npm``PATH</code></td>
+</tr>
+<tr>
+<td>- run: npm install -g bats</td>
+<td>关键字告诉作业在运行器上执行命令。在本例中，您将用于安装软件测试包。<code>run``npm``bats</code></td>
+</tr>
+<tr>
+<td>- run: bats -v</td>
+<td>最后，您将使用输出软件版本的参数运行该命令。<code>bats</code></td>
+</tr>
+</tbody></table>
+<h2 id="高级工作流功能"><a href="#高级工作流功能" class="headerlink" title="高级工作流功能"></a>高级工作流功能</h2><h3 id="存储机密"><a href="#存储机密" class="headerlink" title="存储机密"></a>存储机密</h3><p>如果您的工作流使用敏感数据（例如密码或证书），则可以将其作为<em>机密</em>保存在 GitHub 中，然后在工作流中将其用作环境变量。这意味着您将能够创建和共享工作流，而无需直接在工作流的 YAML 源中嵌入敏感值。</p>
+<p>此示例作业演示如何将现有密钥引用为环境变量，并将其作为参数发送到示例命令。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">example-job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Retrieve secret
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">super_secret</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; secrets.SUPERSECRET &amp;#125;&amp;#125;</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+          example-command "$super_secret"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="创建依赖作业"><a href="#创建依赖作业" class="headerlink" title="创建依赖作业"></a>创建依赖作业</h3><p>默认情况下，工作流中的所有作业同时并行运行。如果作业必须在另一个作业完成后运行，则可以使用该关键字创建此依赖项。如果其中一个作业失败，则会跳过所有依赖作业;但是，如果需要继续作业，则可以使用条件语句定义此语句。<code>needs``if</code></p>
+<p>在此示例中，<code>setup``build``test``build``test</code> 和 作业按顺序运行，并且依赖于它们前面的作业的成功完成：</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">setup</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> ./setup_server.sh
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> setup
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> ./build_server.sh
+  <span class="token key atrule">test</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> build
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">run</span><span class="token punctuation">:</span> ./test_server.sh
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用矩阵"><a href="#使用矩阵" class="headerlink" title="使用矩阵"></a>使用矩阵</h3><p>矩阵策略允许您在单个作业定义中使用变量来自动创建基于变量组合的多个作业运行。例如，可以使用矩阵策略在一种语言的多个版本或多个操作系统上测试代码。矩阵是使用关键字<code>strategy</code>创建的，该关键字以数组的形式接收构建选项。例如，此矩阵将使用不同版本的 Node.js 多次运行作业：</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">build</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">strategy</span><span class="token punctuation">:</span>
+      <span class="token key atrule">matrix</span><span class="token punctuation">:</span>
+        <span class="token key atrule">node</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">,</span> <span class="token number">14</span><span class="token punctuation">,</span> <span class="token number">16</span><span class="token punctuation">]</span>
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v3
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; matrix.node &amp;#125;&amp;#125;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="缓存依赖项"><a href="#缓存依赖项" class="headerlink" title="缓存依赖项"></a>缓存依赖项</h3><p>如果作业定期重用依赖项，则可以考虑缓存这些文件以帮助提高性能。创建缓存后，它可用于同一存储库中的所有工作流。</p>
+<p>此示例演示如何缓存目录：<code> ~/.npm</code></p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">example-job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Cache node modules
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/cache@v3
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">cache-name</span><span class="token punctuation">:</span> cache<span class="token punctuation">-</span>node<span class="token punctuation">-</span>modules
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">path</span><span class="token punctuation">:</span> ~/.npm
+          <span class="token key atrule">key</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; runner.os &amp;#125;&amp;#125;-build-$&amp;#123;&amp;#123; env.cache-name &amp;#125;&amp;#125;-$&amp;#123;&amp;#123; hashFiles('**/package-lock.json') &amp;#125;&amp;#125;</span>
+          <span class="token key atrule">restore-keys</span><span class="token punctuation">:</span> <span class="token punctuation">|</span><span class="token scalar string">
+            $&amp;#123;&amp;#123; runner.os &amp;#125;&amp;#125;-build-$&amp;#123;&amp;#123; env.cache-name &amp;#125;&amp;#125;-</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用数据库或者服务容器"><a href="#使用数据库或者服务容器" class="headerlink" title="使用数据库或者服务容器"></a>使用数据库或者服务容器</h3><p>如果作业需要数据库或缓存服务，则可以使用 <a target="_blank" rel="noopener" href="https://docs.github.com/en/actions/using-jobs/running-jobs-in-a-container"><code>services</code></a> 关键字创建临时容器来托管服务;然后，生成的容器可用于该作业中的所有步骤，并在作业完成后删除。此示例演示作业如何使用它创建容器，然后用于连接到服务。<code>services``postgres``node</code></p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">container-job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token key atrule">container</span><span class="token punctuation">:</span> node<span class="token punctuation">:</span>10.18<span class="token punctuation">-</span>jessie
+    <span class="token key atrule">services</span><span class="token punctuation">:</span>
+      <span class="token key atrule">postgres</span><span class="token punctuation">:</span>
+        <span class="token key atrule">image</span><span class="token punctuation">:</span> postgres
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Check out repository code
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v3
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install dependencies
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm ci
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Connect to PostgreSQL
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> node client.js
+        <span class="token key atrule">env</span><span class="token punctuation">:</span>
+          <span class="token key atrule">POSTGRES_HOST</span><span class="token punctuation">:</span> postgres
+          <span class="token key atrule">POSTGRES_PORT</span><span class="token punctuation">:</span> <span class="token number">5432</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="使用标签传送工作流"><a href="#使用标签传送工作流" class="headerlink" title="使用标签传送工作流"></a>使用标签传送工作流</h3><p>如果要确保特定类型的运行器将处理您的作业，则可以使用标签来控制作业的执行位置。除了默认标签 .然后，您可以在 YAML 工作流中引用这些标签，确保以可预测的方式路由作业。GitHub 托管的运行器分配了预定义的标签。<code>self-hosted</code></p>
+<p>此示例显示工作流如何使用标签来指定所需的运行器：</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">example-job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>self<span class="token punctuation">-</span>hosted<span class="token punctuation">,</span> linux<span class="token punctuation">,</span> x64<span class="token punctuation">,</span> gpu<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>工作流将仅在具有数组中所有标签的运行器上运行。作业将优先转到具有指定标签的空闲自托管运行器。如果没有可用的运行器，并且存在具有指定标签的 GitHub 托管运行器，则作业将转到 GitHub 托管的运行器。<code>runs-on</code></p>
+<h3 id="重用工作流"><a href="#重用工作流" class="headerlink" title="重用工作流"></a>重用工作流</h3><p>见目录</p>
+<h3 id="使用环境"><a href="#使用环境" class="headerlink" title="使用环境"></a>使用环境</h3><h1 id="使用作业"><a href="#使用作业" class="headerlink" title="使用作业"></a>使用作业</h1><p>工作流运行由一个或多个 <code>jobs</code> 组成，默认情况下并行运行。 若要按顺序运行作业，可以使用 <code>jobs.&lt;job_id&gt;.needs</code> 关键字定义对其他作业的依赖关系。</p>
+<p>每个作业在 <code>runs-on</code> 指定的运行器环境中运行。</p>
+<p>在工作流程的使用限制之内可运行无限数量的作业。 </p>
+<h2 id="设置作业的ID"><a href="#设置作业的ID" class="headerlink" title="设置作业的ID"></a>设置作业的ID</h2><p>使用 <code>jobs.&lt;job_id&gt;</code> 为作业提供唯一标识符。 键 <code>job_id</code> 是一个字符串，其值是作业配置数据的映射。 必须将 <code>&lt;job_id&gt;</code> 替换为对于 <code>jobs</code> 对象的唯一字符串。 <code>&lt;job_id&gt;</code> 必须以字母或 <code>_</code> 开头，并且只能包含字母数字字符、<code>-</code> 或 <code>_</code>。</p>
+<p><strong>示例：创建作业</strong></p>
+<p>在此示例中，已创建两个作业，其 <code>job_id</code> 值为 <code>my_first_job</code> 和 <code>my_second_job</code>。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">my_first_job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> My first job
+  <span class="token key atrule">my_second_job</span><span class="token punctuation">:</span>
+    <span class="token key atrule">name</span><span class="token punctuation">:</span> My second job
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="设置作业的名称"><a href="#设置作业的名称" class="headerlink" title="设置作业的名称"></a>设置作业的名称</h2><p>使用 <code>jobs.&lt;job_id&gt;.name</code> 设置作业名称，该名称显示在 GitHub UI 中。</p>
+<h3 id="定义必备作业"><a href="#定义必备作业" class="headerlink" title="定义必备作业"></a>定义必备作业</h3><p>使用 <code>jobs.&lt;job_id&gt;.needs</code> 标识运行此作业之前必须成功完成的所有作业。 它可以是一个字符串，也可以是字符串数组。 如果某个作业失败，则所有需要它的作业都会被跳过，除非这些作业使用让该作业继续的条件表达式。 如果运行包含一系列相互需要的作业，则故障将从故障点开始，应用于依赖项链中的所有作业。</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job1</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> job1
+  <span class="token key atrule">job3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>job1<span class="token punctuation">,</span> job2<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在此示例中，<code>job1</code> 必须在 <code>job2</code> 开始之前成功完成，并且 <code>job3</code> 等待 <code>job1</code> 和 <code>job2</code> 完成。</p>
+<p>此示例中的作业按顺序运行：</p>
+<ol>
+<li><code>job1</code></li>
+<li><code>job2</code></li>
+<li><code>job3</code></li>
+</ol>
+<p><strong>示例：不要求成功的作业。</strong></p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job1</span><span class="token punctuation">:</span>
+  <span class="token key atrule">job2</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> job1
+  <span class="token key atrule">job3</span><span class="token punctuation">:</span>
+    <span class="token key atrule">if</span><span class="token punctuation">:</span> $&amp;<span class="token comment" spellcheck="true">#123;&amp;#123; always() &amp;#125;&amp;#125;</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>job1<span class="token punctuation">,</span> job2<span class="token punctuation">]</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在此示例中，<code>job3</code> 使用 <code>always()</code> 条件表达式，确保始终在 <code>job1</code> 和 <code>job2</code> 完成（无论是否成功）后运行。</p>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2023/02/22/ji-zhu/devops/shen-ru-li-jie-github-gong-zuo-liu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/27.jpg" class="responsive-img" alt="深入理解Github工作流">
+                        
+                        <span class="card-title">深入理解Github工作流</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于工作流工作流是将运行一个或多个作业的可配置自动化过程。工作流由签入到存储库的 YAML 文件定义，并在存储库中的事件触发时运行，也可以手动触发或按定义的计划触发。
+工作流在存储库的目录中定义，一个存储库可以有多个工作流，每个工作流可以执
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-02-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/02/20/ji-zhu/linux/linux-cao-zuo-xi-tong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="Linux操作系统">
+                        
+                        <span class="card-title">Linux操作系统</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            用户及权限添加、修改、删除用户添加账号
+useradd 选项 用户名
+
+
+选项
+-c commant指定一段注释
+-d 目录，指定用户主目录，如果不存在，则同时使用-m选项，可以相创建主目录。
+-g 用户组，指定用户所处的用户组。
+-G 用
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-02-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Linux/" target="_blank">
+                        <span class="chip bg-color">Linux</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Pandy<br />'
+            + '作者: Pandy<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fa fa-list"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).slideUp(500);
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).slideDown(500);
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy;2022-2023 PandyYang. 版权所有
+
+<!--            -->
+<!--            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;-->
+<!--            <span class="white-color">44.7k</span>-->
+<!--            -->
+
+<!--            <br>-->
+<!--            <span id="sitetime"></span>-->
+
+<!--            -->
+<!--            -->
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+    <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:shallowsnow@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fa fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        // document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "", clearTimeout(st)) : (document.title = "", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>
