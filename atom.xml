@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-02-22T03:51:49.466Z</updated>
+  <updated>2023-02-22T06:03:50.330Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>血源诅咒</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/22/shu/xie-yuan-zu-zhou/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/22/shu/xie-yuan-zu-zhou/</id>
+    <published>2023-02-22T06:02:55.000Z</published>
+    <updated>2023-02-22T06:03:50.330Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;雅南是以维多利亚时期英国为原型创作出来的虚拟城市。雅南的地下有些古代城堡的遗迹，分别是苏美鲁遗迹，罗伦城遗迹，伊兹遗迹。曾经有非常繁荣的文明在雅南的地下遗迹里昌盛过，但随着时间的推移他们全都破灭了。尤其是罗伦城，在一场可怕的兽化瘟疫里变成了鬼城。&lt;br&gt;雅南有一间学校叫做拜</summary>
+        
+      
+    
+    
+    
+    <category term="书" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E4%B9%A6/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>深入理解Github工作流</title>
@@ -287,8 +310,8 @@
   
   <entry>
     <title>斐多篇（2）</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/du-shu/fei-duo-pian-2/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/du-shu/fei-duo-pian-2/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/14/shu/fei-duo-pian-2/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/14/shu/fei-duo-pian-2/</id>
     <published>2023-02-14T09:05:33.000Z</published>
     <updated>2023-02-15T01:33:19.511Z</updated>
     
@@ -466,8 +489,8 @@
   
   <entry>
     <title>简爱（3）</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/jian-ai-3/</id>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/shu/jian-ai-3/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/shu/jian-ai-3/</id>
     <published>2023-01-29T09:39:12.000Z</published>
     <updated>2023-02-16T07:16:55.299Z</updated>
     
@@ -496,37 +519,6 @@
     <category term="写实" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%86%99%E5%AE%9E/"/>
     
     <category term="自传" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%87%AA%E4%BC%A0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>斐多篇（1）</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/fei-duo-pian-1/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/01/29/du-shu/fei-duo-pian-1/</id>
-    <published>2023-01-29T02:58:53.000Z</published>
-    <updated>2023-02-14T09:06:06.083Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h3 id=&quot;p1&quot;&gt;&lt;a href=&quot;#p1&quot; class=&quot;headerlink&quot; title=&quot;p1&quot;&gt;&lt;/a&gt;p1&lt;/h3&gt;&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="读书" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%BB%E4%B9%A6/"/>
-    
-    
-    <category term="死亡" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E6%AD%BB%E4%BA%A1/"/>
-    
-    <category term="哲学" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%93%B2%E5%AD%A6/"/>
-    
-    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E8%AE%A4%E7%9F%A5/"/>
-    
-    <category term="灵魂" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E7%81%B5%E9%AD%82/"/>
     
   </entry>
   
