@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>VSCode, Yes, My Lord</title>
+      <link href="/2023/02/23/ji-neng/vscode-yes-my-lord/"/>
+      <url>/2023/02/23/ji-neng/vscode-yes-my-lord/</url>
+      
+        <content type="html"><![CDATA[<p>之前在使用MacBook Pro M1进行开发时，遇见了如下几个问题。</p><ul><li>不支持Python2的很多依赖库。甚至是不支持Python2，即便是用Rosette进行转义安装，程序最终还是无法编译运行。M1使用Conda进行Python版本管理时，只有3.8及以上版本。这让一些依赖于Python2.7的旧项目情何以堪。Pyenv可以安装Python2，但是费劲且大概率无法用于开发，所以最好不要白费力气。</li><li>因为一些涉密内容，只能在专属服务器上开发。</li><li>因为操作系统问题，只能在AMD64架构的Linux上进行开发。</li></ul><p>这些问题我都遇见了，很神奇，在短短半年的时间。我之前写Java，得益于强大的虚拟机，根本感受不到系统架构带来的问题，Java你好好啊，我爱你。但是我现在得给公司干活，顺应时代。</p><p>我曾经每天很痛苦，一度想卖掉我的MacBook，鄙视苹果公司的强大自研，想着世界就是这样被割裂了。技术因为硬件得不到发展。事实证明是我的技术和能力所限，导致我越发狭隘。</p><p>我以前开发用的都是JetBrains家的学习版软件。强大、顺手、智能、就是有点占内存。不过还好，能免费用就不错了。我一直觉得花钱的东西比免费的东西要好（例如VSCode），我觉得没有智能提醒，切换到别的编译器例如VSCode少了顺手的快捷键，面对复杂的配置，我会非常难受。VSCode在我眼里，之前是个插件菜市场。</p><p>慢慢我发现这个东西真的是人就应该用一下。即便是用来记笔记，写菜谱，看蔡徐坤打球，看小说，里面也提供了插件…我勒个去。</p><p>我之前使用的是Pycharm远程开发，其实还好，就是配置繁琐，类似于服务端一份代码，本地一份代码。运行其实在服务端运行，但是本地可以追踪到代码，修改本地代码时，会将本地上传至服务器（可以自动进行）。生成一些产出物时，要手动将服务端代码下载到本地。</p><p>开发Python还好，直到我开发Golang。</p><p>Go的debug，如果想实现远程同步，必须要使用dlv，这个东西的命令行操作方式我也研究过，就是先指定一些断点，然后一步步在cli中执行，为此我还专门写了一篇文章。我不知道谁一般在玩这个东西，难道他们和我一样，都没听过或者用过VSCode这个东西？</p><p>我好难受，因为我要是早点知道有VSCode可以完美支持远程开发，我的开发效率就更高了吧。尽管我学了很多JetBrains家族的远程东西，但是很明显，还不如不学。顺便说一下 他们也做出了类似的ssh远程开发功能，好像叫什么来着，忘了，总之我也用过，用起来跟shit一样。</p><p>好吧，我不否认JetBrains家族的强大，但是也是拥抱VSCode的时候了。这篇文章会持续更新VSCode使用技巧。当作本人的一点点记录吧。</p><h1 id="使用VSCode进行远程开发"><a href="#使用VSCode进行远程开发" class="headerlink" title="使用VSCode进行远程开发"></a>使用VSCode进行远程开发</h1><ol><li><p>安装Remote Development插件。</p><p><img src="http://pic.didablog.com/blog/picture/202302231026089.png" alt="image-20230223102601041"></p></li><li><p>Linux &#x2F; windows &#x2F; MacOS安装OpenSSH</p><ul><li><p>Windows</p><pre><code>Get-WindowsCapability -Online | ? Name -like &#39;OpenSSH*&#39;</code></pre><pre><code>Add-WindowsCapability -Online OpenSSH.Client~~~~0.0.1.0</code></pre></li><li><p>Linux</p><p>Debian&#x2F;Ubuntu</p><pre><code>sudo -isudo apt-get install openssh-client</code></pre><p>RHEL&#x2F;Fedora&#x2F;CentOS</p><pre><code>sudo apt-get install openssh-clients</code></pre></li><li><p>MacOS</p><p>自带，无需安装。</p></li></ul><p>验证安装</p><pre><code>ssh -V</code></pre></li><li><p>生成SSH密钥</p><pre><code>ssh-keygen -t rsa -b 2048</code></pre><p>此操作会生成id_rsa私钥，id_rsa.pub公钥。</p><p>所处目录：</p><ul><li><p>Windows： C:\Users\用户\ .ssh</p></li><li><p>Linux: &#x2F;root&#x2F;.ssh</p></li><li><p>Mac: &#x2F;Users&#x2F;用户名&#x2F;.ssh</p><p><img src="http://pic.didablog.com/blog/picture/202302231045783.png" alt="image-20230223104528766"></p><p>将此公钥和私钥改名，防止后期继续连接远程服务器远程登陆时，出现密钥覆盖问题。</p><p><img src="http://pic.didablog.com/blog/picture/202302231047306.png" alt="image-20230223104755286"></p></li></ul></li><li><p>连接</p><p>将公钥放在远程服务器上，私钥放在本地。</p><p>使用scp进程远程服务器传输。</p><pre><code>文件复制命令格式：scp local_file remote_username@remote_ip:remote_folder目录复制命令格式：scp -r local_file remote_username@remote_ip:remote_folder命令：scp id_rsa_vs_43.pub root@43.138.109.202:/root/.ssh</code></pre><p>远程服务器此时已接收到文件。</p><p><img src="http://pic.didablog.com/blog/picture/202302231052318.png" alt="image-20230223105203298"></p><p>在远程服务器上将传递过来的公钥，写入到authorized_keys中。</p><pre><code>cat id_rsa_vs_43.pub &gt;&gt; authorized_keys</code></pre><p><img src="http://pic.didablog.com/blog/picture/202302231057683.png" alt="image-20230223105723664"></p><p>打开VSCode的config file，加入IdentityFile，对应本机的私钥路径。</p><p><img src="http://pic.didablog.com/blog/picture/202302231109363.png" alt="image-20230223110933338"></p></li></ol><p>​重新加载窗口，会出现远程机器地址。</p><p><img src="http://pic.didablog.com/blog/picture/202302231113641.png" alt="image-20230223111352608"></p><p>​点击最右侧加号，可以在新的窗口打开远程机器，这时，就可以像在本地一样进行远程监控开发了～</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技能 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>血源诅咒</title>
       <link href="/2023/02/22/shu/xie-yuan-zu-zhou/"/>
       <url>/2023/02/22/shu/xie-yuan-zu-zhou/</url>
