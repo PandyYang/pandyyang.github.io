@@ -568,11 +568,12 @@ sh -c <span class="token string">"yarn install &amp;&amp; yarn run dev"</span>
     let gitalk = new Gitalk({
         clientID: '9451e84ab869ac457b31',
         clientSecret: '13d29a483da99aa220fa9f72e3971795e271c9dc',
-        repo: 'pandyyang.github.io',
+        repo: 'https://github.com/PandyYang/pandyyang.github.io',
         owner: 'PandyYang',
         admin: ['PandyYang'],
         id: '2023/01/03/ji-zhu/docker/docker-ji-chu-xue-xi/',
-        distractionFreeMode: false  // Facebook-like distraction free mode
+        distractionFreeMode: false,  // Facebook-like distraction free mode
+        createIssueManually: true,
     });
 
     gitalk.render('gitalk-container');
