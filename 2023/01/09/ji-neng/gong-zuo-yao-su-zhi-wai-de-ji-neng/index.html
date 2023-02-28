@@ -254,7 +254,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -462,34 +462,31 @@
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
-
-    
-    <div class="disqus-card card" data-aos="fade-up">
-    <div id="disqus_thread" class="card-content">
-        <noscript>Please enable JavaScript to view the
-            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-    </div>
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script type="text/javascript">
-    disqus_config = function () {
-        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2023/01/09/ji-neng/gong-zuo-yao-su-zhi-wai-de-ji-neng/';
-        this.page.identifier = '/2023/01/09/ji-neng/gong-zuo-yao-su-zhi-wai-de-ji-neng/';
-        this.page.title = '工作要素之外的技能';
-    };
-    let disqus_shortname = 'didablog';
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '9451e84ab869ac457b31',
+        clientSecret: '13d29a483da99aa220fa9f72e3971795e271c9dc',
+        repo: 'pandyyang.github.io',
+        owner: 'PandyYang',
+        admin: ['PandyYang'],
+        id: '2023/01/09/ji-neng/gong-zuo-yao-su-zhi-wai-de-ji-neng/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    (function () { // DON'T EDIT BELOW THIS LINE
-        let d = document, s = d.createElement('script');
-        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    gitalk.render('gitalk-container');
 </script>
+    
+
+    
+
     
 
     
@@ -509,7 +506,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="家晨">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="家晨">
                         
                         <span class="card-title">家晨</span>
                     </div>
@@ -543,7 +540,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="末了">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="末了">
                         
                         <span class="card-title">末了</span>
                     </div>
@@ -763,10 +760,6 @@
             
         </div>
 <!--        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
 
 
     <a href="mailto:mynsiho@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">

@@ -254,7 +254,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -456,34 +456,31 @@
     </div>
 
     
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
 
-    
-
-    
-    <div class="disqus-card card" data-aos="fade-up">
-    <div id="disqus_thread" class="card-content">
-        <noscript>Please enable JavaScript to view the
-            <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-    </div>
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
 </div>
 
-<script type="text/javascript">
-    disqus_config = function () {
-        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2023/01/08/xiang-fa/mo-liao/';
-        this.page.identifier = '/2023/01/08/xiang-fa/mo-liao/';
-        this.page.title = '末了';
-    };
-    let disqus_shortname = 'didablog';
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '9451e84ab869ac457b31',
+        clientSecret: '13d29a483da99aa220fa9f72e3971795e271c9dc',
+        repo: 'pandyyang.github.io',
+        owner: 'PandyYang',
+        admin: ['PandyYang'],
+        id: '2023/01/08/xiang-fa/mo-liao/',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
 
-    (function () { // DON'T EDIT BELOW THIS LINE
-        let d = document, s = d.createElement('script');
-        // 如：s.src = 'https://blinkfox.disqus.com/embed.js';
-        s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
+    gitalk.render('gitalk-container');
 </script>
+    
+
+    
+
     
 
     
@@ -503,7 +500,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="工作要素之外的技能">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="工作要素之外的技能">
                         
                         <span class="card-title">工作要素之外的技能</span>
                     </div>
@@ -552,7 +549,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="选择和努力">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="选择和努力">
                         
                         <span class="card-title">选择和努力</span>
                     </div>
@@ -582,6 +579,10 @@
                 
                 <div class="card-action article-tags">
                     
+                    <a href="/tags/%E7%BB%8F%E5%8E%86/" target="_blank">
+                        <span class="chip bg-color">经历</span>
+                    </a>
+                    
                     <a href="/tags/%E6%88%90%E9%95%BF/" target="_blank">
                         <span class="chip bg-color">成长</span>
                     </a>
@@ -592,10 +593,6 @@
                     
                     <a href="/tags/%E6%96%B9%E5%90%91/" target="_blank">
                         <span class="chip bg-color">方向</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%BB%8F%E5%8E%86/" target="_blank">
-                        <span class="chip bg-color">经历</span>
                     </a>
                     
                     <a href="/tags/%E9%80%89%E6%8B%A9/" target="_blank">
@@ -800,10 +797,6 @@
             
         </div>
 <!--        <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/PandyYang" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fa fa-github"></i>
-    </a>
-
 
 
     <a href="mailto:mynsiho@gmail.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
