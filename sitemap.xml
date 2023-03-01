@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/</loc>
+    
+    <lastmod>2023-03-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/2023/02/16/sheng-huo/ren-sheng-bu-yi/</loc>
     
     <lastmod>2023-03-01</lastmod>
@@ -434,15 +443,6 @@
   </url>
   
   <url>
-    <loc>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</loc>
-    
-    <lastmod>2023-02-28</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/2023/02/22/ji-zhu/devops/shen-ru-li-jie-github-gong-zuo-liu/</loc>
     
     <lastmod>2023-02-28</lastmod>
@@ -462,6 +462,15 @@
   
   <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/2023/01/03/ji-zhu/docker/docker-an-zhuang-mysql5-5/</loc>
+    
+    <lastmod>2023-02-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/golang/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -497,7 +506,7 @@
   </url>
   
   <url>
-    <loc>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/cgo/cgo-de-zhi-zhen-chuan-di/</loc>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/golang/cgo/cgo-de-zhi-zhen-chuan-di/</loc>
     
     <lastmod>2023-02-28</lastmod>
     
@@ -941,6 +950,13 @@
   
   <url>
     <loc>https://github.com/PandyYang/pandyyang.github.io/tags/%E8%87%AA%E4%BC%A0/</loc>
+    <lastmod>2023-03-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://github.com/PandyYang/pandyyang.github.io/tags/Golang/</loc>
     <lastmod>2023-03-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-03-01T01:39:31.415Z</updated>
+  <updated>2023-03-01T10:08:32.584Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Golang单元测试</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/</id>
+    <published>2023-03-01T08:58:33.000Z</published>
+    <updated>2023-03-01T10:08:32.584Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;testing-t&quot;&gt;&lt;a href=&quot;#testing-t&quot; class=&quot;headerlink&quot; title=&quot;testing.t&quot;&gt;&lt;/a&gt;testing.t&lt;/h2&gt;&lt;p&gt;testing包提供了Go package的自动单元测试支持，其旨在与go</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Golang" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Golang/"/>
+    
+  </entry>
   
   <entry>
     <title>罗马帝国衰亡史</title>
@@ -467,21 +492,6 @@
     
     
     <category term="SDK" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/SDK/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>工作中的觉悟</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/02/13/zhi-chang/gong-zuo-zhong-de-jue-wu/</id>
-    <published>2023-02-13T03:51:26.000Z</published>
-    <updated>2023-02-28T05:30:22.347Z</updated>
-    
-    
-    
-    
-    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
-    
     
   </entry>
   

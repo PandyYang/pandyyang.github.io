@@ -4,14 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用CGO生成动态链接库, Pandy">
+    <meta name="keywords" content="Golang单元测试, Pandy">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="导出c静态库arm系统在导出前要进行操作export GOOS=&#34;linux&#34;
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  
+    <meta name="description" content="testing.ttesting包提供了Go package的自动单元测试支持，其旨在与go test命令一起使用，它会自动执行以下形式：
+func TestXxx(*testing.T)
 
-go build -buildmode=c-archive ">
+注意Xxx不能以小写字母开头，这个函数名提供了一">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@ go build -buildmode=c-archive ">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>使用CGO生成动态链接库 | Pandy</title>
+    <title>Golang单元测试 | Pandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -242,7 +242,7 @@ go build -buildmode=c-archive ">
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '2cf24dba5fb0a30e26e83b2ac5b9e29e1b161e5c1fa7425e73043362938b9824';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('非公开文章，访问受限。')).toString(CryptoJS.enc.Hex)) {
                 alert('访问被拒绝，返回首页。');
@@ -255,13 +255,13 @@ go build -buildmode=c-archive ">
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        使用CGO生成动态链接库
+                        Golang单元测试
                     </div>
                 </div>
             </div>
@@ -372,8 +372,8 @@ go build -buildmode=c-archive ">
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/%E7%8E%AF%E5%A2%83%E9%97%AE%E9%A2%98/" target="_blank">
-                            <span class="chip bg-color">环境问题</span>
+                        <a href="/tags/Golang/" target="_blank">
+                            <span class="chip bg-color">Golang</span>
                         </a>
                         
                     </div>
@@ -384,8 +384,8 @@ go build -buildmode=c-archive ">
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/CGO/" class="post-category" target="_blank">
-                            CGO
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
                         </a>
                         
                     </div>
@@ -396,7 +396,7 @@ go build -buildmode=c-archive ">
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-12-29
+                    2023-03-01
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -410,14 +410,14 @@ go build -buildmode=c-archive ">
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    239
+                    1.8k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
                 
@@ -433,36 +433,244 @@ go build -buildmode=c-archive ">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="导出c静态库"><a href="#导出c静态库" class="headerlink" title="导出c静态库"></a>导出c静态库</h2><h3 id="arm系统在导出前要进行操作"><a href="#arm系统在导出前要进行操作" class="headerlink" title="arm系统在导出前要进行操作"></a>arm系统在导出前要进行操作</h3><pre class="line-numbers language-shell"><code class="language-shell">export GOOS="linux"
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build  
+                <h2 id="testing-t"><a href="#testing-t" class="headerlink" title="testing.t"></a>testing.t</h2><p>testing包提供了Go package的自动单元测试支持，其旨在与go test命令一起使用，它会自动执行以下形式：</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">TestXxx</span><span class="token punctuation">(</span><span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>注意Xxx不能以小写字母开头，这个函数名提供了一个测试例程。</p>
+<p>在这些函数中，使用Error， Fail或者相关方法来指示失败。</p>
+<p>写一个单元测试的步骤：函数以Testxxx开头，文件名以_test结尾，创建一个文件，当执行go build命令时，其会自动被build指令排除，但是当执行go test时，其会自动被包含。</p>
+<p>测试文件可以与被测文件在同一个包中，也可以在对应的后缀为“_test”的包中。</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">package</span> abs
 
-go build -buildmode=c-archive -o number.a
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<h2 id="c调用"><a href="#c调用" class="headerlink" title="c调用"></a>c调用</h2><pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out _test_main.c number.a  
-./a.out
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h2 id="在linux中操作"><a href="#在linux中操作" class="headerlink" title="在linux中操作"></a>在linux中操作</h2><h3 id="生成"><a href="#生成" class="headerlink" title="生成"></a>生成</h3><p>在linux中进行动态链接库文件生成，在main目录下执行</p>
-<pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=c-shared -o sdk.so  
+<span class="token keyword">import</span> <span class="token string">"testing"</span>
+
+<span class="token keyword">func</span> <span class="token function">TestAbs</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    got <span class="token operator">:=</span> <span class="token function">Abs</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> got <span class="token operator">!=</span> <span class="token number">1</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"Abs(-1) = %d; want 1"</span><span class="token punctuation">,</span> got<span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>假如测试文件在同一个包中，它将不可导出。即便是大写开头。（go中规定大写开头的函数才可以被导出）</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">package</span> abs_test
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"testing"</span>
+
+    <span class="token string">"path_to_pkg/abs"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">func</span> <span class="token function">TestAbs</span><span class="token punctuation">(</span>t <span class="token operator">*</span>testing<span class="token punctuation">.</span>T<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    got <span class="token operator">:=</span> abs<span class="token punctuation">.</span><span class="token function">Abs</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> got <span class="token operator">!=</span> <span class="token number">1</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        t<span class="token punctuation">.</span><span class="token function">Errorf</span><span class="token punctuation">(</span><span class="token string">"Abs(-1) = %d; want 1"</span><span class="token punctuation">,</span> got<span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="testing-b"><a href="#testing-b" class="headerlink" title="testing.b"></a>testing.b</h2><p>函数是这种形式：</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">func</span> <span class="token function">BenchmarkXxx</span><span class="token punctuation">(</span><span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>注意go调用要生成plugin</p>
-<pre class="line-numbers language-shell"><code class="language-shell">go build -buildmode=plugin -o ntisdk-plugin.so main.go  
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p>生成可执行文件</p>
-<pre class="line-numbers language-shell"><code class="language-shell">gcc -o a.out main.c sdk.a  
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>将.so .h文件拷贝至指定目录 在main.c中调用相关方法之后设置下查找动态库路径的环境变量<br>用于指定查找共享库（动态链接库）时除了默认路径（.&#x2F;lib和.&#x2F;usr&#x2F;lib）之外的其他路径。</p>
-<pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH="/root/goProject/src/SDK/c"  
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<h3 id="指定"><a href="#指定" class="headerlink" title="指定"></a>指定</h3><p>.&#x2F;a.out</p>
-<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><p>cmd临时指定so文件</p>
-<pre class="line-numbers language-shell"><code class="language-shell">export LD_LIBRARY_PATH=xxx
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>永久指定</p>
-<pre class="line-numbers language-shell"><code class="language-shell"># cat /etc/ld.so.conf
-include ld.so.conf.d/*.conf
-# echo "/usr/local/lib" >> /etc/ld.so.conf
-# ldconfig
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>当执行go test时加上-bench标志，Benchmarks会按照顺序执行。</p>
+<p>一个简单的benchmark函数看起来是这样。</p>
+<pre><code>func BenchmarkRandInt(b *testing.B) &#123;
+    for i := 0; i &lt; b.N; i++ &#123;
+        rand.Int()
+    &#125;
+&#125;
+</code></pre>
+<p>这个benchmark函数必须运行目标代码b.N次，在基准执行期间，调整 b.N 直到基准函数持续足够长的时间以可靠地计时。</p>
+<p>输出</p>
+<pre><code>BenchmarkRandInt-8   	68453040	        17.8 ns/op
+</code></pre>
+<p>意味着BenchmarkRandInt循环执行68453040次，每次耗时17.8ns。</p>
+<p>假如benchmark在运行之前要进行一些昂贵的步骤，timer可能需要被重新设置。</p>
+<pre><code>func BenchmarkBigLen(b *testing.B) &#123;
+    big := NewBig()
+    b.ResetTimer()
+    for i := 0; i &lt; b.N; i++ &#123;
+        big.Len()
+    &#125;
+&#125;
+</code></pre>
+<p>benchmark需要并行执行时，需要使用RunParallel帮助函数，这种方式应该需要加上-cpu标志。</p>
+<pre><code>func BenchmarkTemplateParallel(b *testing.B) &#123;
+    templ := template.Must(template.New(&quot;test&quot;).Parse(&quot;Hello, &#123;&#123;.&#125;&#125;!&quot;))
+    b.RunParallel(func(pb *testing.PB) &#123;
+        var buf bytes.Buffer
+        for pb.Next() &#123;
+            buf.Reset()
+            templ.Execute(&amp;buf, &quot;World&quot;)
+        &#125;
+    &#125;)
+&#125;
+</code></pre>
+<p>一个计算hash效率的简单示例：</p>
+<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">package</span> main
+
+<span class="token keyword">import</span> <span class="token punctuation">(</span>
+    <span class="token string">"crypto/md5"</span>
+    <span class="token string">"testing"</span>
+
+    <span class="token string">"github.com/spaolacci/murmur3"</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> str <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token function">byte</span><span class="token punctuation">(</span><span class="token string">"0804633fd8839931a8bd1ba461d4c74db2d05020"</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkMD5</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        md5<span class="token punctuation">.</span><span class="token function">Sum</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkMurmur128</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    h <span class="token operator">:=</span> murmur3<span class="token punctuation">.</span><span class="token function">New128</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        h<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        h<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+        h<span class="token punctuation">.</span><span class="token function">Sum</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+
+<span class="token keyword">func</span> <span class="token function">BenchmarkMurmur64</span><span class="token punctuation">(</span>b <span class="token operator">*</span>testing<span class="token punctuation">.</span>B<span class="token punctuation">)</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+    h <span class="token operator">:=</span> murmur3<span class="token punctuation">.</span><span class="token function">New64</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    b<span class="token punctuation">.</span><span class="token function">ResetTimer</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> i <span class="token operator">:=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> b<span class="token punctuation">.</span>N<span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        h<span class="token punctuation">.</span><span class="token function">Reset</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        h<span class="token punctuation">.</span><span class="token function">Write</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span>
+        h<span class="token punctuation">.</span><span class="token function">Sum</span><span class="token punctuation">(</span><span class="token boolean">nil</span><span class="token punctuation">)</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>命令</p>
+<pre><code>go test -bench=. -benchmem
+</code></pre>
+<p>输出</p>
+<pre><code>goos: linux
+goarch: amd64
+pkg: ntisdk/test/hash/speed
+cpu: Intel(R) Xeon(R) CPU E5-26xx v4
+BenchmarkMD5-2           7997414               150.1 ns/op             0 B/op          0 allocs/op
+BenchmarkMurmur128-2    15702196                77.28 ns/op           16 B/op          1 allocs/op
+BenchmarkMurmur64-2     17242051                68.32 ns/op            8 B/op          1 allocs/op
+PASS
+ok      ntisdk/test/hash/speed  3.906s
+</code></pre>
+<p>名令的参数含义</p>
+<table>
+<thead>
+<tr>
+<th><strong>参数</strong></th>
+<th><strong>含义</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>-bench regexp</td>
+<td>性能测试，支持表达式对测试函数进行筛选。</td>
+</tr>
+<tr>
+<td>-bench</td>
+<td>. 则是对所有的benchmark函数测试，指定名称则只执行具体测试方法而不是全部</td>
+</tr>
+<tr>
+<td>-benchmem</td>
+<td>性能测试的时候显示测试函数的内存分配的统计信息</td>
+</tr>
+<tr>
+<td>－count n</td>
+<td>运行测试和性能多少此，默认一次</td>
+</tr>
+<tr>
+<td>-run regexp</td>
+<td>只运行特定的测试函数， 比如-run ABC只测试函数名中包含ABC的测试函数</td>
+</tr>
+<tr>
+<td>-timeout t</td>
+<td>测试时间如果超过t, panic,默认10分钟</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>显示测试的详细信息，也会把Log、Logf方法的日志显示出来</td>
+</tr>
+</tbody></table>
+<p>输出的结果含义</p>
+<table>
+<thead>
+<tr>
+<th>结果项</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>BenchmarkMD5-2</td>
+<td><strong>Benchmark_test</strong> 是测试的函数名<br/><strong>-12</strong> 表示GOMAXPROCS（线程数）的值为12</td>
+</tr>
+<tr>
+<td>7997414</td>
+<td>循环次数即b.N的值</td>
+</tr>
+<tr>
+<td>150.1 ns&#x2F;op</td>
+<td>表示平均每次操作花费了<strong>150.1纳秒</strong></td>
+</tr>
+<tr>
+<td>0 B&#x2F;op</td>
+<td>表示每次操作申请了<strong>0Byte</strong>的内存申请</td>
+</tr>
+<tr>
+<td>0 allocs&#x2F;op</td>
+<td>表示每次操作申请了<strong>0</strong>次内存</td>
+</tr>
+</tbody></table>
+<h2 id="testing-f"><a href="#testing-f" class="headerlink" title="testing.f"></a>testing.f</h2><p>“go test”和测试包支持模糊测试，这是一种测试技术，其中使用随机生成的输入调用函数以查找单元测试未预料到的错误。</p>
+<p>例如：</p>
+<pre><code>func FuzzHex(f *testing.F) &#123;
+  for _, seed := range [][]byte&#123;&#123;&#125;, &#123;0&#125;, &#123;9&#125;, &#123;0xa&#125;, &#123;0xf&#125;, &#123;1, 2, 3, 4&#125;&#125; &#123;
+    f.Add(seed)
+  &#125;
+  f.Fuzz(func(t *testing.T, in []byte) &#123;
+    enc := hex.EncodeToString(in)
+    out, err := hex.DecodeString(enc)
+    if err != nil &#123;
+      t.Fatalf(&quot;%v: decode: %v&quot;, in, err)
+    &#125;
+    if !bytes.Equal(in, out) &#123;
+      t.Fatalf(&quot;%v: not equal after round trip: %v&quot;, in, out)
+    &#125;
+  &#125;)
+&#125;
+</code></pre>
+<p>模糊测试维护一个种子语料库或一组默认运行的输入，并且可以为输入生成种子。可以通过调用 (*F).Add 或通过将文件存储在包含模糊测试的包内的目录 testdata&#x2F;fuzz&#x2F;<Name>（其中 <Name> 是模糊测试的名称）中来注册种子输入。种子输入是可选的，但是当提供一组具有良好代码覆盖率的小种子输入时，模糊引擎可能会更有效地发现错误。这些种子输入还可以用作通过模糊测试识别的错误的回归测试。</p>
+<p>模糊测试中传递给 (*F).Fuzz 的函数被视为模糊目标。模糊测试目标必须接受 *T 参数，后跟一个或多个随机输入参数。传递给 (*F).Add 的参数类型必须与这些参数的类型相同。模糊测试目标可能会发出与测试相同的方式发现问题的信号：通过调用 T.Fail（或调用它的任何方法，如 T.Error 或 T.Fatal）或通过panic。</p>
+<p>启用模糊测试时（通过将 -fuzz 标志设置为与特定模糊测试匹配的正则表达式），将使用通过重复对种子输入进行随机更改而生成的参数调用模糊测试目标。在支持的平台上，“go test”使用模糊覆盖检测编译测试可执行文件。模糊引擎使用该工具来查找和缓存扩大覆盖范围的输入，从而增加发现错误的可能性。如果给定输入的模糊测试目标失败，则模糊测试引擎会将导致失败的输入写入包目录中目录 testdata&#x2F;fuzz&#x2F;<Name> 中的文件。该文件稍后用作种子输入。如果无法在该位置写入文件（例如，因为该目录是只读的），</p>
+<p>禁用模糊测试时，将使用在 F.Add 中注册的种子输入和来自 testdata&#x2F;fuzz&#x2F;<Name> 的种子输入调用模糊测试目标。在这种模式下，模糊测试的行为很像常规测试，子测试以 F.Fuzz 而不是 T.Run 开始。</p>
+<h2 id="skipping"><a href="#skipping" class="headerlink" title="skipping"></a>skipping</h2><p>test或者benchmark可以在运行时跳过测试。</p>
+<p>例如</p>
+<pre><code>func TestTimeConsuming(t *testing.T) &#123;
+    if testing.Short() &#123;
+        t.Skip(&quot;skipping test in short mode.&quot;)
+    &#125;
+    ...
+&#125;
+</code></pre>
+<p>skip可以用在一些错误的模糊测试结果中，但是不应该考虑一个错误的输入。</p>
+<pre><code>func FuzzJSONMarshaling(f *testing.F) &#123;
+    f.Fuzz(func(t *testing.T, b []byte) &#123;
+        var v interface&#123;&#125;
+        if err := json.Unmarshal(b, &amp;v); err != nil &#123;
+            t.Skip()
+        &#125;
+        if _, err := json.Marshal(v); err != nil &#123;
+            t.Errorf(&quot;Marshal: %v&quot;, err)
+        &#125;
+    &#125;)
+&#125;
+</code></pre>
 
             </div>
             <hr />
@@ -500,9 +708,9 @@ include ld.so.conf.d/*.conf
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/';
-        this.page.identifier = '/2022/12/29/ji-zhu/cgo/shi-yong-cgo-sheng-cheng-dong-tai-lian-jie-ku/';
-        this.page.title = '使用CGO生成动态链接库';
+        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/';
+        this.page.identifier = '/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/';
+        this.page.title = 'Golang单元测试';
     };
     let disqus_shortname = 'didablog';
 
@@ -525,46 +733,51 @@ include ld.so.conf.d/*.conf
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/12/31/sheng-huo/2022-zai-jian/">
+                <a href="/2023/03/01/ji-zhu/golang/shi-yong-golang-jin-xing-benchmark-ce-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="2022再见">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Golang单元测试">
                         
-                        <span class="card-title">2022再见</span>
+                        <span class="card-title">Golang单元测试</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            2022是特别的一年
+                            testing.ttesting包提供了Go package的自动单元测试支持，其旨在与go test命令一起使用，它会自动执行以下形式：
+func TestXxx(*testing.T)
+
+注意Xxx不能以小写字母开头，这个函数名提供了一
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2022-12-31
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-03-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category" target="_blank">
-                                    生活
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%B0%E5%B9%B4/" target="_blank">
-                        <span class="chip bg-color">新年</span>
+                    <a href="/tags/Golang/" target="_blank">
+                        <span class="chip bg-color">Golang</span>
                     </a>
                     
                 </div>
@@ -578,31 +791,31 @@ include ld.so.conf.d/*.conf
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/12/29/ji-zhu/cgo/cgo-de-zhi-zhen-chuan-di/">
+                <a href="/2023/03/01/shu/luo-ma-di-guo-shuai-wang-shi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="CGO的指针传递">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="罗马帝国衰亡史">
                         
-                        <span class="card-title">CGO的指针传递</span>
+                        <span class="card-title">罗马帝国衰亡史</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            使用指针在C和CGO之间传递上下文。
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2022-12-29
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-03-01
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/CGO/" class="post-category" target="_blank">
-                                    CGO
+                            <a href="/categories/%E4%B9%A6/" class="post-category" target="_blank">
+                                    书
                                 </a>
                             
                             
@@ -779,7 +992,7 @@ include ld.so.conf.d/*.conf
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">70.9k</span>
+            <span class="white-color">72.7k</span>
             
 
             <br>
