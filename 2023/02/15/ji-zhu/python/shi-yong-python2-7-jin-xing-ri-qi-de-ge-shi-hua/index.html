@@ -408,7 +408,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    291
+                    307
                 </div>
                 
 
@@ -433,18 +433,18 @@
             <div id="articleContent">
                 <p>昨天需要将数据入库ES，本来之前是经过kafka，再经入库程序消费之后，处理入库。但是搭建的测试环境不好迁移入库程序，所以自己写了一个脚本进行处理。</p>
 <p>最后发现es的索引日期类型为UTC的字符串格式，而原数据为int类型。所以需要有一个转换。t的类型为int类的秒值，例如int(time.time())，它表示的是自从1970年1月1日00:00:00开始按秒计算的偏移量。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">convert_time_to_date</span><span class="token punctuation">(</span>t<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    milliseconds <span class="token operator">=</span> int<span class="token punctuation">(</span>round<span class="token punctuation">(</span>t <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    date <span class="token operator">=</span> time<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">'%Y-%m-%dT%H:%M:%S'</span><span class="token punctuation">,</span> time<span class="token punctuation">.</span>localtime<span class="token punctuation">(</span>milliseconds <span class="token operator">/</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    date_with_milliseconds <span class="token operator">=</span> <span class="token string">"%s.%03dZ"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>date<span class="token punctuation">,</span> milliseconds <span class="token operator">%</span> <span class="token number">1000</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> date_with_milliseconds
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>def convert_time_to_date(t):
+    milliseconds = int(round(t * 1000))
+    date = time.strftime(&#39;%Y-%m-%dT%H:%M:%S&#39;, time.localtime(milliseconds / 1000))
+    date_with_milliseconds = &quot;%s.%03dZ&quot; % (date, milliseconds % 1000)
+    return date_with_milliseconds
+</code></pre>
 <p>此段程序保留个三位毫秒时间戳。因为es的索引date结构为：</p>
-<pre class="line-numbers language-json"><code class="language-json"><span class="token property">"modified"</span><span class="token operator">:</span> &amp;#<span class="token number">123</span><span class="token punctuation">;</span>
-<span class="token property">"format"</span><span class="token operator">:</span> <span class="token string">"YYYY-MM-dd'T'HH:mm:ss.SSS'Z'"</span><span class="token punctuation">,</span>
-<span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"date"</span>
-&amp;#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>&quot;modified&quot;: &#123;
+&quot;format&quot;: &quot;YYYY-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39;&quot;,
+&quot;type&quot;: &quot;date&quot;
+&#125;
+</code></pre>
 <p>Python的日期是无法精确到毫秒的。所以需要手动进行转换。</p>
 <pre><code>.%03d % (milliseconds % 1000)
 </code></pre>
@@ -773,7 +773,7 @@
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">75k</span>
+            <span class="white-color">75.1k</span>
             
 
             <br>

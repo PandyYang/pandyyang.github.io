@@ -412,7 +412,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    5 分
                 </div>
                 
                 
@@ -441,48 +441,48 @@
 <p>注意：当前的实现有一个错误。虽然允许 Go 代码将 nil 或 C 指针（但不是 Go 指针）写入 C 内存，但如果 C 内存的内容看起来是 Go 指针，当前的实现有时可能会导致运行时错误。因此，如果 Go 代码要在其中存储指针值，请避免将未初始化的 C 内存传递给 Go 代码。在将 C 传递给 Go 之前将 C 中的内存清零。</p>
 <h2 id="如何使用指针传递上下文"><a href="#如何使用指针传递上下文" class="headerlink" title="如何使用指针传递上下文"></a>如何使用指针传递上下文</h2><p>传递CGo的指针需要使用类型：C.uintptr_t。尽管Go有自己的指针类型的实现，例如：unsafe.Pointer。但是注意，在调用过程中会出现安全性问题。</p>
 <p>假如目前我们有一个结构体，其中包含了当前环境，例如：</p>
-<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">type</span> InitHandler <span class="token keyword">struct</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    configInstance <span class="token operator">*</span>viper<span class="token punctuation">.</span>Viper
-    redisPool      <span class="token operator">*</span>redis<span class="token punctuation">.</span>Pool
-    loggerInstance <span class="token operator">*</span>log<span class="token punctuation">.</span>Logger
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre><code>type InitHandler struct &#123;
+    configInstance *viper.Viper
+    redisPool      *redis.Pool
+    loggerInstance *log.Logger
+&#125;
+</code></pre>
 <p>使用指针传递时，可以这样做：</p>
-<pre class="line-numbers language-go"><code class="language-go"><span class="token keyword">return</span> C<span class="token punctuation">.</span><span class="token function">uintptr_t</span><span class="token punctuation">(</span>cgo<span class="token punctuation">.</span><span class="token function">NewHandle</span><span class="token punctuation">(</span>initHandler<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre><code>return C.uintptr_t(cgo.NewHandle(initHandler))
+</code></pre>
 <p>根据指针解析出环境：</p>
-<pre class="line-numbers language-go"><code class="language-go">h <span class="token operator">:=</span> cgo<span class="token punctuation">.</span><span class="token function">Handle</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span>
-val <span class="token operator">:=</span> h<span class="token punctuation">.</span><span class="token function">Value</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token punctuation">(</span>InitHandler<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<pre><code>h := cgo.Handle(handle)
+val := h.Value().(InitHandler)
+</code></pre>
 <p>使用完毕后释放指针空间：</p>
 <pre><code>h := cgo.Handle(handle)
 h.Delete()
 </code></pre>
 <h2 id="C和CGO进行交互"><a href="#C和CGO进行交互" class="headerlink" title="C和CGO进行交互"></a>C和CGO进行交互</h2><p>在Go中，使用CGO的类型定义的指针，如何在C端进行接受，传值？要使用一个特定类型：uintptr_t。</p>
 <p>例如：</p>
-<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">"libxxx.h"</span></span>
-<span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span>
+<pre><code>#include &quot;libxxx.h&quot;
+#include &lt;stdio.h&gt;
 
-<span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-    <span class="token comment" spellcheck="true">// gcc main.c -o main -L. -lxxx</span>
-    <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"Hello, World!\n"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    uintptr_t s <span class="token operator">=</span> <span class="token function">init</span><span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token function">destroy</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+int main()
+&#123;
+    // gcc main.c -o main -L. -lxxx
+    printf(&quot;Hello, World!\n&quot;);
+    uintptr_t s = init(&quot;xxx&quot;);
+    destroy(s);
+    return 0;
+&#125;
+</code></pre>
 <h2 id="Python和CGO交互"><a href="#Python和CGO交互" class="headerlink" title="Python和CGO交互"></a>Python和CGO交互</h2><p>Python和CGO的交互要用到ctypes这个库，传递值时，注意类型必须提前指定，否则只会接收到一个地址值。</p>
-<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> ctypes
-so <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>CDLL<span class="token punctuation">(</span><span class="token string">'/xxx.so'</span><span class="token punctuation">)</span>
+<pre><code>import ctypes
+so = ctypes.CDLL(&#39;/xxx.so&#39;)
 
-ptr <span class="token operator">=</span> so<span class="token punctuation">.</span>init<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"configpath"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-so<span class="token punctuation">.</span>query<span class="token punctuation">.</span>restype <span class="token operator">=</span> ctypes<span class="token punctuation">.</span>c_char_p
-res <span class="token operator">=</span> so<span class="token punctuation">.</span>getmethod<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">,</span> ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span><span class="token string">"xxx"</span><span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_char_p<span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span>
-so<span class="token punctuation">.</span>destroy<span class="token punctuation">(</span>ctypes<span class="token punctuation">.</span>c_void_p<span class="token punctuation">(</span>ptr<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+ptr = so.init(ctypes.c_char_p(&quot;configpath&quot;.encode(&quot;utf-8&quot;)))
+so.query.restype = ctypes.c_char_p
+res = so.getmethod(ctypes.c_void_p(ptr), ctypes.c_char_p(&quot;xxx&quot;.encode(&quot;utf-8&quot;)))
+print(res)
+print(ctypes.c_char_p(res))
+so.destroy(ctypes.c_void_p(ptr))
+</code></pre>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p><strong>cgo doc</strong>: <a target="_blank" rel="noopener" href="https://pkg.go.dev/cmd/cgo">https://pkg.go.dev/cmd/cgo</a></p>
 <p><strong>go语言高级编程</strong>： <a target="_blank" rel="noopener" href="https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html">https://chai2010.cn/advanced-go-programming-book/ch2-cgo/ch2-02-basic.html</a></p>
 <p><strong>go doc</strong>：<a target="_blank" rel="noopener" href="https://go.dev/doc/">https://go.dev/doc/</a></p>
@@ -803,7 +803,7 @@ so<span class="token punctuation">.</span>destroy<span class="token punctuation"
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">75k</span>
+            <span class="white-color">75.1k</span>
             
 
             <br>
