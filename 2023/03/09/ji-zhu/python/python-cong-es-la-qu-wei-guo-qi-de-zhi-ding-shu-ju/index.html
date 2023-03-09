@@ -4,24 +4,15 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="街心, Pandy">
+    <meta name="keywords" content="Python从ES拉取未过期的指定数据, Pandy">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="本钟塔尖的晚风将乌云逼退
-你瞧
-街心琴调
-宫崎骏的夏天
-枫坠的瓦尔登湖
-plato 之心
-记忆中窗边的纸鹤
-蒙纱月
-咖啡杯里的拉线
-和
-你的脸
-都在此刻
-晕出了感觉
-">
+    <meta name="description" content="ES版本为8， Python版本为2.7。
+主要是ES的语法，如果需要同时存在多条件和过滤，直接使用bool的must查询以及filter过滤。
+注意must和filter中的都为数组形式。
+其中term为精确查询。
+range中有lt, ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -29,7 +20,7 @@ plato 之心
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>街心 | Pandy</title>
+    <title>Python从ES拉取未过期的指定数据 | Pandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -265,13 +256,13 @@ plato 之心
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        街心
+                        Python从ES拉取未过期的指定数据
                     </div>
                 </div>
             </div>
@@ -381,7 +372,11 @@ plato 之心
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -390,8 +385,8 @@ plato 之心
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/%E8%AF%97/" class="post-category" target="_blank">
-                            诗
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
                         </a>
                         
                     </div>
@@ -402,7 +397,7 @@ plato 之心
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-01-02
+                    2023-03-09
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -416,7 +411,7 @@ plato 之心
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    65
+                    271
                 </div>
                 
 
@@ -439,19 +434,61 @@ plato 之心
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>本钟塔尖的晚风将乌云逼退</p>
-<p>你瞧</p>
-<p>街心琴调</p>
-<p>宫崎骏的夏天</p>
-<p>枫坠的瓦尔登湖</p>
-<p>plato 之心</p>
-<p>记忆中窗边的纸鹤</p>
-<p>蒙纱月</p>
-<p>咖啡杯里的拉线</p>
-<p>和</p>
-<p>你的脸</p>
-<p>都在此刻</p>
-<p>晕出了感觉</p>
+                <p>ES版本为8， Python版本为2.7。</p>
+<p>主要是ES的语法，如果需要同时存在多条件和过滤，直接使用bool的must查询以及filter过滤。</p>
+<p>注意must和filter中的都为数组形式。</p>
+<p>其中term为精确查询。</p>
+<p>range中有lt, lte, gt, gte。分别对应着小于、小于等于、大于、大于等于。</p>
+<pre><code># -*- coding:utf-8 -*-
+from elasticsearch import Elasticsearch
+import json
+
+es_hosts = [&quot;127.0.0.1:9201&quot;, &quot;127.0.0.1:9202&quot;,&quot;127.0.0.1:9203&quot;]
+esClient = Elasticsearch(
+    es_hosts,
+    retry_on_timeout=True
+)
+num = 0
+with open(&quot;valid_ip.txt&quot;, &quot;a+&quot;) as output_fp:
+    f = open(&quot;ip.txt&quot;, &#39;r&#39;)
+    lines = f.readlines()
+    for line in lines:
+        query = &#123;
+            &quot;query&quot;: &#123;
+                &quot;bool&quot;: &#123;
+                    &quot;must&quot;: [
+                        &#123;
+                            &quot;term&quot;: &#123;
+                                &quot;observables.value&quot;: line.replace(&#39;\n&#39;, &#39;&#39;)
+                            &#125;
+                        &#125;,
+                        &#123;
+                            &quot;term&quot;: &#123;
+                                &quot;revoked&quot;: &quot;false&quot;
+                            &#125;
+                        &#125;
+                    ],
+                    &quot;filter&quot;: [
+                        &#123;
+                            &quot;range&quot;: &#123;
+                                &quot;valid_until&quot;: &#123;
+                                    &quot;gte&quot;: &quot;2023-03-01T00:00:00Z&quot;
+                                &#125;
+                            &#125;
+                        &#125;
+                    ]
+                &#125;
+            &#125;
+        &#125;
+
+        result = esClient.search(index=&#39;test_index&#39;, body=query)
+        if len(result[&#39;hits&#39;][&#39;hits&#39;]) &gt; 0:
+            v = result[&#39;hits&#39;][&#39;hits&#39;][0][&#39;_source&#39;]
+            str_res = json.dumps(v, ensure_ascii=False)
+            num = num + 1
+            print num
+            output_fp.write(str_res + &quot;\n&quot;)
+</code></pre>
 
             </div>
             <hr />
@@ -489,9 +526,9 @@ plato 之心
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2023/01/02/shi/01/jie-xin/';
-        this.page.identifier = '/2023/01/02/shi/01/jie-xin/';
-        this.page.title = '街心';
+        this.page.url = 'https://github.com/PandyYang/pandyyang.github.io/2023/03/09/ji-zhu/python/python-cong-es-la-qu-wei-guo-qi-de-zhi-ding-shu-ju/';
+        this.page.identifier = '/2023/03/09/ji-zhu/python/python-cong-es-la-qu-wei-guo-qi-de-zhi-ding-shu-ju/';
+        this.page.title = 'Python从ES拉取未过期的指定数据';
     };
     let disqus_shortname = 'didablog';
 
@@ -514,49 +551,54 @@ plato 之心
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/01/02/shi/01/shen-ying/">
+                <a href="/2023/03/09/ji-zhu/python/python-cong-es-la-qu-wei-guo-qi-de-zhi-ding-shu-ju/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="身影">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Python从ES拉取未过期的指定数据">
                         
-                        <span class="card-title">身影</span>
+                        <span class="card-title">Python从ES拉取未过期的指定数据</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            终于躲在柜子里的夏季
-答应了和秋日约定好的小雨
-要一起在雾气氤氲的小镇淅沥
-你那在我脑海里飘忽不定的身影
-就像屋檐下的风铃
-那样动听
-动听动听
-却不及
-有你的梦
-
+                            ES版本为8， Python版本为2.7。
+主要是ES的语法，如果需要同时存在多条件和过滤，直接使用bool的must查询以及filter过滤。
+注意must和filter中的都为数组形式。
+其中term为精确查询。
+range中有lt, 
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-01-02
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-03-09
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%97/" class="post-category" target="_blank">
-                                    诗
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -568,50 +610,45 @@ plato 之心
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/01/02/shi/01/wu-hou/">
+                <a href="/2023/03/08/sheng-huo/cheng-nan-hua-yi-kai/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="午后">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="城南花已开">
                         
-                        <span class="card-title">午后</span>
+                        <span class="card-title">城南花已开</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            你说
-想你了就写信
-于是乎
-在一个安静的晴天午后
-我拿出纸和笔
-不远处的竹篱笆上停留着灰蜻蜓
-风告诉它
-纸鹤的心中很适合飞行
-然后
-我翻过一页页情绪
-和院子里的蔷薇一起
-闭着眼睛
-在猫的胡须上
-旅行
+                            
 
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-01-02
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-03-08
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%AF%97/" class="post-category" target="_blank">
-                                    诗
+                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category" target="_blank">
+                                    生活
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%9B%9B%E5%AD%A3/" target="_blank">
+                        <span class="chip bg-color">四季</span>
+                    </a>
+                    
                 </div>
                 
             </div>

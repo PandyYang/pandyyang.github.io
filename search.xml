@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Python从ES拉取未过期的指定数据</title>
+      <link href="/2023/03/09/ji-zhu/python/python-cong-es-la-qu-wei-guo-qi-de-zhi-ding-shu-ju/"/>
+      <url>/2023/03/09/ji-zhu/python/python-cong-es-la-qu-wei-guo-qi-de-zhi-ding-shu-ju/</url>
+      
+        <content type="html"><![CDATA[<p>ES版本为8， Python版本为2.7。</p><p>主要是ES的语法，如果需要同时存在多条件和过滤，直接使用bool的must查询以及filter过滤。</p><p>注意must和filter中的都为数组形式。</p><p>其中term为精确查询。</p><p>range中有lt, lte, gt, gte。分别对应着小于、小于等于、大于、大于等于。</p><pre><code># -*- coding:utf-8 -*-from elasticsearch import Elasticsearchimport jsones_hosts = [&quot;127.0.0.1:9201&quot;, &quot;127.0.0.1:9202&quot;,&quot;127.0.0.1:9203&quot;]esClient = Elasticsearch(    es_hosts,    retry_on_timeout=True)num = 0with open(&quot;valid_ip.txt&quot;, &quot;a+&quot;) as output_fp:    f = open(&quot;ip.txt&quot;, &#39;r&#39;)    lines = f.readlines()    for line in lines:        query = &#123;            &quot;query&quot;: &#123;                &quot;bool&quot;: &#123;                    &quot;must&quot;: [                        &#123;                            &quot;term&quot;: &#123;                                &quot;observables.value&quot;: line.replace(&#39;\n&#39;, &#39;&#39;)                            &#125;                        &#125;,                        &#123;                            &quot;term&quot;: &#123;                                &quot;revoked&quot;: &quot;false&quot;                            &#125;                        &#125;                    ],                    &quot;filter&quot;: [                        &#123;                            &quot;range&quot;: &#123;                                &quot;valid_until&quot;: &#123;                                    &quot;gte&quot;: &quot;2023-03-01T00:00:00Z&quot;                                &#125;                            &#125;                        &#125;                    ]                &#125;            &#125;        &#125;        result = esClient.search(index=&#39;test_index&#39;, body=query)        if len(result[&#39;hits&#39;][&#39;hits&#39;]) &gt; 0:            v = result[&#39;hits&#39;][&#39;hits&#39;][0][&#39;_source&#39;]            str_res = json.dumps(v, ensure_ascii=False)            num = num + 1            print num            output_fp.write(str_res + &quot;\n&quot;)</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>城南花已开</title>
       <link href="/2023/03/08/sheng-huo/cheng-nan-hua-yi-kai/"/>
       <url>/2023/03/08/sheng-huo/cheng-nan-hua-yi-kai/</url>
