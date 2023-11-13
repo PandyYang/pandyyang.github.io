@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-10-23T02:40:32.731Z</updated>
+  <updated>2023-11-13T03:08:51.009Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CNNVD爬虫开发</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
+    <published>2023-11-13T02:58:43.000Z</published>
+    <updated>2023-11-13T03:08:51.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。&lt;/p&gt;
+&lt;p&gt;但是最近发现了问题，</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>人间有味是清欢</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/</id>
+    <published>2023-11-05T02:32:26.000Z</published>
+    <updated>2023-11-07T08:26:00.437Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​		今天是个周日，终于能有点时间写点东西啦，每次过一阵子不写点什么，就感觉房间过很久没有整理，脑袋乱乱的，思路也不是很清晰。人难得有几个爱好，这是之一吧。坚持写点类似于日记、感悟、想法的东西，是真真切切地体验到自身存在的感觉。&lt;/p&gt;
+&lt;p&gt;​		家里最近寄来了很多水果，</summary>
+        
+      
+    
+    
+    
+    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2023-2024职业规划</title>
@@ -136,30 +186,6 @@
     
     
     <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>人间有味是清欢</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/11/xiang-fa/ren-jian-you-wei-shi-qing-huan/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/11/xiang-fa/ren-jian-you-wei-shi-qing-huan/</id>
-    <published>2023-09-11T03:25:26.000Z</published>
-    <updated>2023-09-30T02:48:39.346Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;待写。&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
     
     
   </entry>
@@ -483,30 +509,6 @@
     
     
     <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>生活在别处</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/07/23/sheng-huo/sheng-huo-zai-bie-chu/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/07/23/sheng-huo/sheng-huo-zai-bie-chu/</id>
-    <published>2023-07-23T04:42:04.000Z</published>
-    <updated>2023-07-26T06:13:53.003Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://s2.loli.net/2023/07/23/zLA2g1xVMtJKZ6a.jpg&quot; alt=&quot;82ca0139b91db434e7a80577afc9fbd&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>

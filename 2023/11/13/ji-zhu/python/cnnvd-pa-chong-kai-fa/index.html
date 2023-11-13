@@ -4,12 +4,13 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="人间有味是清欢, Pandy">
+    <meta name="keywords" content="CNNVD爬虫开发, Pandy">
     <meta name="baidu-site-verification" content="fmlEuI34ir" />
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48" />
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7" />
-    <meta name="description" content="待写。
-">
+    <meta name="description" content="CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。
+但是最近发现了问题， 共享的数据文件中没有补丁信息和相关的链接信息。
+所以需要爬取CNNVD和CNVD页面，直接获取。CNVD因为存在">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>人间有味是清欢 | Pandy</title>
+    <title>CNNVD爬虫开发 | Pandy</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -298,13 +299,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.loli.net/2023/05/22/YwDNojU6kP7qKOn.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://s2.loli.net/2023/05/22/8ms74aPxu1Czyhj.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        人间有味是清欢
+                        CNNVD爬虫开发
                     </div>
                 </div>
             </div>
@@ -414,7 +415,11 @@
                 <div class="col s7">
                     
                     <div class="article-tag">
-                        <span class="chip bg-color">无标签</span>
+                        
+                        <a href="/tags/Python/" target="_blank">
+                            <span class="chip bg-color">Python</span>
+                        </a>
+                        
                     </div>
                     
                 </div>
@@ -423,8 +428,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/%E6%83%B3%E6%B3%95/" class="post-category" target="_blank">
-                            想法
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
                         </a>
                         
                     </div>
@@ -435,7 +440,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-09-11
+                    2023-11-13
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -449,14 +454,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2
+                    633
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
                 
@@ -467,7 +472,126 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>待写。</p>
+                <p>CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。</p>
+<p>但是最近发现了问题， 共享的数据文件中没有补丁信息和相关的链接信息。</p>
+<p>所以需要爬取CNNVD和CNVD页面，直接获取。CNVD因为存在反爬机制，并且每日更新的数据列表暂时无法访问，所以爬虫还在研究中，CNNVD的爬虫现在已开发完毕，可以正常运行。</p>
+<p>主要逻辑如下：</p>
+<ol>
+<li>爬虫每次凌晨四点运行，处理昨天的数据。</li>
+<li>自动从第一页开始爬取，首先将更新日期从大到小排序，然后只处理昨天的，日期不匹配直接退出程序。</li>
+<li>要注意爬取间隔，我这里是睡眠5-10秒，避免触发反爬机制。</li>
+<li>页码会自动累加，直到将昨天的数据处理完毕。</li>
+</ol>
+<p>整个逻辑来看是比较简单的。撒花。</p>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># -*- coding:UTF-8 -*-</span>
+<span class="token keyword">import</span> json
+<span class="token keyword">import</span> random
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> time
+<span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime<span class="token punctuation">,</span> timedelta
+<span class="token keyword">from</span> merge_vul <span class="token keyword">import</span> merge_vul
+<span class="token keyword">import</span> re
+
+<span class="token keyword">import</span> requests
+
+
+<span class="token keyword">def</span> <span class="token function">get_yesterday_time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    now <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    yesterday <span class="token operator">=</span> now <span class="token operator">-</span> timedelta<span class="token punctuation">(</span>days<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    formatted_date <span class="token operator">=</span> yesterday<span class="token punctuation">.</span>strftime<span class="token punctuation">(</span><span class="token string">"%Y-%m-%d"</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> formatted_date
+
+
+<span class="token keyword">def</span> <span class="token function">get_refer_url</span><span class="token punctuation">(</span>refer<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 使用正则表达式提取链接</span>
+    matches <span class="token operator">=</span> re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span>r<span class="token string">'链接:(https://[^\s]+)'</span><span class="token punctuation">,</span> refer<span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">","</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span>matches<span class="token punctuation">)</span>
+
+
+<span class="token triple-quoted-string string">"""
+获取某一页的数据
+主要是为了确保爬取的数据是最近一天更新的。
+"""</span>
+<span class="token keyword">def</span> <span class="token function">getPageData</span><span class="token punctuation">(</span>pageNum<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"pageNum---------------------------"</span> <span class="token operator">+</span> str<span class="token punctuation">(</span>pageNum<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    sleep_time <span class="token operator">=</span> random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time<span class="token punctuation">)</span>
+
+    base_url <span class="token operator">=</span> <span class="token string">'https://www.cnnvd.org.cn/web/homePage/cnnvdVulList'</span>
+
+    data <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"pageIndex"</span><span class="token punctuation">:</span> pageNum<span class="token punctuation">,</span>
+        <span class="token string">"pageSize"</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span>
+
+    headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">'User-Agent'</span><span class="token punctuation">:</span> <span class="token string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36'</span><span class="token punctuation">,</span>
+        <span class="token string">'Content-Type'</span><span class="token punctuation">:</span> <span class="token string">'application/json'</span>
+    <span class="token punctuation">}</span>
+
+    res <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>base_url<span class="token punctuation">,</span> json<span class="token operator">=</span>data<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># print(res.text)</span>
+
+    data <span class="token operator">=</span> res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    records <span class="token operator">=</span> data<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"records"</span><span class="token punctuation">]</span>
+
+    <span class="token comment" spellcheck="true"># 日期按照从大到小排序，可以避免更新昨日数据时，异常中止程序</span>
+    records <span class="token operator">=</span> sorted<span class="token punctuation">(</span>records<span class="token punctuation">,</span> key<span class="token operator">=</span><span class="token keyword">lambda</span> x<span class="token punctuation">:</span> datetime<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>x<span class="token punctuation">[</span><span class="token string">"updateTime"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'%Y-%m-%d'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> reverse<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+    <span class="token keyword">for</span> record <span class="token keyword">in</span> records<span class="token punctuation">:</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span>sleep_time<span class="token punctuation">)</span>
+        id <span class="token operator">=</span> record<span class="token punctuation">[</span><span class="token string">"id"</span><span class="token punctuation">]</span>
+        cnnvdCode <span class="token operator">=</span> record<span class="token punctuation">[</span><span class="token string">"cnnvdCode"</span><span class="token punctuation">]</span>
+        vulType <span class="token operator">=</span> record<span class="token punctuation">[</span><span class="token string">"vulType"</span><span class="token punctuation">]</span>
+
+        details_req_body <span class="token operator">=</span> <span class="token punctuation">{</span>
+            <span class="token string">"id"</span><span class="token punctuation">:</span> id<span class="token punctuation">,</span>
+            <span class="token string">"vulType"</span><span class="token punctuation">:</span> vulType<span class="token punctuation">,</span>
+            <span class="token string">"cnnvdCode"</span><span class="token punctuation">:</span> cnnvdCode
+        <span class="token punctuation">}</span>
+
+        details_base_url <span class="token operator">=</span> <span class="token string">"https://www.cnnvd.org.cn/web/cnnvdVul/getCnnnvdDetailOnDatasource"</span>
+        details_res <span class="token operator">=</span> requests<span class="token punctuation">.</span>post<span class="token punctuation">(</span>details_base_url<span class="token punctuation">,</span> json<span class="token operator">=</span>details_req_body<span class="token punctuation">,</span> headers<span class="token operator">=</span>headers<span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># res = details_res.text</span>
+        <span class="token comment" spellcheck="true"># print(res)</span>
+
+        details_data <span class="token operator">=</span> details_res<span class="token punctuation">.</span>json<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+        cnnvdDetail <span class="token operator">=</span> details_data<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"cnnvdDetail"</span><span class="token punctuation">]</span>
+
+        cve_id <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"cveCode"</span><span class="token punctuation">]</span>
+        cnnvd_id <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"cnnvdCode"</span><span class="token punctuation">]</span>
+        name_cn <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"vulName"</span><span class="token punctuation">]</span>
+        description_cn <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"vulDesc"</span><span class="token punctuation">]</span>
+        solution_cn <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"patch"</span><span class="token punctuation">]</span>
+        refer_url <span class="token operator">=</span> get_refer_url<span class="token punctuation">(</span>cnnvdDetail<span class="token punctuation">[</span><span class="token string">"referUrl"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        last_updated <span class="token operator">=</span> int<span class="token punctuation">(</span>time<span class="token punctuation">.</span>mktime<span class="token punctuation">(</span>time<span class="token punctuation">.</span>strptime<span class="token punctuation">(</span>str<span class="token punctuation">(</span>cnnvdDetail<span class="token punctuation">[</span><span class="token string">"publishTime"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">"%Y-%m-%d"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        hazard_level <span class="token operator">=</span> cnnvdDetail<span class="token punctuation">[</span><span class="token string">"hazardLevel"</span><span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span> hazard_level <span class="token operator">==</span> <span class="token number">1</span> <span class="token operator">or</span> <span class="token number">2</span><span class="token punctuation">:</span>
+            risk_level <span class="token operator">=</span> <span class="token string">"high"</span>
+        <span class="token keyword">elif</span> hazard_level <span class="token operator">==</span> <span class="token number">3</span><span class="token punctuation">:</span>
+            risk_level <span class="token operator">=</span> <span class="token string">"moderate"</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            risk_level <span class="token operator">=</span> <span class="token string">"unknown"</span>
+
+        merge_object <span class="token operator">=</span> merge_vul<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        merge_object<span class="token punctuation">.</span>create_data<span class="token punctuation">(</span>cve_id<span class="token punctuation">,</span> cnnvd_id<span class="token punctuation">,</span> name_cn<span class="token punctuation">,</span> description_cn<span class="token punctuation">,</span> solution_cn<span class="token punctuation">,</span> last_updated<span class="token punctuation">,</span>
+                                 risk_level<span class="token punctuation">,</span> refer_url<span class="token punctuation">)</span>
+
+        <span class="token comment" spellcheck="true"># 只更新前一天的数据 再小就直接退出程序</span>
+        up_time <span class="token operator">=</span> details_data<span class="token punctuation">[</span><span class="token string">"data"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"cnnvdDetail"</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token string">"updateTime"</span><span class="token punctuation">]</span>
+        <span class="token keyword">if</span> str<span class="token punctuation">(</span>up_time<span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">!=</span> get_yesterday_time<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            <span class="token keyword">continue</span>
+    getPageData<span class="token punctuation">(</span>pageNum <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    pageNum <span class="token operator">=</span> <span class="token number">1</span>
+    getPageData<span class="token punctuation">(</span>pageNum<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -500,8 +624,8 @@
             </div>
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
-                  property="dct:title" rel="dct:type">《人间有味是清欢》</span> 由 <a
-                    xmlns:cc="http://creativecommons.org/ns#" href="/2023/09/11/xiang-fa/ren-jian-you-wei-shi-qing-huan/"
+                  property="dct:title" rel="dct:type">《CNNVD爬虫开发》</span> 由 <a
+                    xmlns:cc="http://creativecommons.org/ns#" href="/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"
                     property="cc:attributionName"
                     rel="cc:attributionURL">Pandy</a> 采用
             <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
@@ -563,42 +687,52 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2023/09/15/sheng-huo/bei-jing-bei-jing/">
+                <a href="/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/">
                     <div class="card-image">
                         
                         
-                        <img src="https://s2.loli.net/2023/05/18/LJqpzQe4ZSDuBlt.jpg" class="responsive-img" alt="北京 北京">
+                        <img src="https://s2.loli.net/2023/05/22/8ms74aPxu1Czyhj.jpg" class="responsive-img" alt="CNNVD爬虫开发">
                         
-                        <span class="card-title">北京 北京</span>
+                        <span class="card-title">CNNVD爬虫开发</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            每次在生活这个分区写字，似乎都要发生些什么事情了，或者说，人生的一些观念，要发生变化了。
-我喜欢变化，不喜欢一成不变，变化指的是那种能对我的生活，带来更多希望和乐趣的变化。
-例如，换一份工作、从事一个新的项目、去一个新地方旅行、读一本新的书
+                            CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。
+但是最近发现了问题， 共享的数据文件中没有补丁信息和相关的链接信息。
+所以需要爬取CNNVD和CNVD页面，直接获取。CNVD因为存在
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-09-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%9F%E6%B4%BB/" class="post-category" target="_blank">
-                                    生活
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
                                 </a>
                             
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Python/" target="_blank">
+                        <span class="chip bg-color">Python</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -610,25 +744,25 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/09/11/xiang-fa/dui-zhang-zhao-yang-de-yi-dian-kan-fa/">
+                <a href="/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/">
                     <div class="card-image">
                         
                         
-                        <img src="https://s2.loli.net/2023/05/18/WkJCL6IDBp1nAuV.png" class="responsive-img" alt="对张朝阳的一点看法">
+                        <img src="https://s2.loli.net/2023/05/22/YwDNojU6kP7qKOn.jpg" class="responsive-img" alt="人间有味是清欢">
                         
-                        <span class="card-title">对张朝阳的一点看法</span>
+                        <span class="card-title">人间有味是清欢</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            我很少对一个人写一些分析性的文字。可能出于尊重，可能出于…嗯，暂且叫做无感。
-最近看了张朝阳的几节物理课，感觉这个人有一些西式的风格，怀着自信、些许狂妄、在黑板上演算公式时，让人觉得他有点东西，一看背景，有人说博学、有人说他缺少’中华民族文
+                            ​		今天是个周日，终于能有点时间写点东西啦，每次过一阵子不写点什么，就感觉房间过很久没有整理，脑袋乱乱的，思路也不是很清晰。人难得有几个爱好，这是之一吧。坚持写点类似于日记、感悟、想法的东西，是真真切切地体验到自身存在的感觉。
+​		家里
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-09-11
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-11-05
                             </span>
                         <span class="publish-author">
                             
@@ -799,7 +933,7 @@
             诗 宇宙 死亡
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">276k</span>
+            <span class="white-color">277.8k</span>
             
 
             <br>
