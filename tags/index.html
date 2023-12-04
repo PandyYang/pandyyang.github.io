@@ -315,11 +315,70 @@
             </div>
             <div class="tag-chips">
                 
+                
+                <a href="/tags/%E7%9F%AD%E7%AF%87/" title="短篇: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="短篇" style="background-color: #F9EBEA;">短篇
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E7%AB%A5%E8%AF%9D/" title="童话: 1">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="童话" style="background-color: #F5EEF8;">童话
+                        <span class="tag-length">1</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E9%95%BF%E7%AF%87/" title="长篇: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="长篇" style="background-color: #D5F5E3;">长篇
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
+                
+                <a href="/tags/%E5%B0%8F%E8%AF%B4/" title="小说: 4">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            data-tagname="小说" style="background-color: #E8F8F5;">小说
+                        <span class="tag-length">4</span>
+                    </span>
+                </a>
+                
             </div>
         </div>
     </div>
 </div>
 
+    
+    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
+<style type="text/css">
+    #tag-wordcloud {
+        width: 100%;
+        height: 300px;
+    }
+</style>
+
+<div class="container" data-aos="fade-up">
+    <div class="card">
+        <div id="tag-wordcloud" class="card-content"></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
+<script type="text/javascript">
+    
+
+    $('#tag-wordcloud').jQCloud([{"text":"短篇","weight":1,"link":"/tags/%E7%9F%AD%E7%AF%87/"},{"text":"童话","weight":1,"link":"/tags/%E7%AB%A5%E8%AF%9D/"},{"text":"长篇","weight":4,"link":"/tags/%E9%95%BF%E7%AF%87/"},{"text":"小说","weight":4,"link":"/tags/%E5%B0%8F%E8%AF%B4/"}], {
+        autoResize: true
+    });
+</script>
     
 
 </main>
