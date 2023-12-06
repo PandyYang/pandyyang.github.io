@@ -1,0 +1,1102 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="如何解决超大文件的内容合并问题？, Pandy">
+    <meta name="description" content="背景是这样的，有一批数据大概有1亿行左右，其中有一些数据可能出现重复。例如有下面两行数据：
+&amp;#123;
+    &amp;quot;id&amp;quot;: 10001,
+    &amp;quot;key&amp;quot;: &amp;quot;dida&amp;quot;,
+ ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>如何解决超大文件的内容合并问题？ | Pandy</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/day-night.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7932dff180fe30aa989c03f6825ed82f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+
+<!--    <script>-->
+<!--        (function(){-->
+<!--        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";-->
+<!--        document.write('<script src="' + src + '" id="sozz"><\/script>');-->
+<!--        })();-->
+<!--    </script>-->
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pandy" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Pandy</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Pandy</div>
+        <div class="logo-desc">
+            
+            士不可以不弘毅
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/PandyYang/pandy.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa-brands fa-github-alt"></i>github
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/PandyYang/pandy.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="github" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pagePasswd = '';
+        if (pagePasswd && pagePasswd.length > 0) {
+            let inputPasswd = CryptoJS.SHA256(prompt('芝麻开门~')).toString(CryptoJS.enc.Hex)
+            let ownerPasswd = '89e67ba902ad9ce44af57524376cea5a7d3502c9d5e117de45ba21395682bcbd'
+            if (inputPasswd !== pagePasswd && inputPasswd !== ownerPasswd){
+                alert('门似乎纹丝未动...');
+                location.href = localStorage.getItem("lastUrl") || '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://didablog.oss-cn-beijing.aliyuncs.com/20231204105319.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        如何解决超大文件的内容合并问题？
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        <span class="chip bg-color">无标签</span>
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2023-05-22
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Pandy
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    8 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>背景是这样的，有一批数据大概有1亿行左右，其中有一些数据可能出现重复。例如有下面两行数据：</p>
+<pre><code>&#123;
+    &quot;id&quot;: 10001,
+    &quot;key&quot;: &quot;dida&quot;,
+    &quot;value&quot;: &quot;我是滴答&quot;,
+&#125;
+</code></pre>
+<pre><code>&#123;
+    &quot;id&quot;: 10002,
+    &quot;key&quot;: &quot;dida&quot;
+    &quot;value&quot;: &quot;我是滴滴答答&quot;,
+&#125;
+</code></pre>
+<p>这两行数据的共同点是key一致，但是id不一致。</p>
+<p>现在有一批数据，存储在一个json文件内，现在需要将其中的id不一致，但是key一致的数据，进行合并。我们可以简单理解为，id不一致时，key一致，其余内容必定不一致！就是所谓的重复数据。</p>
+<p>尽管需求很扯，希望全天下的产品经理以此为鉴或者去学学中医之类的。</p>
+<p>如果要我设计，我会用一种更高效的办法，例如数组嵌套之类的解决此问题，虽然会变复杂，总比现在想办法解决强。</p>
+<p>先想想如何处理这样一种情况。要处理一个文件中的重复行数，单单依靠程序和一个文件是很难搞定的，如果把数据读到内存中处理，那是不可能的，所以要借助一个中件间进行处理。</p>
+<h3 id="1-Redis"><a href="#1-Redis" class="headerlink" title="1. Redis"></a>1. Redis</h3><p>Redis说白了，就是帮你把机器内存扩大到了和磁盘一样大。当然用的是其数据过期策略，Redis有很多过期策略，均可配置。</p>
+<p>暂且不说Redis的高级特性，例如过滤器、流等等，现在考虑用其kv结构，来解决问题。</p>
+<p>在第一步的时候，我们遍历文件。当然遍历的规则是先查后写。</p>
+<p>比如，在插入dida之前先查Redis看看dida在不在，如果在的话，需要判断id是否一致，流程图如下：</p>
+<p><img src="https://s2.loli.net/2023/05/22/6KcsmiXjQFyzhgT.png"></p>
+<p>这应该是最简单的一个办法了，问题是要单独引入一个redis，假如环境中没有redis，那就需要想办法找一个（废话！）</p>
+<p>其次，关键问题在于，1亿行文件太大，以Redis的变态性能，也要好一会呢，并且Redis的吞吐量会受网络影响，尽管可以使用Redis线程池，但是Redis又是单线程的，嘿嘿，看来这玩意适合读多的场景，并且一定要注意，线程一旦多了，要调优Linux的文件量等等，看似简单，其实好像也有点问题。</p>
+<p>为什么呢？</p>
+<ol>
+<li><p>Redis通过网络交互。</p>
+</li>
+<li><p>Redis适合读多写少，尤其是面对线程池的场景。</p>
+<p>而且按照我的经验，单机操作的时候，不要花心思去研究线程池之类的。Redigo的线程池还有坑，需要在golang的每个操作中，get、close，否则程序会崩溃。</p>
+</li>
+<li><p>每个操作都是先查后写，似乎很耗时。无论有没有，都要查，然后写。特别是对于一些机械磁盘，我不确定这样会不会影响到机器性能。</p>
+</li>
+</ol>
+<p>我们想个办法改进下吧。我们可以以json数据中的key为redis的key，一次全量写入，然后再写一次…具体看下设计图。</p>
+<p><img src="https://s2.loli.net/2023/05/22/8769zvuaiAbXj4p.png" alt="处理重复数据-第 2 页.drawio"></p>
+<p>二次写入法，避免了大量的读取、合并、写入耗费的时间。为什么呢？</p>
+<p>因为第一次以高速度写入Redis之后，第二次再高速读出来，只需要对比下结果的id是否一致就行了，高写高读，但是这只适合重复数据量不多的时候，假如有一半数据都是重复的，我想这两种方式应该差别不大，但无论如何我对二次写入有信心。</p>
+<p>但是我还是不满足，因为此时程序还是基于http交互的，redis可能在北京，我在广东，这一次io就是几毫秒的延迟，任何数乘以1亿，都大到影响我回家吃饭了。</p>
+<p>有没有一种内置的Redis来将这方面的耗时降低到最低？网络有延迟、有波动、带宽还要钱！</p>
+<h3 id="2-内置存储"><a href="#2-内置存储" class="headerlink" title="2. 内置存储"></a>2. 内置存储</h3><p>只有你想不到的技术，没有github没有的技术。</p>
+<p>KV数据库，例如谷歌的LevelDB （C++写成），还有一些流行的RocketDB，以及Badger（go写成的）。</p>
+<p>我其实对谷歌的LevelDB有好感，但是我的程序是用Go写的，尽管我可以用CGO来想办法调它的库，可我不愿意，因为会增加复杂度。</p>
+<p>LevelDB有替代的Go库，但是不是官方维护的，不是我不信任各位，主要是项目完蛋了，我就失业了，你们又不陪我一起。</p>
+<p>看了下Badger，调优参数较多，项目应用较为广泛，用这个先试试。</p>
+<p>不推荐使用NutsDB，虽然它是国人写的，而且花里胡哨的用法一大堆，但是我不建议用这个开源库，这个库声称借鉴了很多其他的著名KV库，但是首当其冲的就是内存占用过大，这在生产环境中是致命的！而且我暂时没发现有内存淘汰策略，希望作者加油。</p>
+<p>Badger的读取写入速度最高应该有5W&#x2F;s，似乎能和Redis一战了，其底层使用了一种压缩日志的算法和合并数据的算法，效率很高，缺点是不能并发执行。会存在文件锁，有分布式需求的慎用。例如一边淘汰数据一边写入数据，或者多个进程同时操作数据，这个是不允许的。</p>
+<p>其实处理流程和上图二差不多，但是注意，如果有多个文件，需要每次在处理完一个文件后，清空数据库再进行操作。</p>
+<p><img src="https://s2.loli.net/2023/05/22/zL5RKIkyTxfHoJv.png" alt="处理重复数据-第 3 页.drawio"></p>
+<p>附上代码。</p>
+<pre><code>func ProcessEncryptData() &#123;
+
+    for k, v := range mapData &#123;
+        utils.DroupDB()
+        handleEncryptData(k, v)
+    &#125;
+
+    utils.DroupDB()
+&#125;
+
+
+func handleEncryptData(ori, des string) error &#123;
+    utils.CreateDirAndFile(ori)
+    utils.CreateDirAndFile(des)
+
+    err := writeEncryptDataArr(ori)
+    if err != nil &#123;
+        return err
+    &#125;
+    err = mergeEncryptDataArr(ori)
+    if err != nil &#123;
+        return err
+    &#125;
+    err = writeArrValueToFile(des)
+    if err != nil &#123;
+        return err
+    &#125;
+
+    return nil
+&#125;
+
+func writeEncryptDataArr(ori string) error &#123;
+    f, _ := os.Open(ori)
+    reader := bufio.NewReader(f)
+
+    _, om := service.GetOptMode()
+    for &#123;
+        v, _, err := reader.ReadLine()
+
+        if err == io.EOF &#123;
+            utils.GetLogger().Printf(&quot;finished handle file, when write encrypt data: %s&quot;, ori)
+            break
+        &#125;
+
+        var edata entries.EncryptData
+        json.Unmarshal(v, &amp;edata)
+
+        var arr []entries.NtiSdkDataVo
+        arr = append(arr, *edata.Value)
+
+        value, err := json.Marshal(arr)
+        if err != nil &#123;
+            utils.GetLogger().Printf(&quot;when write encrypt data arr, marshal data failed, %s&quot;, err.Error())
+            return err
+        &#125;
+
+        om.Add(&quot;&quot;, edata.Key, string(value))
+    &#125;
+
+    return nil
+&#125;
+
+func mergeEncryptDataArr(ori string) error &#123;
+    _, om := service.GetOptMode()
+    f, _ := os.Open(ori)
+
+    s := bufio.NewReader(f)
+    for &#123;
+        v, _, err := s.ReadLine()
+        if err == io.EOF &#123;
+            utils.GetLogger().Printf(&quot;finished handle file, when merge encrypt data: %s&quot;, ori)
+            break
+        &#125;
+
+        var edata entries.EncryptData
+        json.Unmarshal(v, &amp;edata)
+        // value, _ := json.Marshal(edata.Value)
+        dbValue, _ := om.Query(&quot;&quot;, edata.Key)
+
+        edataV, err := json.Marshal(edata.Value)
+
+        if err != nil &#123;
+            utils.GetLogger().Printf(&quot;when merge encrypt data arr, marshal data failed, %s&quot;, err.Error())
+            return err
+        &#125;
+
+        f, v2 := beforeMergeArr(edataV, []byte(dbValue))
+        if !f &#123;
+            om.Modify(&quot;&quot;, edata.Key, string(v2))
+        &#125;
+    &#125;
+
+    return nil
+&#125;
+
+func beforeMergeArr(insertValue, dbValue []byte) (bool, []byte) &#123;
+
+    var iv entries.NtiSdkDataVo
+    json.Unmarshal(insertValue, &amp;iv)
+
+    var dv []entries.NtiSdkDataVo
+    json.Unmarshal(dbValue, &amp;dv)
+
+    flag := false
+    for _, v := range dv &#123;
+        // 已存在
+        if v.Id == iv.Id &#123;
+            flag = true
+        &#125;
+    &#125;
+
+    if !flag &#123;
+        dv = append(dv, iv)
+        b, _ := json.Marshal(dv)
+        return false, b
+    &#125; else &#123;
+        return true, dbValue
+    &#125;
+&#125;
+
+func writeArrValueToFile(des string) error &#123;
+    file, err := os.OpenFile(des, os.O_RDWR|os.O_APPEND, 0666)
+    if err != nil &#123;
+        utils.GetLogger().Printf(&quot;when write arr value to file failed, %s&quot;, err.Error())
+        return err
+    &#125;
+    defer file.Close()
+    write := bufio.NewWriter(file)
+    db := utils.GetMemory3()
+
+    err = db.View(func(txn *badger.Txn) error &#123;
+        opts := badger.DefaultIteratorOptions
+        opts.PrefetchSize = 1000
+        it := txn.NewIterator(opts)
+        defer it.Close()
+
+        for it.Rewind(); it.Valid(); it.Next() &#123;
+            item := it.Item()
+            k := item.Key()
+
+            // 将键值对写入输出文件
+            err := item.Value(func(v []byte) error &#123;
+                var encryptDataArr entries.EncryptDataArr
+                encryptDataArr.Key = string(k)
+                var dataVo []*entries.NtiSdkDataVo
+                json.Unmarshal(v, &amp;dataVo)
+                encryptDataArr.Value = dataVo
+                b, _ := json.Marshal(encryptDataArr)
+                _, err := write.WriteString(string(b) + &quot;\n&quot;)
+                write.Flush()
+                return err
+            &#125;)
+            if err != nil &#123;
+                utils.GetLogger().Printf(&quot;when write arr value to file, db view failed, %s&quot;, err.Error())
+                return err
+            &#125;
+        &#125;
+
+        return nil
+    &#125;)
+
+    if err != nil &#123;
+        utils.GetLogger().Printf(&quot;when write arr value to file, set range data from db failed, %s&quot;, err.Error())
+        return err
+    &#125;
+
+    utils.GetLogger().Printf(&quot;finished handle file, when rewrite encrypt data to: %s&quot;, des)
+    return nil
+&#125;
+</code></pre>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+                    <img alt="知识共享许可协议"
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">《如何解决超大文件的内容合并问题？》</span> 由 <a
+                    xmlns:cc="http://creativecommons.org/ns#" href="/2023/05/22/ji-zhu/wen-ti/ru-he-jie-jue-chao-da-wen-jian-de-nei-rong-he-bing-wen-ti/"
+                    property="cc:attributionName"
+                    rel="cc:attributionURL">Pandy</a> 采用
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+                知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>
+            进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2023/05/23/ji-zhu/golang/shen-ru-li-jie-cron-biao-da-shi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105254.png" class="responsive-img" alt="深入理解Cron表达式">
+                        
+                        <span class="card-title">深入理解Cron表达式</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            学完或许可以做个煮蛋器，或者闹钟，或者定时炸弹的定时装置。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-23
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Golang/" target="_blank">
+                        <span class="chip bg-color">Golang</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2023/05/22/sui-sui-nian/xie-hui-mei/">
+                    <div class="card-image">
+                        
+                        <img src="https://s2.loli.net/2023/05/22/mOJP6cW9VZ3RYnI.png" class="responsive-img" alt="叶惠美">
+                        
+                        <span class="card-title">叶惠美</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            天很黑，但夜会很美～
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-05-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/" class="post-category" target="_blank">
+                                    碎碎念
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Pandy<br />'
+            + '作者: Pandy<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.css">
+</head>
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+    <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="切换主题" >
+        <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+    </a>
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+            setTimeout(function () {
+                $('body').hasClass('DarkMode')
+                    ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon'))
+                    : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+
+                    setTimeout(function () {
+                        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                            $(this).remove()
+                        })
+                    }, 2e3)
+            })
+    }
+
+    //黑夜模式自动开启功能（首次加载）
+    setTimeout(function () {
+        if (localStorage.getItem('isDark') == null) {
+            if ((new Date().getHours() >= 22 || new Date().getHours() < 7) && !$('body').hasClass('DarkMode')) {
+                $('body').addClass('DarkMode');
+                localStorage.setItem('isDark', '1');
+                $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon');
+            }
+        } else {
+            /* 模式判断 */
+            if (localStorage.getItem('isDark') === '1') {
+                document.body.classList.add('DarkMode');
+                $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon');
+            } else {
+                document.body.classList.remove('DarkMode');
+                $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon');
+            }
+        }
+    }, 0);
+</script>
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="position: center">
+        <div class="copy-right">
+            &copy;2022-2023 PandyYang 版权所有
+            <br>
+            诗 宇宙 死亡
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">281.8k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script>
+    $(document).ready(function () {
+
+        // var int = setInterval(fixCount, 50);
+        // var pvcountOffset = 80000;
+        // var uvcountOffset = 20000;
+
+        // function fixCount() {
+        //     if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+        //         $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+        //         clearInterval(int);
+        //     }
+        //     if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        //         $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+        //         clearInterval(int);
+        //     }
+        // }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2022, 12, 29, 00, 00, 00);
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "", clearTimeout(st)) : (document.title = "", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GP1D6B9899"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GP1D6B9899');
+</script>
+
+
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>
