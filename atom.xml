@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
-  <updated>2023-12-04T01:45:57.152Z</updated>
+  <updated>2024-01-05T07:03:53.884Z</updated>
   <id>https://github.com/PandyYang/pandyyang.github.io/</id>
   
   <author>
@@ -15,6 +15,105 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何基于S3搭建hadoop大数据集群，并整合Hive、Spark</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/</id>
+    <published>2024-01-04T01:51:03.000Z</published>
+    <updated>2024-01-05T07:03:53.884Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;写作本文的目的，一个是为了积累经验，一个是为了给同样需要基于S3搭建大数据平台的人提供一个参考。&lt;/p&gt;
+&lt;p&gt;本文不会带你手把手一步步操作，只会阐述核心的配置文件、组件的交互等等问题。&lt;/p&gt;
+&lt;h2 id=&quot;组件版本信息&quot;&gt;&lt;a href=&quot;#组件版本信息&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="大数据" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>年会不能停</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2024/01/01/dian-ying/nian-hui-bu-neng-ting/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2024/01/01/dian-ying/nian-hui-bu-neng-ting/</id>
+    <published>2024-01-01T01:01:42.000Z</published>
+    <updated>2024-01-04T01:50:06.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;昨天跨年之夜和朋友吃了个饭，看了一部电影叫做《年会不能停》。是大鹏演的一部带有喜剧意味的关于职场裁员的片子。&lt;/p&gt;
+&lt;p&gt;我恍惚之间好像在这部片子中看到了我的名字？？潘迪杨？&lt;/p&gt;
+&lt;p&gt;总体感觉这部片子挺有想法。关于理想、关于现实、关于生活，是关于在大城市打拼的个人的</summary>
+        
+      
+    
+    
+    
+    <category term="电影" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%B5%E5%BD%B1/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2023 再见</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/24/sheng-huo/2023-zai-jian/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/24/sheng-huo/2023-zai-jian/</id>
+    <published>2023-12-24T00:28:36.000Z</published>
+    <updated>2024-01-04T01:50:06.579Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天是2023年12月24日8:33，圣诞节的前一天。快要到新的一年了，回顾自己所经历的2023，有得有失，作为一个小人物来说，虽无总结的必要，但在这个地方略微记录下过去一年生活经历的轨迹，倒不失为一件略微有意义的事情。&lt;/p&gt;
+&lt;p&gt;2023年，疫情消散。1月8号，国家卫</summary>
+        
+      
+    
+    
+    
+    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>信息洪流</title>
+    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/15/ren-zhi/xin-xi-hong-liu/"/>
+    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/15/ren-zhi/xin-xi-hong-liu/</id>
+    <published>2023-12-14T22:23:59.000Z</published>
+    <updated>2024-01-04T01:50:06.580Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​	其实一直以来，发现自己不知道是有意还是无意，总是无法真正融入到目前的信息化时代，选择不”不自觉”去看抖音，刷小红书，看知乎、贴吧、微博、豆瓣等等各种app，我可以单纯是为了无聊去消遣，在地铁上打发时间，可以在做饭的时候去小红书找找菜谱，玩游戏的时候找找攻略，或者干脆就是</summary>
+        
+      
+    
+    
+    
+    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AE%A4%E7%9F%A5/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>在林间</title>
@@ -400,106 +499,6 @@
         
     <summary type="html">&lt;p&gt;&lt;img src=&quot;https://didablog.oss-cn-beijing.aliyuncs.com/4018eed74333c35308fca8a11711921.jpg&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>婚姻是什么</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/25/sheng-huo/hun-yin-shi-shi-me/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/25/sheng-huo/hun-yin-shi-shi-me/</id>
-    <published>2023-09-25T08:34:09.000Z</published>
-    <updated>2023-09-28T09:12:14.302Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;2023年9月23日，我的发小之一，结婚了。我有六个关系差不多的发小，这是第二个结婚的人。&lt;/p&gt;
-&lt;p&gt;好快啊，他们是在一次朋友的婚礼上相识，相知，到后来的相濡以沫的。&lt;/p&gt;
-&lt;p&gt;我在北京，提前半个月接到他的电话，他那时候在青海的高原上做工程项目。&lt;/p&gt;
-&lt;p&gt;我在</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>何谓孤独</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/18/xiang-fa/he-wei-gu-du/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/18/xiang-fa/he-wei-gu-du/</id>
-    <published>2023-09-18T02:46:27.000Z</published>
-    <updated>2023-09-28T09:12:14.291Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;待完稿。&lt;/p&gt;
-</summary>
-        
-      
-    
-    
-    
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>北京 北京</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/15/sheng-huo/bei-jing-bei-jing/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/15/sheng-huo/bei-jing-bei-jing/</id>
-    <published>2023-09-15T03:02:00.000Z</published>
-    <updated>2023-09-28T09:12:14.302Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;每次在生活这个分区写字，似乎都要发生些什么事情了，或者说，人生的一些观念，要发生变化了。&lt;/p&gt;
-&lt;p&gt;我喜欢变化，不喜欢一成不变，变化指的是那种能对我的生活，带来更多希望和乐趣的变化。&lt;/p&gt;
-&lt;p&gt;例如，换一份工作、从事一个新的项目、去一个新地方旅行、读一本新的书、产生</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>对张朝阳的一点看法</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/11/xiang-fa/dui-zhang-zhao-yang-de-yi-dian-kan-fa/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/11/xiang-fa/dui-zhang-zhao-yang-de-yi-dian-kan-fa/</id>
-    <published>2023-09-11T02:57:27.000Z</published>
-    <updated>2023-09-28T09:12:14.291Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;我很少对一个人写一些分析性的文字。可能出于尊重，可能出于…嗯，暂且叫做无感。&lt;/p&gt;
-&lt;p&gt;最近看了张朝阳的几节物理课，感觉这个人有一些西式的风格，怀着自信、些许狂妄、在黑板上演算公式时，让人觉得他有点东西，一看背景，有人说博学、有人说他缺少’中华民族文化底蕴‘。&lt;/p&gt;
-</summary>
         
       
     
