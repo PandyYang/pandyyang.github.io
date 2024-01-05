@@ -3,11 +3,11 @@
   <title>Pandy</title>
   
   
-  <link href="https://github.com/PandyYang/pandyyang.github.io/atom.xml" rel="self"/>
+  <link href="https://github.com/PandyYang/atom.xml" rel="self"/>
   
-  <link href="https://github.com/PandyYang/pandyyang.github.io/"/>
+  <link href="https://github.com/PandyYang/"/>
   <updated>2024-01-05T07:03:53.884Z</updated>
-  <id>https://github.com/PandyYang/pandyyang.github.io/</id>
+  <id>https://github.com/PandyYang/</id>
   
   <author>
     <name>Pandy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>如何基于S3搭建hadoop大数据集群，并整合Hive、Spark</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/</id>
+    <link href="https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/"/>
+    <id>https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/</id>
     <published>2024-01-04T01:51:03.000Z</published>
     <updated>2024-01-05T07:03:53.884Z</updated>
     
@@ -36,17 +36,17 @@
     
     
     
-    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="大数据" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    <category term="大数据" scheme="https://github.com/PandyYang/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
     
   </entry>
   
   <entry>
     <title>年会不能停</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2024/01/01/dian-ying/nian-hui-bu-neng-ting/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2024/01/01/dian-ying/nian-hui-bu-neng-ting/</id>
+    <link href="https://github.com/PandyYang/2024/01/01/dian-ying/nian-hui-bu-neng-ting/"/>
+    <id>https://github.com/PandyYang/2024/01/01/dian-ying/nian-hui-bu-neng-ting/</id>
     <published>2024-01-01T01:01:42.000Z</published>
     <updated>2024-01-04T01:50:06.580Z</updated>
     
@@ -63,15 +63,15 @@
     
     
     
-    <category term="电影" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%B5%E5%BD%B1/"/>
+    <category term="电影" scheme="https://github.com/PandyYang/categories/%E7%94%B5%E5%BD%B1/"/>
     
     
   </entry>
   
   <entry>
     <title>2023 再见</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/24/sheng-huo/2023-zai-jian/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/24/sheng-huo/2023-zai-jian/</id>
+    <link href="https://github.com/PandyYang/2023/12/24/sheng-huo/2023-zai-jian/"/>
+    <id>https://github.com/PandyYang/2023/12/24/sheng-huo/2023-zai-jian/</id>
     <published>2023-12-24T00:28:36.000Z</published>
     <updated>2024-01-04T01:50:06.579Z</updated>
     
@@ -87,15 +87,15 @@
     
     
     
-    <category term="生活" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%94%9F%E6%B4%BB/"/>
+    <category term="生活" scheme="https://github.com/PandyYang/categories/%E7%94%9F%E6%B4%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>信息洪流</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/15/ren-zhi/xin-xi-hong-liu/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/15/ren-zhi/xin-xi-hong-liu/</id>
+    <link href="https://github.com/PandyYang/2023/12/15/ren-zhi/xin-xi-hong-liu/"/>
+    <id>https://github.com/PandyYang/2023/12/15/ren-zhi/xin-xi-hong-liu/</id>
     <published>2023-12-14T22:23:59.000Z</published>
     <updated>2024-01-04T01:50:06.580Z</updated>
     
@@ -110,15 +110,15 @@
     
     
     
-    <category term="认知" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AE%A4%E7%9F%A5/"/>
+    <category term="认知" scheme="https://github.com/PandyYang/categories/%E8%AE%A4%E7%9F%A5/"/>
     
     
   </entry>
   
   <entry>
     <title>在林间</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/zai-lin-jian/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/zai-lin-jian/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/zai-lin-jian/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/zai-lin-jian/</id>
     <published>2023-12-03T14:27:28.000Z</published>
     <updated>2023-12-04T01:45:57.152Z</updated>
     
@@ -133,15 +133,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>旅行者二号</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/lu-xing-zhe-er-hao/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/lu-xing-zhe-er-hao/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/lu-xing-zhe-er-hao/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/lu-xing-zhe-er-hao/</id>
     <published>2023-12-03T14:25:01.000Z</published>
     <updated>2023-12-04T03:09:24.565Z</updated>
     
@@ -156,15 +156,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>爸，我回来了</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/ba-wo-hui-lai-liao/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/ba-wo-hui-lai-liao/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/ba-wo-hui-lai-liao/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/ba-wo-hui-lai-liao/</id>
     <published>2023-12-03T14:24:29.000Z</published>
     <updated>2023-12-04T03:19:56.248Z</updated>
     
@@ -179,15 +179,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>我的姥爷</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/mu-ye/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/mu-ye/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/mu-ye/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/mu-ye/</id>
     <published>2023-12-03T14:23:24.000Z</published>
     <updated>2023-12-04T01:45:57.153Z</updated>
     
@@ -202,15 +202,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>幻想</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/huan-xiang/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/huan-xiang/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/huan-xiang/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/huan-xiang/</id>
     <published>2023-12-03T14:22:37.000Z</published>
     <updated>2023-12-04T01:45:57.153Z</updated>
     
@@ -225,15 +225,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>生亦何欢</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/sheng-yi-he-huan/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/sheng-yi-he-huan/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/sheng-yi-he-huan/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/sheng-yi-he-huan/</id>
     <published>2023-12-03T14:21:09.000Z</published>
     <updated>2023-12-04T01:45:57.156Z</updated>
     
@@ -248,15 +248,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>诗意</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/shi-yi-sheng-huo/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/sui-sui-nian/shi-yi-sheng-huo/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/sui-sui-nian/shi-yi-sheng-huo/"/>
+    <id>https://github.com/PandyYang/2023/12/03/sui-sui-nian/shi-yi-sheng-huo/</id>
     <published>2023-12-03T14:16:35.000Z</published>
     <updated>2023-12-04T01:45:57.157Z</updated>
     
@@ -271,15 +271,15 @@
     
     
     
-    <category term="碎碎念" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    <category term="碎碎念" scheme="https://github.com/PandyYang/categories/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
     
     
   </entry>
   
   <entry>
     <title>心事</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/shi/xin-shi/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/shi/xin-shi/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/shi/xin-shi/"/>
+    <id>https://github.com/PandyYang/2023/12/03/shi/xin-shi/</id>
     <published>2023-12-03T14:10:01.000Z</published>
     <updated>2023-12-04T03:19:56.263Z</updated>
     
@@ -299,15 +299,15 @@
     
     
     
-    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    <category term="诗" scheme="https://github.com/PandyYang/categories/%E8%AF%97/"/>
     
     
   </entry>
   
   <entry>
     <title>秋夜月凉星河</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/shi/qiu-ye-yue-liang-xing-he/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/shi/qiu-ye-yue-liang-xing-he/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/shi/qiu-ye-yue-liang-xing-he/"/>
+    <id>https://github.com/PandyYang/2023/12/03/shi/qiu-ye-yue-liang-xing-he/</id>
     <published>2023-12-03T02:59:09.000Z</published>
     <updated>2023-12-04T03:19:56.270Z</updated>
     
@@ -332,15 +332,15 @@
     
     
     
-    <category term="诗" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%AF%97/"/>
+    <category term="诗" scheme="https://github.com/PandyYang/categories/%E8%AF%97/"/>
     
     
   </entry>
   
   <entry>
     <title>爱是什么</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/xiang-fa/ai-shi-shi-me/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/xiang-fa/ai-shi-shi-me/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/xiang-fa/ai-shi-shi-me/"/>
+    <id>https://github.com/PandyYang/2023/12/03/xiang-fa/ai-shi-shi-me/</id>
     <published>2023-12-03T02:58:45.000Z</published>
     <updated>2023-12-04T03:25:35.937Z</updated>
     
@@ -356,15 +356,15 @@
     
     
     
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
+    <category term="想法" scheme="https://github.com/PandyYang/categories/%E6%83%B3%E6%B3%95/"/>
     
     
   </entry>
   
   <entry>
     <title>读大学的意义</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/</id>
+    <link href="https://github.com/PandyYang/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/"/>
+    <id>https://github.com/PandyYang/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/</id>
     <published>2023-12-03T02:57:02.000Z</published>
     <updated>2023-12-04T03:25:35.942Z</updated>
     
@@ -380,15 +380,15 @@
     
     
     
-    <category term="成长" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%88%90%E9%95%BF/"/>
+    <category term="成长" scheme="https://github.com/PandyYang/categories/%E6%88%90%E9%95%BF/"/>
     
     
   </entry>
   
   <entry>
     <title>对中小型企业项目管理的一点看法</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/</id>
+    <link href="https://github.com/PandyYang/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/"/>
+    <id>https://github.com/PandyYang/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/</id>
     <published>2023-11-14T02:29:09.000Z</published>
     <updated>2023-11-14T06:03:44.738Z</updated>
     
@@ -405,15 +405,15 @@
     
     
     
-    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
+    <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
     
   </entry>
   
   <entry>
     <title>CNNVD爬虫开发</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
+    <link href="https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
+    <id>https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
     <published>2023-11-13T02:58:43.000Z</published>
     <updated>2023-11-13T03:08:51.009Z</updated>
     
@@ -429,17 +429,17 @@
     
     
     
-    <category term="技术" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-    <category term="Python" scheme="https://github.com/PandyYang/pandyyang.github.io/tags/Python/"/>
+    <category term="Python" scheme="https://github.com/PandyYang/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>人间有味是清欢</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/</id>
+    <link href="https://github.com/PandyYang/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/"/>
+    <id>https://github.com/PandyYang/2023/11/05/xiang-fa/ren-jian-you-wei-shi-qing-huan/</id>
     <published>2023-11-05T02:32:26.000Z</published>
     <updated>2023-11-07T08:26:00.437Z</updated>
     
@@ -455,15 +455,15 @@
     
     
     
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
+    <category term="想法" scheme="https://github.com/PandyYang/categories/%E6%83%B3%E6%B3%95/"/>
     
     
   </entry>
   
   <entry>
     <title>2023-2024职业规划</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/10/23/zhi-chang/2023-2024-zhi-ye-gui-hua/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/10/23/zhi-chang/2023-2024-zhi-ye-gui-hua/</id>
+    <link href="https://github.com/PandyYang/2023/10/23/zhi-chang/2023-2024-zhi-ye-gui-hua/"/>
+    <id>https://github.com/PandyYang/2023/10/23/zhi-chang/2023-2024-zhi-ye-gui-hua/</id>
     <published>2023-10-23T02:24:00.000Z</published>
     <updated>2023-10-23T02:40:32.731Z</updated>
     
@@ -480,15 +480,15 @@
     
     
     
-    <category term="职场" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E8%81%8C%E5%9C%BA/"/>
+    <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
     
   </entry>
   
   <entry>
     <title>秋夜月凉星河</title>
-    <link href="https://github.com/PandyYang/pandyyang.github.io/2023/09/30/xiang-fa/qiu-ye-yue-liang-xing-he/"/>
-    <id>https://github.com/PandyYang/pandyyang.github.io/2023/09/30/xiang-fa/qiu-ye-yue-liang-xing-he/</id>
+    <link href="https://github.com/PandyYang/2023/09/30/xiang-fa/qiu-ye-yue-liang-xing-he/"/>
+    <id>https://github.com/PandyYang/2023/09/30/xiang-fa/qiu-ye-yue-liang-xing-he/</id>
     <published>2023-09-30T08:45:18.000Z</published>
     <updated>2023-10-20T05:58:28.398Z</updated>
     
@@ -504,7 +504,7 @@
     
     
     
-    <category term="想法" scheme="https://github.com/PandyYang/pandyyang.github.io/categories/%E6%83%B3%E6%B3%95/"/>
+    <category term="想法" scheme="https://github.com/PandyYang/categories/%E6%83%B3%E6%B3%95/"/>
     
     
   </entry>
