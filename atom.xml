@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/"/>
-  <updated>2024-03-08T06:06:45.785Z</updated>
+  <updated>2024-03-07T02:41:58.667Z</updated>
   <id>https://github.com/PandyYang/</id>
   
   <author>
@@ -15,31 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>如何写作</title>
-    <link href="https://github.com/PandyYang/2024/03/08/xie-zuo/ru-he-xie-zuo/"/>
-    <id>https://github.com/PandyYang/2024/03/08/xie-zuo/ru-he-xie-zuo/</id>
-    <published>2024-03-08T02:06:13.000Z</published>
-    <updated>2024-03-08T06:06:45.785Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;写这篇文章，有点莫名奇妙，如何写作…嗯，听着像是一个写东西很厉害，很出名的人想出来的标题。&lt;/p&gt;
-&lt;p&gt;与其说是来”好为人师”，不如说是记录下自己在这个方面长期以来的想法和探索。对看到的人有帮助，也是一点点经验分享所获得的慰藉。&lt;/p&gt;
-&lt;p&gt;我其实不擅长归纳、总结，这个</summary>
-        
-      
-    
-    
-    
-    <category term="写作" scheme="https://github.com/PandyYang/categories/%E5%86%99%E4%BD%9C/"/>
-    
-    
-  </entry>
   
   <entry>
     <title>感我此言良久立</title>
@@ -510,6 +485,32 @@
     
     <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>CNNVD爬虫开发</title>
+    <link href="https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
+    <id>https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
+    <published>2023-11-13T02:58:43.000Z</published>
+    <updated>2023-11-13T03:08:51.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。&lt;/p&gt;
+&lt;p&gt;但是最近发现了问题，</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://github.com/PandyYang/tags/Python/"/>
     
   </entry>
   
