@@ -248,7 +248,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pagePasswd = '';
+        let pagePasswd = '0030755f33599334e14572a306f3ae78a2275cfee6aac75e008e34b939f80d3f';
         if (pagePasswd && pagePasswd.length > 0) {
             let inputPasswd = CryptoJS.SHA256(prompt('芝麻开门~')).toString(CryptoJS.enc.Hex)
             let ownerPasswd = '89e67ba902ad9ce44af57524376cea5a7d3502c9d5e117de45ba21395682bcbd'
@@ -263,7 +263,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://didablog.oss-cn-beijing.aliyuncs.com/20231204104537.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://didablog.oss-cn-beijing.aliyuncs.com/20231204104246.png')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -753,7 +753,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105931.png" class="responsive-img" alt="论压力与安逸">
+                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204110010.png" class="responsive-img" alt="论压力与安逸">
                         
                         <span class="card-title">论压力与安逸</span>
                     </div>
@@ -794,7 +794,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105706.png" class="responsive-img" alt="3-4月想法摘录">
+                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105745.png" class="responsive-img" alt="3-4月想法摘录">
                         
                         <span class="card-title">3-4月想法摘录</span>
                     </div>
@@ -1022,7 +1022,7 @@
             诗 宇宙 死亡
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">303.6k</span>
+            <span class="white-color">312.2k</span>
             
 
             <br>
@@ -1107,7 +1107,9 @@
 <script src="/js/search.js"></script>
 <script type="text/javascript">
 $(function () {
-    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    console.log("/search.xml")
+    // searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+    searchFunc("/search.xml", 'searchInput', 'searchResult');
 });
 </script>
     <!-- 回到顶部按钮 -->

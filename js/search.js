@@ -1,9 +1,14 @@
 var searchFunc = function (path, search_id, content_id) {
+    console.log("aha")
+    console.log(path)
+    console.log(search_id)
+    console.log(content_id)
     'use strict';
     $.ajax({
         url: path,
         dataType: "xml",
         success: function (xmlResponse) {
+            console.log(xmlResponse)
             // get the contents from search data
             var datas = $("entry", xmlResponse).map(function () {
                 return {
@@ -17,6 +22,7 @@ var searchFunc = function (path, search_id, content_id) {
             $input.addEventListener('input', function () {
                 var str = '<ul class=\"search-result-list\">';
                 var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                console.log(keywords)
                 $resultContent.innerHTML = "";
                 if (this.value.trim().length <= 0) {
                     return;
