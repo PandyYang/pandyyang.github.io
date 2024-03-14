@@ -1,8 +1,4 @@
 var searchFunc = function (path, search_id, content_id) {
-    console.log("aha")
-    console.log(path)
-    console.log(search_id)
-    console.log(content_id)
     'use strict';
     $.ajax({
         url: path,
@@ -86,6 +82,12 @@ var searchFunc = function (path, search_id, content_id) {
                 str += "</ul>";
                 $resultContent.innerHTML = str;
             });
+        },
+        error: function (xhr, status, error) {
+            console.log("Ajax请求失败");
+            console.log("错误状态: " + status);
+            console.log("错误详情: " + error);
+            // 根据需要，这里可以添加更多错误处理逻辑
         }
     });
 }
