@@ -289,7 +289,7 @@
         // 当不在首页时 密码输入错误 会留在当前页
         if (window.location.href.indexOf("page") !== -1) {
             localStorage.setItem("lastUrl", window.location.href);
-        } else if (window.location.href === "http://pandy.cc/" || window.location.href === "http://pandy.cc/") {
+        } else if (window.location.href === "http://pandy.cc/" || window.location.href === "https://pandy.cc/") {
             // 在第一页时 清空lastUrl 防止密码错误锁死在page2
             localStorage.setItem("lastUrl", "");
         }
