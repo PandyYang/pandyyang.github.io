@@ -120,31 +120,6 @@
   </entry>
   
   <entry>
-    <title>回家</title>
-    <link href="https://github.com/PandyYang/2024/01/18/sheng-huo/hui-jia/"/>
-    <id>https://github.com/PandyYang/2024/01/18/sheng-huo/hui-jia/</id>
-    <published>2024-01-18T05:56:01.000Z</published>
-    <updated>2024-03-18T06:22:41.733Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;昨天是周天，3月17号，一觉醒来，感觉到前所未有的孤独。&lt;/p&gt;
-&lt;p&gt;这次，我真的要离开北京了。白天的时候，还是在看书，在小小的房间里，和几个小伙伴开了黑，但是心里一直都是空空的。&lt;/p&gt;
-&lt;p&gt;早上和爷爷打了一个电话，爷爷在和他的朋友吃饭。上周他去医院保养了，</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>如何基于S3搭建hadoop大数据集群，并整合Hive、Spark</title>
     <link href="https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/"/>
     <id>https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/</id>
@@ -509,6 +484,31 @@
     
     
     <category term="成长" scheme="https://github.com/PandyYang/categories/%E6%88%90%E9%95%BF/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>对中小型企业项目管理的一点看法</title>
+    <link href="https://github.com/PandyYang/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/"/>
+    <id>https://github.com/PandyYang/2023/11/14/zhi-chang/dui-zhong-xiao-xing-gong-si-xiang-mu-guan-li-de-yi-dian-kan-fa/</id>
+    <published>2023-11-14T02:29:09.000Z</published>
+    <updated>2023-11-14T06:03:44.738Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;​	之前在上一家的时候，公司差不多有1万多人，纯研发的话差不多有四五千人，公司的规模还是非常大的。公司规模大，随之而来的就是流水线式的管理。比如敏捷开发中的一些措施的落地。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Daily</summary>
+        
+      
+    
+    
+    
+    <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
     
   </entry>
