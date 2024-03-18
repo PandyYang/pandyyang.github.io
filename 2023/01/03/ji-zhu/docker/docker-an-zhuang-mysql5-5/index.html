@@ -262,7 +262,7 @@ docker create --name mysql -v /data/mysql-">
         let pagePasswd = '';
         if (pagePasswd && pagePasswd.length > 0) {
             let inputPasswd = CryptoJS.SHA256(prompt('芝麻开门~')).toString(CryptoJS.enc.Hex)
-            let ownerPasswd = '89e67ba902ad9ce44af57524376cea5a7d3502c9d5e117de45ba21395682bcbd'
+            let ownerPasswd = '03d5720fe72b22f152e5718a7eb1b2d1cfa1198e763cd6121fe70b379ccd56f5'
             if (inputPasswd !== pagePasswd && inputPasswd !== ownerPasswd){
                 alert('门似乎纹丝未动...');
                 location.href = localStorage.getItem("lastUrl") || '/';
