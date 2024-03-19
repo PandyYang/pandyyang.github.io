@@ -95,31 +95,6 @@
   </entry>
   
   <entry>
-    <title>过年</title>
-    <link href="https://github.com/PandyYang/2024/01/30/sheng-huo/guo-nian/"/>
-    <id>https://github.com/PandyYang/2024/01/30/sheng-huo/guo-nian/</id>
-    <published>2024-01-30T02:10:06.000Z</published>
-    <updated>2024-02-23T08:22:26.748Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;最近快过年了，一直对于过年没有什么大的期待，也没什么大的乐趣可言，不喜欢去相亲，也不爱走亲戚，生活嘛，平淡无奇去过，无病无灾就已经很好了。&lt;/p&gt;
-&lt;p&gt;但是普普通通的日子，曾几何时，都是一种奢求了。&lt;/p&gt;
-&lt;p&gt;去年的时候，我和父亲发生了一些冲突，原因很简单，因为妈妈那</summary>
-        
-      
-    
-    
-    
-    <category term="生活" scheme="https://github.com/PandyYang/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
     <title>如何基于S3搭建hadoop大数据集群，并整合Hive、Spark</title>
     <link href="https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/"/>
     <id>https://github.com/PandyYang/2024/01/04/ji-zhu/da-shu-ju/ru-he-ji-yu-s3-da-jian-hadoop-da-shu-ju-ji-qun-bing-zheng-he-hive-spark/</id>
@@ -510,6 +485,32 @@
     
     <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
+    
+  </entry>
+  
+  <entry>
+    <title>CNNVD爬虫开发</title>
+    <link href="https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
+    <id>https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
+    <published>2023-11-13T02:58:43.000Z</published>
+    <updated>2023-11-13T03:08:51.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。&lt;/p&gt;
+&lt;p&gt;但是最近发现了问题，</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="Python" scheme="https://github.com/PandyYang/tags/Python/"/>
     
   </entry>
   
