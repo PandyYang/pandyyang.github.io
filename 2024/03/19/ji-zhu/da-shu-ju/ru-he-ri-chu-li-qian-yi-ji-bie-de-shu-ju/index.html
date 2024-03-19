@@ -1,0 +1,1060 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="如何日处理千亿级别的数据, Pandy">
+    <meta name="description" content="每天我们都会接触到数据。这个时代最不缺的就是数据。数据从哪里来？有什么用？你知道工程师们是如何处理海量数据的吗？
+打开你的Excel，你知道Excel可以一次最多处理多少数据吗？
+Excel的每个工作表可以有最多1,048,576行，每个工">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>如何日处理千亿级别的数据 | Pandy</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/day-night.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?7932dff180fe30aa989c03f6825ed82f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+
+<!--    <script>-->
+<!--        (function(){-->
+<!--        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";-->
+<!--        document.write('<script src="' + src + '" id="sozz"><\/script>');-->
+<!--        })();-->
+<!--    </script>-->
+
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Pandy" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-atom-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Pandy</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Pandy</div>
+        <div class="logo-desc">
+            
+            士不可以不弘毅
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/PandyYang/pandy.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fa-brands fa-github-alt"></i>github
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/PandyYang/pandy.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="github" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pagePasswd = '';
+        if (pagePasswd && pagePasswd.length > 0) {
+            let inputPasswd = CryptoJS.SHA256(prompt('芝麻开门~')).toString(CryptoJS.enc.Hex)
+            let ownerPasswd = '03d5720fe72b22f152e5718a7eb1b2d1cfa1198e763cd6121fe70b379ccd56f5'
+            if (inputPasswd !== pagePasswd && inputPasswd !== ownerPasswd){
+                alert('门似乎纹丝未动...');
+                location.href = localStorage.getItem("lastUrl") || '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://didablog.oss-cn-beijing.aliyuncs.com/20231204105020.png')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        如何日处理千亿级别的数据
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 20px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" target="_blank">
+                            <span class="chip bg-color">大数据</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                            技术
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-19
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    Pandy
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    18 分
+                </div>
+                
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>每天我们都会接触到数据。这个时代最不缺的就是数据。数据从哪里来？有什么用？你知道工程师们是如何处理海量数据的吗？</p>
+<p>打开你的Excel，你知道Excel可以一次最多处理多少数据吗？</p>
+<p>Excel的每个工作表可以有最多1,048,576行，每个工作表可以有最多16,384列（从列A到列XFD）。</p>
+<p>你可能会想，Excel为什么要有这个限制，还好它一直都够我使用了，亲爱的，宇宙的尽头其实是我们认知的边界。</p>
+<p>你看，思考少一点，问题就会少一点，乐趣果然会多一些。</p>
+<p>开个玩笑。</p>
+<p>话说回来，假如你某天遇见了非常多的数据要处理，想象一下，Excel最多搞定100w的数据。</p>
+<p>你现在有120w数据呢？</p>
+<p>真聪明，你现在把这些数据分成为两个Excel，每个60w，漂亮，除了电脑卡了一点，这个问题用分治法得到了很好的解决。</p>
+<p>数据量来到了200w，3个Excel。</p>
+<p>来到了2000w，30个Excel。</p>
+<p>…暂且不说打开它们需要多久，如果你是一个Excel高手，可能需要小心写那些自定义函数了，并且要有耐心，实在不行还得换个电脑，加加内存条之类的。</p>
+<p>解决一个问题的最好方式，要么是学习一门新的东西，工欲善其事必先利其器，要么是让老板就加钱，有钱能使鬼推磨，我替你解决。</p>
+<p>哈哈哈。</p>
+<p>如果每天需要处理千亿 - 万亿 - 亿亿级别的数据，就必须要在传输、存储、计算上学习一些好玩的东西了。</p>
+<p>如果天上的每个星星都有名字，我们来一起数一数，算一算，记一记。</p>
+<h2 id="开始航行"><a href="#开始航行" class="headerlink" title="开始航行"></a>开始航行</h2><p>最后一次检查燃料，倒数，准备出发，我们会持续收到星系航行者从浩瀚虚空中传来的星星，并对它们进行分析、存储。</p>
+<p>每当感受到引擎带给人的巨大推力，我会感慨宇宙凭什么不能被数学、物理和工程师征服呢？我们的征程是可星辰大海！注意这里的海，可是无尽星海哦。</p>
+<p>我们的每一眼都是未知，对未知的好奇，这是热爱、勇气、探索的唯一理由。</p>
+<h2 id="Kafka"><a href="#Kafka" class="headerlink" title="Kafka"></a>Kafka</h2><p><img src="https://didablog.oss-cn-beijing.aliyuncs.com/image-20240319142438623.png" alt="Kafka官网首页"></p>
+<h3 id="初识Kafka"><a href="#初识Kafka" class="headerlink" title="初识Kafka"></a>初识Kafka</h3><p>与君初相识，犹如故人归。</p>
+<p>Kafka，没错，可能你看过一些莫名其妙的书，有一个作者叫做卡夫卡，不是村上春树写的《海边的卡夫卡》。</p>
+<p>优秀的人，是想做什么都会做得优秀的。并不是因为这个人有做好所有事的天赋。</p>
+<p>Kafka除了是一个作家，还是一个伟大的流处理平台。流是什么？流就是数据流。<strong>Kafka的目标是为处理实时数据提供一个统一、高吞吐、低延迟的平台。</strong></p>
+<p>Jay Kreps，Kafka的命名来源于此人，领英的工程师，当然，灵感来自于弗朗茨·卡夫卡，出生于奥匈帝国的小说家。</p>
+<h3 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h3><p>学习一个东西，如果不知道其原理，那活着难道不是一种遗憾。</p>
+<p><img src="https://didablog.oss-cn-beijing.aliyuncs.com/400px-Overview_of_Apache_Kafka.svg.png" alt="Kafka架构图"></p>
+<p>我们向太空中派了多个使者，它们会孤独…而又荣耀得航行，也许是…，好吧，是永久，也许当人类的文明早已湮灭，它们身上承载的就是人类存在过的证明。</p>
+<p>每个使者就是一个Producer，作为<strong>消息的生产者</strong>。星光在闪烁，自从人类发明了电，从而掀起了电气革命，从那之后，电磁学的发展，让信息可以在真空中得以传输，谁说我们埋头书海，不是在遨游星空呢？</p>
+<p>传递回来的信息，可以进入不同的<strong>分区（Partition）</strong>,不同的<strong>Topic</strong>下，在一个分区内这些消息被索引并连同时间戳存储在一起，被称为<strong>消费者（Consumer）</strong>的进程消费，Kafka可以运行在一个由一台或者多台服务器组成的集群上，并且分区可以跨集群节点分布。</p>
+<p>可能你要问了，为什么数据不直接发给我的电脑，要发给Kafka，然后让我从Kafka中消费？这不是多此一举吗。</p>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><p>Kafka不单单提供了一种消息的流转。它还可以：</p>
+<ol>
+<li><p>可扩展性。</p>
+<p>假如我们的使者中有1970年发射的向着北边的，有2020年发射的向着南边的，过了50年，发送的协议、接口已经完全变了，我们就需要接口适配，从而汇聚信息，再提供给多个消费者进行消费。m个生产者，n个消费者，并且生产者和消费者可以随意增减。</p>
+</li>
+<li><p>数据缓冲。</p>
+<p>想象我们的使者在经过火星或者木星，甚至是以后的超大星系时，发送的星星数据是非常多的，假如那时候恰好每个飞行器都在发送非常大量的数据，如果不经过Kafka缓冲，那么消息根本处理不完，处理不完，就可能丢失数据，甚至影响消费者的稳定性，毕竟如果机器处理不过来，很容易造成带宽占满，机器宕机。</p>
+</li>
+<li><p>容错性和高可用。</p>
+<p>假如我们没有Kafka，恰好有一个星星的数据因为网络中断，或者停电，造成了丢失，而那颗星星上恰好住着小王子！你们永远收不到那朵玫瑰花的照片了，555….</p>
+<p>Kafka通过数据副本和集群的机制来保证数据的高可用性和容错性，即使部门系统或网络发送故障，数据也不会丢失，仍可以被消费。太好了，小王子不用每天看着日落了，因为我们收到了消息，可以回复他了，你的玫瑰虽然有刺，也很爱生气，但是她还爱着你，而你，要勇敢呀~</p>
+</li>
+<li><p>解耦生产者和消费者。</p>
+<p>Kafka汇聚了多个生产者所发送的星星数据，我们的消费者可能分布全球，并且机器的带宽、性能有优有劣，这时候谁的机器好一些就可以处理多一些的数据，谁的机器小一些，就能按自己的能力处理，消费者和生产者完全不用担心频次啊、数据量啊这些问题，只是凭借自己的能力，从Kafka拿数据，就像是一片大海，你那边在下雨，我这边在拿着贝壳在舀水，地球依旧没变，真的吗？别哭了，海都咸了好多。</p>
+</li>
+<li><p>消息顺序性的保障。</p>
+<p>有一些消费者的处理，要基于消息的顺序，比如有的星星身上披着大气的环流，如果能保证顺序，那么我们就能看到风的形状，如果没有顺序，那可能星星的一些轨迹就很难预测到了。Kafka保证了写入一个特定分区的消息是有序的。</p>
+</li>
+<li><p>功能的丰富和灵活性。</p>
+<p>Kafka还提供了丰富的功能，比如对消息做一个统一的过滤、转换或者聚合。比如有一些数据里一片漆黑，什么也没有。那我们的消费点在重复消费一些数据的时候，可能每个消费者都要把这些数据剔除掉，如果Kafka能帮我们做一个统一的处理，那我们的消费者也许会省力好多，处理消息会更快了！</p>
+</li>
+</ol>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>Kafka不光有以上的优点。其实也有很多类似于Kafka的中间件，Kafka的一大优势是它的<strong>高性能</strong>！如果你要处理1000亿的数据，那么…Kafka吞吐数据的速度要达到每秒钟至少100万条。</p>
+<p>你可以靠近传奇，但是很难超越，除非有新的革命性的东西产生，传奇之所以难以超越，是因为它在当下，全人类的认知里，将一些权衡、优点做到了极致。</p>
+<p>如果你想在一个技术上登峰造极，但在目前的平台和认知里遇见阻碍的时候，或许你可以深入底层看看。</p>
+<p>对硬件没有深入的理解，在软件上就难以有更高的成就。</p>
+<p>星星？何时能存完啊。</p>
+<p>技术的底层是什么呢？是CPU、是磁盘、是操作系统、是1和0。</p>
+<p>Kafka的设计和实现上做了这些事，让它足以应对海量数据的传输和存储：</p>
+<ol>
+<li><p>分布式系统设计。</p>
+<p>Kafka是一个分布式流处理平台，它能够跨多台服务器分布运行。这种分布式架构使得Kafka可以通过增加更多的服务器来水平扩展其性能和容量，同时也提高了系统的容错能力。</p>
+<p>为什么我们有能力处理如此海量的数据，就是因为人类将单个机器组成了一个大的集群，此所谓分布式，分布式的理论有很多，CAP、BASE等等，围绕分布式也出现了一系列的工作岗位，但是往往大公司才有能力去面对这么多的数据，搭建一个大型集群。</p>
+</li>
+<li><p><strong>分区（Partitioning）</strong></p>
+</li>
+</ol>
+<p>​	Kafka中的主题（Topics）可以被切分成多个分区，这些分区可以分布在不同的服务器上。分区使得Kafka能够并行处理数据，大大提	高了吞吐量。同时，分区还保证了同一分区内消息的顺序，这对于需要顺序一致性的应用是非常重要的。</p>
+<ol start="3">
+<li><strong>批处理（Batching）</strong></li>
+</ol>
+<p>​	Kafka支持消息的批处理。这意味着生产者可以将多个消息聚合成一个批次发送，而消费者可以一次性拉取和处理多个消息。批处理	可以显著减少网络请求的次数，减少网络开销，提高数据处理效率。</p>
+<ol start="4">
+<li><strong>零拷贝技术（Zero-copy）</strong></li>
+</ol>
+<p>​	Kafka利用了操作系统的零拷贝技术来传输数据。这种技术可以直接从文件系统缓存将数据发送到网络接口，避免了在用户空间和内	核空间之间多次复制数据，从而减少了CPU的使用和提高了数据传输的效率。</p>
+<ol start="5">
+<li><strong>顺序磁盘I&#x2F;O</strong></li>
+</ol>
+<p>​	Kafka的存储设计优化了磁盘I&#x2F;O操作。消息在磁盘上是顺序存储的，这样的顺序写入比随机写入更快。对于读操作，由于大部分读取	是从缓存中完成的，加上磁盘的顺序读取也相对较快，因此Kafka能够实现高效的数据读写。</p>
+<ol start="6">
+<li><strong>日志压缩（Log Compaction）</strong></li>
+</ol>
+<p>​	Kafka提供了日志压缩的功能，这允许它在保留数据不变的前提下，删除那些具有相同键的旧消息。这样不仅节省了存储空间，还保	证了即使在长时间运行后，消费者也能从中读取到完整的数据状态。</p>
+<ol start="7">
+<li><strong>高效的数据结构</strong></li>
+</ol>
+<p>​	Kafka内部使用高效的数据结构和算法来管理和处理数据。例如，它使用索引文件来快速定位数据，使得即使是处理大量数据时也能	保持快速的数据访问速度。</p>
+<p>看到这里，我想大家都已经看不下去了。</p>
+<p>浪漫主义与现实主义的差别就是，当要实现无以复加的浪漫时，比如遨游天际，那么你要付出多少呢？多少代呢？多少理论呢？</p>
+<p>将人类的视野推向宇宙的，不光是浪漫，而是更多的脚踏实地。</p>
+<p>《霸王别姬》里有一句，你要想人前显贵，不得人后受罪？</p>
+<p>那些出类拔萃，力王狂澜，璀璨如星之人，谁的荣耀背后，没有刻着孤独和苦痛？</p>
+<p>我们拿到了星星的数据，看吧，才只是将小溪汇聚到了湖泊，当一个想法要落地的时候，会有很多现实问题要解决，正如两个人相处的时候，基于表象的一厢情愿的理解，是根本不够的，世一并不是一世。</p>
+<p>我们的Kafka用到了大规模的集群来传输、持久化数据，别忘了Kafka是用于处理数据流的，如果你钱很多，可以把数据全部放在里面，没有任何问题，但是Kafka毕竟不适合长久得保存数据，它的功能上面已经提到了，是给我们一个统一、高吞吐、低延迟的平台。</p>
+<p>所以下一步，我们要想想，数据从天上汇集而来，要存放在哪里？</p>
+<h2 id="Hadoop"><a href="#Hadoop" class="headerlink" title="Hadoop"></a>Hadoop</h2><p><img src="https://didablog.oss-cn-beijing.aliyuncs.com/1_kPKoXmHBDmGthbah-0549A.png" alt="img"></p>
+<h3 id="初识大数据"><a href="#初识大数据" class="headerlink" title="初识大数据"></a>初识大数据</h3><p>很久以前，Google发表了几篇论文。</p>
+<p>有时候改变个人命运的、乃至改变世界的，往往是那几粒思想的花火，但是花火在迸发之前，正如张弓射箭，是需要蕴集非常多的东西的，努力、天赋、运气、环境…生命的出现竟也是如此，我们不知道哪一束太阳光激发了有机体进化为了单细胞，我们不知道哪个小蝌蚪进入了卵细胞，从而形成了我们。这一切是偶然吗？一切的出现？亲爱的，是，却又不是…</p>
+<p>辩证，是一个很深邃的词语。辩证法去理解分析问题，不会让一个人的想法趋于极端。</p>
+<p>我们读《周易》，了解种种流传千年的智慧，只是为了，什么？</p>
+<p>为了更好地发现自己，认识世界。</p>
+<h3 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h3><p>Google对大数据和分布式计算的贡献是巨大的，这是一家伟大的公司，我自我感觉。</p>
+<p>相关论文如下：</p>
+<h4 id="1-GFS-Google-File-System"><a href="#1-GFS-Google-File-System" class="headerlink" title="1. GFS (Google File System)"></a>1. <strong>GFS (Google File System)</strong></h4><ul>
+<li><strong>标题</strong>: The Google File System</li>
+<li><strong>简介</strong>: GFS是一个针对大规模数据集设计的分布式文件系统。它强调的是容错性和高吞吐量，特别适用于大规模数据处理系统。Hadoop的HDFS（Hadoop Distributed File System）就是受到GFS启发而开发的。</li>
+</ul>
+<h4 id="2-MapReduce"><a href="#2-MapReduce" class="headerlink" title="2. MapReduce"></a>2. <strong>MapReduce</strong></h4><ul>
+<li><strong>标题</strong>: MapReduce: Simplified Data Processing on Large Clusters</li>
+<li><strong>简介</strong>: MapReduce是一种编程模型，用于在大规模数据集上进行并行计算。它简化了大量数据的处理过程，允许开发者通过编写简单的Map和Reduce函数来处理分布式数据。这篇论文激发了Apache Hadoop项目的诞生。</li>
+</ul>
+<h4 id="3-Bigtable"><a href="#3-Bigtable" class="headerlink" title="3. Bigtable"></a>3. <strong>Bigtable</strong></h4><ul>
+<li><strong>标题</strong>: Bigtable: A Distributed Storage System for Structured Data</li>
+<li><strong>简介</strong>: Bigtable是一个高效的非关系型数据库，它支持存储结构化数据的扩展性需求。Bigtable对后来的NoSQL数据库设计有很大的影响，例如Apache HBase就是基于Bigtable的概念开发的。</li>
+</ul>
+<h4 id="4-Dremel"><a href="#4-Dremel" class="headerlink" title="4.Dremel"></a>4.<strong>Dremel</strong></h4><ul>
+<li><strong>标题</strong>: Dremel: Interactive Analysis of Web-Scale Datasets</li>
+<li><strong>简介</strong>: Dremel是一个分布式系统，用于对大规模数据集进行快速的交互式分析。它能够支持复杂的SQL查询，并提供快速的查询性能，是Google BigQuery服务的基础。</li>
+</ul>
+<h4 id="5-Spanner"><a href="#5-Spanner" class="headerlink" title="5. Spanner"></a>5. <strong>Spanner</strong></h4><ul>
+<li><strong>标题</strong>: Spanner: Google’s Globally-Distributed Database</li>
+<li><strong>简介</strong>: Spanner是Google开发的一个全球分布式数据库，它提供了SQL接口和事务的一致性，同时保持了高可用性和全球数据分布的能力。Spanner的创新之处在于它对外部同步时钟的利用，解决了分布式系统中的一致性问题。</li>
+</ul>
+<h4 id="6-Borg"><a href="#6-Borg" class="headerlink" title="6. Borg"></a>6. <strong>Borg</strong></h4><ul>
+<li><strong>标题</strong>: Large-scale cluster management at Google with Borg</li>
+<li><strong>简介</strong>: Borg是Google内部使用的一个大规模集群管理系统，它用于运行和管理数以万计的任务。Borg展示了如何在大规模环境下有效地管理资源，其概念和设计启发了Kubernetes项目的开发。</li>
+</ul>
+<p>人间也许根本没有所谓的技术，有的只是思想的质化而已。</p>
+<p>而这一切，妙不可言。</p>
+<p>所有不凡之辈，都想在历史中留下自己的足迹，让那几个足印，随着群星而永恒闪耀。除此之外，一切于他们，都是没有意义的。因为生命毕竟是羸弱且短暂的，那些人身上，是炎热的血在涌动，在推动人类和历史前行，没有比这，更有趣的事了。</p>
+<p>而于普通人，专注且热爱，擅长的事情，爱值得的人，我要是说这一生转瞬即逝，你会信吗？</p>
+<p>但是只有当你学会爱，想去爱的时候，爱才会来吧…</p>
+<p>我们拿到了星星的数据，暂时放在了Kafka中，如果没有足够的消费者，那么Kafka中的数据会越来越多，幸好星星之间的距离很远，数据流不是一直都那么大， 消费者总能慢慢消费，而Kafka随着数据的突然增大，也能横向扩展到一个合理的范围，这种动态的平衡，是基于对全局的把控。</p>
+<h3 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h3><p>有了理论基础，那么实现就指日可待了，总会有这样的人出现的。</p>
+<p>Doug cutting当时就职于雅虎，他和其他一些人基于谷歌的GFS以及MapreReduce思想，用了两年的时间实现了DFS和MapreReduce机制，一个微缩版：Nutch。</p>
+<p>2006年3月，Map-Reduce分布式离线计算和NDFS即Nutch分布式文件系统分别被纳入称为Hadoop的项目中。</p>
+<p>Hadoop目前成为了Apache基金会的顶级项目。</p>
+<p>Hadoop这个名字来源于Doug cuttiing儿子的玩具大象。</p>
+<p>看吧， 正如Java的橡树和ElasticSearch的食谱，巨擘总爱轻描淡写。</p>
+<p>我想起了距今大约5.4亿至4.8亿年前，地球上有一个物种大爆发的阶段，史称<strong>寒武纪大爆发</strong>，化石记录显示绝大多数的动物<strong>“门”</strong>都在这一时期出现，它持续了2千万年-2.5千万年，它导致了大多数现代动物门的发散。这也是显宇宙的开始…</p>
+<p>达尔文在《物种起源》中也困惑于这个问题，即便在当代，寒武纪大爆发依旧是科学界的一大谜题。</p>
+<p>其实不光是寒武纪大爆发，很多的医学问题，也是至今无解。看似很简单，比如我的换季手蜕皮，这是没有解释的。</p>
+<p>第一次工业革命距今260多年，第二次工业革命距今150多年，广义相对论距今100多年，1994年Java 1.0可以正式下载…</p>
+<p>亲爱的，生命出现了如此之久，但只要几百年的发展，一切就都变了，清朝的人一定想象不到我们在干嘛？你在玩手机，我在挤地铁。</p>
+<p>这难道不是另一个寒武纪大爆发？这是最好的年代，这是最坏的年代。</p>
+<p>路漫漫其修远兮，亲爱的，不要做你的什么题了，但我想了想，你还是好好做吧~</p>
+<h4 id="架构-1"><a href="#架构-1" class="headerlink" title="架构"></a>架构</h4><p><img src="https://didablog.oss-cn-beijing.aliyuncs.com/hdfsarchitecture.gif" alt="HDFS 架构"></p>
+<p>架构是复杂的，但是只需要知道几个核心的设计。</p>
+<ul>
+<li><strong>NameNode</strong>：管理文件系统的元数据，比如文件的目录树、文件和块的映射关系等。它不存储实际数据，但是知道每个文件的数据块存放在哪些DataNodes上。</li>
+<li><strong>DataNodes</strong>：存储实际的数据块。每当有文件要存储到HDFS时，这个文件会被分成多个数据块，这些块被存储在不同的DataNodes上。DataNodes根据NameNode的指示存储和检索数据块，并定期向NameNode报告它们存储的块列表。</li>
+</ul>
+<p>这里有一个思想，也是在yarn中用的，就是将管理和操作分开，这样可以最大化提升扩展和性能。</p>
+<p>其余细节不多介绍，总之，为了支持数据的存储、容错、扩展、吞吐、纠错、通信、安全、复制等等，有一群人在努力。</p>
+<h4 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h4><p>我们想多存放数据，我有时候感慨我写了这么久代码，竟没有一点点能看见的摸得着得物质产出，0和1被磁性固定在了磁盘上，我只能看到显示器。</p>
+<p>数据，在哪里？磁盘，内存，卡带。磁场、电场、大气、自转、定理、公理…你会发现少任何一个环节，这个世界就不会如此残酷，又如此完美。</p>
+<p>HDFS作为一个分布式的文件系统，它将大文件分割成数据块（默认大小为128MB或256MB），并将这些块分布存储在整个集群的多个节点上。</p>
+<p>为了提高容错性，HDFS在不同的节点上复制每个数据块（默认情况下每个块有三个副本）来实现高容错性。如果一个节点失败，数据可以从其他节点的副本中恢复。</p>
+<p>通过简单地添加更多节点，可以轻松扩展存储容量和计算能力，从而支持PB级别甚至更大规模的数据集。</p>
+<p>我们的星星目前存放在Hadoop的HDFS中，当然，你也可以选择其他一些存储，例如S3，存放在HDFS的数据，HDFS会进行管理，存放在其他地方的数据，由各自进行管理。</p>
+<h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><p>我们搞定了存，但是数据如果不经过计算，其实我们也不知道有多少星星，星星的类别、颜色、大小一些具体的细节。</p>
+<p>我眼睛疼，待续待续~~</p>
+<h3 id="YARN"><a href="#YARN" class="headerlink" title="YARN"></a>YARN</h3><h2 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h2><p>计算</p>
+<h2 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h2><p>sql检索</p>
+<h2 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h2><p>kv检索</p>
+<h2 id="ClickHouse"><a href="#ClickHouse" class="headerlink" title="ClickHouse"></a>ClickHouse</h2><p>万亿级别检索</p>
+<h2 id="Greemplum"><a href="#Greemplum" class="headerlink" title="Greemplum"></a>Greemplum</h2><p>结构化数据检索</p>
+<h2 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h2><p>复杂检索</p>
+<h2 id="Neo4j"><a href="#Neo4j" class="headerlink" title="Neo4j"></a>Neo4j</h2><p>构建图</p>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+                    <img alt="知识共享许可协议"
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png"/></a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">《如何日处理千亿级别的数据》</span> 由 <a
+                    xmlns:cc="http://creativecommons.org/ns#" href="/2024/03/19/ji-zhu/da-shu-ju/ru-he-ri-chu-li-qian-yi-ji-bie-de-shu-ju/"
+                    property="cc:attributionName"
+                    rel="cc:attributionURL">Pandy</a> 采用
+            <a rel="license noopener" target="_blank" href="https://creativecommons.org/licenses/by-nc/4.0/deed.zh">
+                知识共享署名-非商业性使用 4.0 国际许可协议
+            </a>
+            进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2024/03/19/ji-zhu/da-shu-ju/ru-he-ri-chu-li-qian-yi-ji-bie-de-shu-ju/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105020.png" class="responsive-img" alt="如何日处理千亿级别的数据">
+                        
+                        <span class="card-title">如何日处理千亿级别的数据</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            每天我们都会接触到数据。这个时代最不缺的就是数据。数据从哪里来？有什么用？你知道工程师们是如何处理海量数据的吗？
+打开你的Excel，你知道Excel可以一次最多处理多少数据吗？
+Excel的每个工作表可以有最多1,048,576行，每个工
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-03-19
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/" target="_blank">
+                        <span class="chip bg-color">大数据</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/03/13/xiang-fa/ru-he-shi-yong-mei-qu-applestore-chong-zhi-chatgpt4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://didablog.oss-cn-beijing.aliyuncs.com/20231204105648.png" class="responsive-img" alt="如何使用美区AppleStore充值ChatGPT4">
+                        
+                        <span class="card-title">如何使用美区AppleStore充值ChatGPT4</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            我一直觉得ChatGPT是一个划时代的产物。在第一次将ChatGPT所写的代码，用于生产环境的时候，我隐约得感到了一个新时代在来临。
+人工智能这个词，2023年之前一直是不愠不火的存在，但是现在纵观各个科技企业、各国政府都在追赶着人工智能的
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-03-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8A%80%E6%9C%AF/" class="post-category" target="_blank">
+                                    技术
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('10')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Pandy<br />'
+            + '作者: Pandy<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h1, h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h1, h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+    });
+</script>
+    
+
+</main>
+
+
+    <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.css">
+</head>
+<!-- 白天和黑夜主题 -->
+<div class="sum-moon-box">
+    <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="切换主题" >
+        <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+    </a>
+</div>
+
+<script>
+    function switchNightMode() {
+        $('<div class="Cuteen_DarkSky"><div class="Cuteen_DarkPlanet"></div></div>').appendTo($('body')),
+            setTimeout(function () {
+                $('body').hasClass('DarkMode')
+                    ? ($('body').removeClass('DarkMode'), localStorage.setItem('isDark', '0'), $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon'))
+                    : ($('body').addClass('DarkMode'), localStorage.setItem('isDark', '1'), $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')),
+
+                    setTimeout(function () {
+                        $('.Cuteen_DarkSky').fadeOut(1e3, function () {
+                            $(this).remove()
+                        })
+                    }, 2e3)
+            })
+    }
+
+    //黑夜模式自动开启功能（首次加载）
+    setTimeout(function () {
+        if (localStorage.getItem('isDark') == null) {
+            if ((new Date().getHours() >= 22 || new Date().getHours() < 7) && !$('body').hasClass('DarkMode')) {
+                $('body').addClass('DarkMode');
+                localStorage.setItem('isDark', '1');
+                $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon');
+            }
+        } else {
+            /* 模式判断 */
+            if (localStorage.getItem('isDark') === '1') {
+                document.body.classList.add('DarkMode');
+                $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon');
+            } else {
+                document.body.classList.remove('DarkMode');
+                $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon');
+            }
+        }
+    }, 0);
+</script>
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="position: center">
+        <div class="copy-right">
+            &copy;2022-2023 PandyYang 版权所有
+            <br>
+            诗 宇宙 死亡
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">316.6k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script>
+    $(document).ready(function () {
+
+        // var int = setInterval(fixCount, 50);
+        // var pvcountOffset = 80000;
+        // var uvcountOffset = 20000;
+
+        // function fixCount() {
+        //     if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+        //         $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+        //         clearInterval(int);
+        //     }
+        //     if ($("#busuanzi_container_site_pv").css("display") != "none") {
+        //         $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据
+        //         clearInterval(int);
+        //     }
+        // }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2022, 12, 29, 00, 00, 00);
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "", clearTimeout(st)) : (document.title = "", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GP1D6B9899"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', 'G-GP1D6B9899');
+</script>
+
+
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

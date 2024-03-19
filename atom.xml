@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/"/>
-  <updated>2024-03-13T08:53:40.310Z</updated>
+  <updated>2024-03-19T09:53:02.816Z</updated>
   <id>https://github.com/PandyYang/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何日处理千亿级别的数据</title>
+    <link href="https://github.com/PandyYang/2024/03/19/ji-zhu/da-shu-ju/ru-he-ri-chu-li-qian-yi-ji-bie-de-shu-ju/"/>
+    <id>https://github.com/PandyYang/2024/03/19/ji-zhu/da-shu-ju/ru-he-ri-chu-li-qian-yi-ji-bie-de-shu-ju/</id>
+    <published>2024-03-19T05:59:48.000Z</published>
+    <updated>2024-03-19T09:53:02.816Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;每天我们都会接触到数据。这个时代最不缺的就是数据。数据从哪里来？有什么用？你知道工程师们是如何处理海量数据的吗？&lt;/p&gt;
+&lt;p&gt;打开你的Excel，你知道Excel可以一次最多处理多少数据吗？&lt;/p&gt;
+&lt;p&gt;Excel的每个工作表可以有最多1,048,576行，每个工作表可</summary>
+        
+      
+    
+    
+    
+    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+    <category term="大数据" scheme="https://github.com/PandyYang/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>如何使用美区AppleStore充值ChatGPT4</title>
@@ -485,32 +512,6 @@
     
     <category term="职场" scheme="https://github.com/PandyYang/categories/%E8%81%8C%E5%9C%BA/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>CNNVD爬虫开发</title>
-    <link href="https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/"/>
-    <id>https://github.com/PandyYang/2023/11/13/ji-zhu/python/cnnvd-pa-chong-kai-fa/</id>
-    <published>2023-11-13T02:58:43.000Z</published>
-    <updated>2023-11-13T03:08:51.009Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;CNNVD和CNVD的官网其实都有共享的数据。之前一直是在下载共享的数据文件，然后经过程序解析进行入库。&lt;/p&gt;
-&lt;p&gt;但是最近发现了问题，</summary>
-        
-      
-    
-    
-    
-    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="Python" scheme="https://github.com/PandyYang/tags/Python/"/>
     
   </entry>
   
