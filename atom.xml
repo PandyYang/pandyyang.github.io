@@ -6,7 +6,7 @@
   <link href="https://github.com/PandyYang/atom.xml" rel="self"/>
   
   <link href="https://github.com/PandyYang/"/>
-  <updated>2024-03-25T10:36:14.057Z</updated>
+  <updated>2024-03-25T06:37:15.738Z</updated>
   <id>https://github.com/PandyYang/</id>
   
   <author>
@@ -15,32 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>如何搭建一个个人博客</title>
-    <link href="https://github.com/PandyYang/2024/03/25/ji-zhu/other/ru-he-da-jian-yi-ge-ge-ren-bo-ke/"/>
-    <id>https://github.com/PandyYang/2024/03/25/ji-zhu/other/ru-he-da-jian-yi-ge-ge-ren-bo-ke/</id>
-    <published>2024-03-25T09:08:28.000Z</published>
-    <updated>2024-03-25T10:36:14.057Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;以本博客为例，来分享一下搭建一个个人博客的全过程。&lt;/p&gt;
-&lt;p&gt;不知道大家对于搭建一个个人的网站这件事有什么看法，是不是觉得挺酷的，可以拥有自己在网上的一块自留地，可以把文章放在上面，让全世界的人看，可以就像那些大的企业拥有自己的门户一样，自己也拥有一个属于自己的门户。&lt;</summary>
-        
-      
-    
-    
-    
-    <category term="技术" scheme="https://github.com/PandyYang/categories/%E6%8A%80%E6%9C%AF/"/>
-    
-    
-    <category term="其他" scheme="https://github.com/PandyYang/tags/%E5%85%B6%E4%BB%96/"/>
-    
-  </entry>
   
   <entry>
     <title>读书推荐</title>
@@ -513,6 +487,30 @@
     
     
     <category term="想法" scheme="https://github.com/PandyYang/categories/%E6%83%B3%E6%B3%95/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>读大学的意义</title>
+    <link href="https://github.com/PandyYang/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/"/>
+    <id>https://github.com/PandyYang/2023/12/03/cheng-chang/du-da-xue-de-yi-yi/</id>
+    <published>2023-12-03T02:57:02.000Z</published>
+    <updated>2023-12-04T03:25:35.942Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;上大学，尤其是好大学的意义之一就是对抗世俗，找寻自我。&lt;/p&gt;
+&lt;p&gt;我在大学里躺在树下，看书晒绿太阳，眸子里再抑郁，也是心安理得。我有大把的时间去想，去探寻，去构思我以后要做什么，要成为什么，它似乎把我和这个社会隔开，提供给我一个缓冲，我可以买烟抽，我可以为姑娘们喝酒，我</summary>
+        
+      
+    
+    
+    
+    <category term="成长" scheme="https://github.com/PandyYang/categories/%E6%88%90%E9%95%BF/"/>
     
     
   </entry>
